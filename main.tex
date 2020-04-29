@@ -382,8 +382,31 @@ File name: \fn{ktt.tex}}
             \end{exmp}
             
             \begin{thm}
-                
+                Let $E = f(u_1, \dots, u_r)$ be a finitely generated extension of $F$ such that each $u_i$, $i = 1, \dots, r$, is algebraic over $F$. Then $E$ is finite over $F$ and, hence, an algebraic extension of $F$.
             \end{thm}
+            
+            \begin{proof}
+                Set $E_i = F(u_1, \dots, u_i)$, $1 \leq i \leq r$. Observe that if an element in $E$ is algebraic over a field $F$, then, trivially, it is algebraic over any field $K$ such that $E \supset K \supset F$. Therefore, each $u_i$ is algebraic over $E_{i - 1}$, $i = 1, \dots, r$, with $E_0 = F$. Also, $E_i = E_{i - 1}(u_i)$. Therefore, by xxx, $[E_i : E_{i - 1}]$ is finite, say $n_i$. By xxx,
+                \begin{equation*}
+                    [E:F] = [E:E_{r - 1}][E_{r - 1}:E_{r - 2}] \dots [E_1:F];
+                \end{equation*}
+                hence,
+                \begin{equation*}
+                    [E:F] = n_rn_{r - 1} \dots n_1.
+                \end{equation*}
+                Thus, $E$ is a finite extension of $F$ and therefore algebraic over $F$.
+            \end{proof}
+            
+            \begin{thm}
+                Let $E$ be an extension of $F$. If $K$ is the subset of $E$ consisting of all the elements that are algebraic over $F$, then $K$ is a subfield of $E$ and an algebraic extension of $F$.
+            \end{thm}
+            
+            \begin{proof}
+                We need only show that if $a, b \in E$ and are algebraic over $F$, then $a \pm b, ab \text{ and } a/b (\text{if } b \neq 0)$ are also algebraic over $F$. This follows from the fact that all these elements lie in $F(a, b)$, which by xxx, is an algebraic extension of $F$.\par
+                Thus, $K$ is an algebraic extension of $F$ in $E$.
+            \end{proof}
+            
+        \subsection{Algebraically Closed Fields}
             
 	\section{Normal and Separable Extensions}
 	
