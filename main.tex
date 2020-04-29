@@ -1,0 +1,401 @@
+%%% ====================================================================
+%%% @LaTeX-file{
+%%%   filename  = "testmath.tex",
+%%%   version   = "2.0",
+%%%   date      = "1999/11/15",
+%%%   time      = "15:09:17 EST",
+%%%   checksum  = "07762 2342 7811 82371",
+%%%   author    = "American Mathematical Society",
+%%%   copyright = "Copyright 1995, 1999 American Mathematical Society,
+%%%                all rights reserved.  Copying of this file is
+%%%                authorized only if either:
+%%%                (1) you make absolutely no changes to your copy,
+%%%                including name; OR
+%%%                (2) if you do make changes, you first rename it
+%%%                to some other name.",
+%%%   address   = "American Mathematical Society,
+%%%                Technical Support,
+%%%                Electronic Products and Services,
+%%%                P. O. Box 6248,
+%%%                Providence, RI 02940,
+%%%                USA",
+%%%   telephone = "401-455-4080 or (in the USA and Canada)
+%%%                800-321-4AMS (321-4267)",
+%%%   FAX       = "401-331-3842",
+%%%   email     = "tech-support@ams.org (Internet)",
+%%%   codetable = "ISO/ASCII",
+%%%   keywords  = "latex, amsmath, examples, documentation",
+%%%   supported = "yes",
+%%%   abstract  = "This is a test file containing extensive examples of
+%%%                mathematical constructs supported by the amsmath
+%%%                package.",
+%%%   docstring = "The checksum field above contains a CRC-16
+%%%                checksum as the first value, followed by the
+%%%                equivalent of the standard UNIX wc (word
+%%%                count) utility output of lines, words, and
+%%%                characters.  This is produced by Robert
+%%%                Solovay's checksum utility.",
+%%% }
+%%% ====================================================================
+\NeedsTeXFormat{LaTeX2e}% LaTeX 2.09 can't be used (nor non-LaTeX)
+[1994/12/01]% LaTeX date must December 1994 or later
+\documentclass[draft]{article}
+\pagestyle{headings}
+
+\title{Fields and Galois Theory\\
+File name: \fn{ktt.tex}}
+\author{Utkan Utkaner}
+
+\usepackage{amsmath,amsthm}
+\usepackage{amssymb}
+
+%    Some definitions useful in producing this sort of documentation:
+\chardef\bslash=`\\ % p. 424, TeXbook
+%    Normalized (nonbold, nonitalic) tt font, to avoid font
+%    substitution warning messages if tt is used inside section
+%    headings and other places where odd font combinations might
+%    result.
+\newcommand{\ntt}{\normalfont\ttfamily}
+%    command name
+\newcommand{\cn}[1]{{\protect\ntt\bslash#1}}
+%    LaTeX package name
+\newcommand{\pkg}[1]{{\protect\ntt#1}}
+%    File name
+\newcommand{\fn}[1]{{\protect\ntt#1}}
+%    environment name
+\newcommand{\env}[1]{{\protect\ntt#1}}
+\hfuzz1pc % Don't bother to report overfull boxes if overage is < 1pc
+
+%       Theorem environments
+
+%% \theoremstyle{plain} %% This is the default
+\newtheorem{thm}{Theorem}[section]
+\newtheorem{cor}[thm]{Corollary}
+\newtheorem{lem}[thm]{Lemma}
+\newtheorem{prop}[thm]{Proposition}
+\newtheorem{ax}{Axiom}
+
+\newtheorem{exmp}{Example}
+
+\theoremstyle{definition}
+\newtheorem{defn}{Definition}[section]
+
+\theoremstyle{remark}
+\newtheorem{rem}{Remark}[section]
+\newtheorem*{notation}{Notation}
+
+%\numberwithin{equation}{section}
+
+\newcommand{\thmref}[1]{Theorem~\ref{#1}}
+\newcommand{\secref}[1]{\S\ref{#1}}
+\newcommand{\lemref}[1]{Lemma~\ref{#1}}
+
+\newcommand{\bysame}{\mbox{\rule{3em}{.4pt}}\,}
+
+%       Math definitions
+
+\newcommand{\A}{\mathcal{A}}
+\newcommand{\B}{\mathcal{B}}
+\newcommand{\st}{\sigma}
+\newcommand{\XcY}{{(X,Y)}}
+\newcommand{\SX}{{S_X}}
+\newcommand{\SY}{{S_Y}}
+\newcommand{\SXY}{{S_{X,Y}}}
+\newcommand{\SXgYy}{{S_{X|Y}(y)}}
+\newcommand{\Cw}[1]{{\hat C_#1(X|Y)}}
+\newcommand{\G}{{G(X|Y)}}
+\newcommand{\PY}{{P_{\mathcal{Y}}}}
+\newcommand{\X}{\mathcal{X}}
+\newcommand{\wt}{\widetilde}
+\newcommand{\wh}{\widehat}
+
+\DeclareMathOperator{\per}{per}
+\DeclareMathOperator{\cov}{cov}
+\DeclareMathOperator{\non}{non}
+\DeclareMathOperator{\cf}{cf}
+\DeclareMathOperator{\add}{add}
+\DeclareMathOperator{\Cham}{Cham}
+\DeclareMathOperator{\IM}{Im}
+\DeclareMathOperator{\esssup}{ess\,sup}
+\DeclareMathOperator{\meas}{meas}
+\DeclareMathOperator{\seg}{seg}
+
+%    \interval is used to provide better spacing after a [ that
+%    is used as a closing delimiter.
+\newcommand{\interval}[1]{\mathinner{#1}}
+
+%    Notation for an expression evaluated at a particular condition. The
+%    optional argument can be used to override automatic sizing of the
+%    right vert bar, e.g. \eval[\biggr]{...}_{...}
+\newcommand{\eval}[2][\right]{\relax
+\ifx#1\right\relax \left.\fi#2#1\rvert}
+
+%    Enclose the argument in vert-bar delimiters:
+\newcommand{\envert}[1]{\left\lvert#1\right\rvert}
+\let\abs=\envert
+
+%    Enclose the argument in double-vert-bar delimiters:
+\newcommand{\enVert}[1]{\left\lVert#1\right\rVert}
+\let\norm=\enVert
+
+\begin{document}
+	\maketitle
+	\markboth{Fields and Galois Theory}
+	{Fields and Galois Theory}
+	\renewcommand{\sectionmark}[1]{}
+	
+	\section{Basic Definitions and Results}
+		
+        \subsection{Symmetry}
+		
+        \subsection{Rings}
+		
+        \subsection{Domains and Fields}
+		
+        \subsection{Homomorphisms and Ideals}
+		
+        \subsection{Quotient Rings}
+		
+        \subsection{Polynomial Rings over Fields}
+		
+        \subsection{Prime Ideals and Maximal Ideals}
+		    
+	\section{Algebraic Extensions of Fields}
+	
+		\subsection{Factoring Polynomials}
+		
+		    \begin{prop}[Gauss's Lemma (Primitivity)]
+		        The product of two primitive polynomials $f(x)$ and $g(x)$ is itself primitive.
+		    \end{prop}
+		    
+		    \begin{proof}
+		        Assume that the product $f(x)g(x)$ is not primitive, so there is some prime $p$ dividing each of its coefficients. Let $\sigma: \mathbb{Z} \to \mathbb{Z}_p$ be the natural map, and consider the ring map $\sigma^{*}: \mathbb{Z}[x] \to \mathbb{Z}_p[x]$ reducing coefficients mod $p$. Now
+		        \begin{equation*}
+		            \sigma^{*}(fg) = \sigma^{*}(f)\sigma^{*}(g).
+		        \end{equation*}
+		        But $\sigma^{*}(fg) = 0$ in $\mathbb{Z}_p[x]$ while $\sigma^{*}(f) \neq 0$ and $\sigma^{*}(g) \neq 0$, and this contradicts the fact that $\mathbb{Z}[x]$ is a domain.
+		    \end{proof}
+			
+			\begin{prop}[Gauss's Lemma (Irreducibility)]
+				Let $f(x) \in \mathbb{Z}[x]$. If $f(x)$ is reducible over $\mathbb{Q}$, then it is also reducible over $\mathbb{Z}$.
+			\end{prop}
+			
+			\begin{proof}
+				Suppose $f(x)$ is reducible over $\mathbb{Q}$. Without loss of generality we may assume that $f(x)$ is primitive. Let $f(x) = u(x)v(x)$ with $u(x), v(x) \in \mathbb{Q}[x]$ and $u(x), v(x) \notin \mathbb{Q}$. Then $f(x) = (a / b)u'(x)v'(x)$, where $u'(x)$ and $v'(x)$ are primitive polynomials in $\mathbb{Z}[x]$. Then $bf(x) = au'(x)v'(x)$. The gcd of the coefficients of $bf(x)$ is $b$, and the gcd of the coefficients of $au'(x)v'(x)$ is $a$, by xxx. Hence, $b = \pm a$, so $f(x) = \pm u'(x)v'(x)$. Therefore, $f(x)$ is reducible over $\mathbb{Z}$.
+			\end{proof}
+			
+			\begin{prop}
+				Let $f(x) = a_0 + a_1x + \dots + a_{n - 1}x^{n - 1} + x^n \in \mathbb{Z}[x]$ be a monic polynomial, i.e., a polynomial with leading coefficient one. If $f(x)$ has a root $a \in \mathbb{Q}$, then $a \in \mathbb{Z}$ and $a | a_0$.
+			\end{prop}
+			
+			\begin{proof}
+				Write $a = \alpha / \beta, \text{ where } \alpha, \beta \in \mathbb{Z} \text{ and } (\alpha, \beta) = 1$. Then
+				\begin{equation*}
+					a_0 + a_1(\frac{\alpha}{\beta}) + \dots + a_{n - 1}(\frac{\alpha^{n - 1}}{\beta^{n - 1}}) + \frac{\alpha^n}{\beta^n} = 0.
+				\end{equation*}
+				Multiply the above equation by $\beta^{n - 1}$ to obtain
+				\begin{equation*}
+					a_0\beta^{n - 1} + a_1\alpha\beta^{n - 2} + \dots + a_{n - 1}\alpha^{n - 1} = -\frac{\alpha^n}{\beta}.
+				\end{equation*}
+				Because $\alpha, \beta \in \mathbb{Z}$, it follows that $\alpha^n / \beta \in \mathbb{Z}$, so $\beta$ must be $\pm 1$. The last equation also shows $\alpha | a_0$. Hence, $a = \pm \alpha \in \mathbb{Z}$ and $a | a_0$.
+			\end{proof}
+			
+			\begin{prop}[Eisenstein's Criterion]
+				Let $f(x) = a_0 + a_1x + \dots + a_{n}x^n \in \mathbb{Z}[x]$ for $n \geq 1$. If there is a prime $p$ such that $p^2 \not| a_0$, $p | a_1, \dots, p | a_{n - 1}$, $p \not| a_n$, then $f(x)$ is irreducible over $\mathbb{Q}$.
+			\end{prop}
+			
+			\begin{proof}
+				Suppose\begin{equation*}
+					f(x) = (b_0 + b_1x + \dots + b_rx^r)(c_0 + c_1x + \dots + c_sx^s),
+				\end{equation*}
+				with $b_i, c_i \in \mathbb{Z}$, $b_r \neq 0$, $c_s \neq 0$, $r < n$, and $s < n$. Then $a_0 = b_0c_0$ and $a_n = b_rc_s$. Then since $p | a_0$ and $p^2 \not| a_0$, either $p | b_0$ and $p \not| c_0$ or $p | c_0$ and $p \not| b_0$. Consider the case $p | c_0$ and $p \not| b_0$. Because $p \not| a_n$, it follows that $p \not| b_r$ and $p \not| c_s$. Let $c_m$ be the first coefficient in $c_0 + \dots + c_sx^s$ such that $p \not| c_m$. Then note that $a_m = b_0c_m + b_1c_{m - 1} + \dots + b_mc_0$. From this we see that $p \not| a_m$ (otherwise, $p | c_m$), so $m = n$. Then $n = m \leq s < n$, which is impossible. Similarly, if $p | b_0$ and $p \not| c_0$, we arrive at an absurdity. Hence by Gauss's Lemma, $f(x)$ is irreducible over $\mathbb{Q}$.
+			\end{proof}
+			
+			\begin{rem}
+			    The last three propositions hold mutatis mutandis with $\mathbb{Z}$ replaced by a unique factorization domain $R$ (replace $\mathbb{Q}$ with the field of fractions of R and $p$ with a prime element of $R$).
+			\end{rem}
+			
+		\subsection{Adjunction of Roots}
+		
+			\begin{defn}
+				If $F$ is a subfield of a field $E$, one also says that $E$ is an extension of $F$, and one writes $E/F$ is an extension.
+			\end{defn}
+			
+			\begin{defn}
+				Let $E/F$ be an extension. The dimension of $E$ viewed as a vector space over F is called the degree of $E$ over $F$ and it is denoted by $[E : F]$. One says that $E/F$ is a finite extension if $[E : F]$ is finite.
+			\end{defn}
+			
+			\begin{defn}
+			    When $K$ and $L$ are extensions of a field $F$, an $F$-homomorphism of $K$ into $L$ or an embedding of $K$ in $L$ over $F$ is a homomorphism $\varphi: K \to L$ such that $\varphi(c) = c \text{ for all } c \in F$. 
+			\end{defn}
+			
+			\begin{prop}[Multiplicativity of Degrees]
+				If $F \subset B \subset E$ are fields with $[E : B]$ and $[B : F]$ finite, then $E/F$ is a finite extension and
+				\begin{equation*}
+					[E : F] = [E : B][B : F].
+				\end{equation*}
+			\end{prop}
+			
+			\begin{proof}
+				Let $\{\alpha_1, \dots, \alpha_m\}$ be a basis of $E/B$, and let $\{\beta_1, \dots, \beta_n\}$ be a basis of $B/F$. It suffices to prove that $\{\beta_j\alpha_i : 1 \leq i \leq m, 1 \leq j \leq n\}$ is a basis of $E/F$.\par
+				This set spans $E$. If $\gamma \in E$, then there are $b_i$ in $B$ with $\gamma = \sum{b_i\alpha_i}$. But each $b_i = \sum{c_{ij}\beta_j}$ for $c_{ij}$ in $F$; hence $\gamma = \sum{c_{ij}\beta_j\alpha_i}$. To see that this set is linearly independent, assume that $\sum{c_{ij}\beta_j\alpha_i} = 0$ for $c_{ij}$ in $F$. Now $b_i = \sum{c_{ij}\beta_j} \in B$, so that independence of the $\alpha_i$ over $B$ implies that $b_i = 0 \text{ for all } i$. Hence $\sum{c_{ij}\beta_j} = 0 \text{ for all } i$, and so the independence of the $\beta_j$ over $F$ implies that $c_{ij} = 0 \text{ for all } i, j$, as desired.
+			\end{proof}
+			
+			\begin{prop}
+				If $F$ is a field and $p(x) \in F[x]$ is irreducible, then the quotient ring $F[x]/(p(x))$ is a field containing (an isomorphic copy of) $F$ and a root of $p(x)$.
+			\end{prop}
+			
+			\begin{proof}
+				Since $p(x)$ is irreducible, the principle ideal $I = (p(x))$ is a nonzero prime ideal; since $F[x]$ is a PID, $I$ is a maximal ideal, and so $E = F[x]/I$ is a field. Now the map $a \mapsto a + I$ is an isomorphism from $F$ to $F' = {a + I : a \in F} \subset E$.\par
+				Let $\theta = x + I \in E$; we claim that $\theta$ is a root of $p(x)$. Write $p(x) = a_0 + a_1x + \dots + a_nx^n, \text{ where } a_i \in F$. Then, in $E$
+				\begin{align*}
+					p(\theta) &= (a_0 + I) + (a_1 + I)\theta + \dots + (a_n + I)\theta^n\\
+					&= (a_0 + I) + (a_1 + I)(x + I) + \dots + (a_n + I)(x + I)^n\\
+					&= (a_0 + I) + (a_1x + I) + \dots + (a_nx^n + I)\\
+					&= a_0 + a_1x + \dots + a_nx^n + I\\
+					&= p(x) + I\\
+					&= I,
+				\end{align*}
+				because $I = (p(x))$. But $I = 0 + I$ is the zero element of $F[x]/I$, and hence $\theta$ is a root of $p(x)$.
+			\end{proof}
+			
+			\begin{rem}
+			    One usually identifies $F$ with the subfield $F'$ of $E$ in xxx. Henceforth, whenever there is an embedding of a field $F$ into a field $E$, we say that $E$ is an extension of $F$.
+			\end{rem}
+			
+			\begin{prop}[Kronecker Theorem]
+				Let $f(x) \in F[x]$, where $F$ is a field. There exists an extension $E$ of $F$ in which $f(x)$ has a root.
+			\end{prop}
+			
+			\begin{proof}
+				The proof is by induction on the degree of $\partial(f(x))$. If $\partial(f(x)) = 1$, then $f(x)$ is linear and we can choose $E = F$. If $\partial(f(x)) > 1$, write $f(x) = p(x)g(x)$, where $p(x)$ is irreducible. xxx provides a field $B$ containing $F$ and a root $\theta$ of $p(x)$. Hence $p(x) = (x - \theta)h(x)$ in $B[x]$. By induction, there is a field $E$ containing $B$ in which $h(x)g(x)$, hence $f(x)$ has a root.
+			\end{proof}
+			
+			\begin{prop}
+				Let $F$ be a field. Let $p(x)$ be an irreducible polynomial in $F[x]$ and $u$ be a root of $p(x)$ in an extension $E$ of $F$. Then
+				\begin{enumerate}
+				\renewcommand{\labelenumi}{(\roman{enumi})}
+					\item $F(u)$, the subfield of $E$ generated by $F$ and $u$ is the set
+					\begin{equation*}
+					    F[u] = \{b_0 + b_1u + \dots + b_{m}u^m \in E : b_0 + b_1x + \dots + b_{m}x^m \in F[x] \}
+					\end{equation*}
+					\item If the degree of $p(x)$ is $n$, the set $\{1, u, \dots, u^{n - 1}\}$ forms a basis of $F(u)$ over $F$; that is, each element of $F(u)$ can be written uniquely as\\$c_0 + c_1u + \dots + c_{n - 1}u^{n - 1}, \text{ where } c_i \in F \text{ and } [F(u):F] = n$.
+				\end{enumerate}
+			\end{prop}
+			
+			\begin{proof}
+			    Let $p(x)$ be an irreducible polynomial in $F[x]$ having a root, say u, in an extension $E$ of $F$. We denote by $F(u)$ the subfield of $E$ generated by $F$ and $u$ that is, the smallest subfield of $E$ containing $F$ and $u$. Consider the mapping $\phi : F[x] \to E$ defined by
+			    \begin{equation*}
+			        \phi(b_0 + b_1x + \dots + b_mx^m) = b_0 + b_1u + \dots + b_mu^m,
+			    \end{equation*}
+			    where $b_0 + b_1x + \dots + b_mx^m \in F[x]$. Obviously, $\phi$ is a homomorphism whose kernel contains $p(x)$, because $p(u) = 0$. We show that $\textup{Ker}\phi = (p(x))$.\par
+			    Because $F[x]$ is a PID, $\textup{Ker}\phi = (g(x)) \text{ for some } g(x) \in F[x]$. Then $p(x) \in \textup{Ker}\phi$ implies $p(x) = g(x)h(x) \text{ for some } h(x) \in F[x]$. Because $p(x)$ is irreducible over $F$, $h(x) \in F$. Thus $\textup{Ker}\phi = (g(x)) = (p(x))$.\par
+			    By xxx,
+			    \begin{align*}
+			        F[x]/(p(x)) &\cong \textup{Im}\phi\\
+			        &= \{b_0 + b_1u + \dots + b_mu^m \in E : b_0 + b_1x + \dots + b_mx^m \in F[x]\}\\
+			        &= F[u],
+			    \end{align*}
+			    say. Because $F[x]/(p(x))$ is a field, the set $F[u]$ is a field. Obviously $F[u]$ is the smallest subfield of $E$ containing $F$ and $u$, so $F(u) = F[u]$. If the degree of $p(x)$ is $n$, then $u$ cannot satisfy any polynomial in $F[x]$ of degree less that $n$. This shows that the set
+			    \begin{equation*}
+			        \{1, u, \dots, u^{n - 1}\}
+			    \end{equation*}
+			    forms a basis of $F(u)$ over $F$, and $[F(u) : F] = n$.
+			\end{proof}
+			
+		\subsection{Algebraic Extensions}
+		
+		    \begin{defn}
+                Let $E$ be an extension of a field $F$. An element $\alpha \in E$ is said to be algebraic over $F$ if there exist elements $a_0, \dots, a_n$ $(n \geq 1)$ of $F$, not all equal to 0, such that
+                \begin{equation*}
+                    a_0 + a_1\alpha + \dots + a_n\alpha^n = 0.
+                \end{equation*}
+                In other words, an element $\alpha \in E$ is algebraic over $F$ if there exists a nonconstant polynomial $p(x) \in F[x]$ such that $p(\alpha) = 0$.
+            \end{defn}
+            
+            \begin{thm}
+                Let $E$ be an extension of a field $F$, and let $u \in E$ be algebraic over $F$. Let $p(x) \in F[x]$ be a polynomial of the least degree such that $p(u) = 0$. Then
+                \begin{enumerate}
+                \renewcommand{\labelenumi}{(\roman{enumi})}
+                    \item $p(x)$ is irreducible over $F$.
+                    \item If $g(x) \in F[x]$ is such that $g(u) = 0$, then $p(x) | g(x)$.
+                    \item There is exactly one monic polynomial $p(x) \in F[x]$ of least degree such that $p(u) = 0$.
+                \end{enumerate}
+            \end{thm}
+            
+            \begin{proof}
+                \begin{enumerate}
+                \renewcommand{\labelenumi}{(\roman{enumi})}
+                    \item Let $p(x) = p_1(x)p_2(x)$, and $\partial(p_1(x))$, $\partial(p_2(x))$ be less than $\partial(p(x))$. Then $0 = p(u) = p_1(u)p_2(u)$. This gives $p_1(u) = 0$ or $p_2(u) = 0$; that is, $u$ satisfies a polynomial of degree less than that of $p(x)$, a contradiction. So $p(x)$ is irreducible of $F$.
+                    \item By the division algorithm $g(x) = p(x)q(x) + r(x)$, where $r(x) = 0$ or $\partial(r(x)) < \partial(p(x))$. Then $g(u) = p(u)q(u) + r(u)$; that is, $r(u) = 0$. Because $p(x)$ is of the least degree among the polynomials satisfied by $u$, $r(x)$ must be 0. Thus, $p(x) | g(x)$.
+                    \item Let $g(x)$ be a monic polynomial of least degree such that $g(u) = 0$. Then by $(ii)$ $p(x) | g(x)$ and $g(x) | p(x)$, which gives $p(x) = g(x)$ since both are monic polynomials.
+                \end{enumerate}
+            \end{proof}
+            
+            \begin{defn}
+                The monic irreducible polynomial in $F[x]$ of which $u$ is a root will be called the minimal polynomial of $u$ over $F$.
+            \end{defn}
+            
+            \begin{defn}
+                An extension $E$ of a field $F$ is called algebraic if each element of $E$ is algebraic over $F$.\par
+                Extensions that are not algebraic are called transcendental extensions.
+            \end{defn}
+            
+            \begin{thm}
+                If $E/F$ is a finite extension, then it is an algebraic extension.
+            \end{thm}
+            
+            \begin{proof}
+                Assume that $[E:F] = n$ and $\alpha \in E$. In any $n$-dimensional vector space, any sequence of $n + 1$ vectors is linearly dependent. There are thus scalars $c_i \in F \text{ for } i = 0, 1, \dots, n$, not all 0, with
+                \begin{equation*}
+                    \displaystyle\sum_{i = 0}^{n}{c_i\alpha^i} = 0;
+                \end{equation*}
+                there is thus a nonzero polynomial in $F[x]$ having $\alpha$ as a root, and so $\alpha$ is algebraic over $F$.
+            \end{proof}
+            
+            \begin{rem}
+                Not every algebraic extension is finite.
+            \end{rem}
+            
+            \begin{exmp}
+            
+                Define the algebraic numbers $\mathbb{A}$ to be the set of all those complex numbers that are algebraic over $\mathbb{Q}$. Than $\mathbb{A}/\mathbb{Q}$ is an algebraic extension that is not finite.
+                
+            \end{exmp}
+            
+            \begin{defn}
+            
+                An extension $E/F$ is finitely generated if there are elements $\alpha_1, \alpha_2, \dots, \alpha_k$ in $E$ such that $E = F(\alpha_1, \alpha_2, \dots, \alpha_k)$.
+                
+            \end{defn}
+            
+            \begin{rem}
+                A finitely generated extension need not be algebraic.
+            \end{rem}
+            
+             \begin{exmp}
+                Let $f(x)$ be a polynomial ring over a field $F$ in a variable $x$. Consider the field of quotients $E$ of $F[x]$. The elements of $E$ are of the form
+                \begin{equation*}
+                    (a_0 + a_1x + \dots + a_mx^m)(b_0 + b_1x + \dots + b_nx^n)^{-1},
+                \end{equation*}
+                where $a_i, b_i \in F$ and not all $b_i$ are zero. Thus, $E$ is generated by $x$ over $F$; that is, $E = F(x)$. Clearly, by the definition of a polynomial ring, $x$ cannot be algebraic over $F$. Hence, $E$ is not an algebraic extension.
+            \end{exmp}
+            
+            \begin{thm}
+                
+            \end{thm}
+            
+	\section{Normal and Separable Extensions}
+	
+	\section{Galois Theory}
+	
+\newpage
+
+    \begin{thebibliography}{10}
+    
+    	\bibitem{}
+    	
+    \end{thebibliography}
+	
+\end{document}
+\endinput
