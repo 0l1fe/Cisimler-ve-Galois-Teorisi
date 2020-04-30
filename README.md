@@ -23,6 +23,7 @@
         - **add defn?** infinite extension (^^; otherwise $E/F$ is called an infinite extension.^^)
     - ## Algebraicall
         - **add defn?** transcendental element
+        - **del defn?** transcendental extension
         - / or ^-1}
     - ## Algebraically Closed Fields
         - defn We will denote an algebraic closure...
@@ -32,13 +33,16 @@
     - ## 
 - 
 - 
-- fnc: f(x), g(x), h(x), ... -> u(x), v(x), w(x), ...
-- ring map: sigma
-- prime: p
-- irr: p(x)
-- rationals: q= a/b
-- coef: a_i, b_i, ...
-- degree: n, m -> r, s
-- field: F -> E or K, L : B
-- basis: alpha, beta, ... 
-- root: alpha, beta or theta ...
+- fnc: f(x), g(x), -> u(x), v(x),
+- irr: p(x), q(x),
+- hom: varphi
+- map: sigma
+- prime: p, q,
+- rationals: q, r, = a/b, c/d,
+- ^^coef: a_i, b_i, ...^^
+- element: a, b
+- ^^degree:  n, m, <-> r, s^^
+- field: F <- E or K, L; int: B <- A
+- ^^root: alpha, beta^^ 
+- constant: c
+- index: i, j, <-> r, s,
