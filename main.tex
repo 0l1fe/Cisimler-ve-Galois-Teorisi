@@ -171,33 +171,33 @@ File name: \fn{ktt.tex}}
 		    \begin{proof}
 		        Assume that the product $f(x)g(x)$ is not primitive, so there is some prime $p$ dividing each of its coefficients. Let $\sigma: \mathbb{Z} \to \mathbb{Z}_p$ be the natural map, and consider the ring map $\sigma^{*}: \mathbb{Z}[x] \to \mathbb{Z}_p[x]$ reducing coefficients mod $p$. Now
 		        \begin{equation*}
-		            \sigma^{*}(fg) = \sigma^{*}(f)\sigma^{*}(g).
+		            \sigma^{*}(f(x)g(x)) = \sigma^{*}(f(x))\sigma^{*}(g(x)).
 		        \end{equation*}
-		        But $\sigma^{*}(fg) = 0$ in $\mathbb{Z}_p[x]$ while $\sigma^{*}(f) \neq 0$ and $\sigma^{*}(g) \neq 0$, and this contradicts the fact that $\mathbb{Z}[x]$ is a domain.
+		        But $\sigma^{*}(f(x)g(x)) = 0$ in $\mathbb{Z}_p[x]$ while $\sigma^{*}(f(x)) \neq 0$ and $\sigma^{*}(g(x)) \neq 0$, and this contradicts the fact that $\mathbb{Z}[x]$ is a domain.
 		    \end{proof}
 			
 			\begin{prop}[Gauss's Lemma (Irreducibility)]
-				Let $f(x) \in \mathbb{Z}[x]$. If $f(x)$ is reducible over $\mathbb{Q}$, then it is also reducible over $\mathbb{Z}$.
+				Let $f(x) \in \mathbb{Z}[x]$. If $f(x)$ is irreducible over $\mathbb{Z}$, then it is also irreducible over $\mathbb{Q}$.
 			\end{prop}
 			
 			\begin{proof}
-				Suppose $f(x)$ is reducible over $\mathbb{Q}$. Without loss of generality we may assume that $f(x)$ is primitive. Let $f(x) = u(x)v(x)$ with $u(x), v(x) \in \mathbb{Q}[x]$ and $u(x), v(x) \notin \mathbb{Q}$. Then $f(x) = (a / b)u'(x)v'(x)$, where $u'(x)$ and $v'(x)$ are primitive polynomials in $\mathbb{Z}[x]$. Then $bf(x) = au'(x)v'(x)$. The gcd of the coefficients of $bf(x)$ is $b$, and the gcd of the coefficients of $au'(x)v'(x)$ is $a$, by xxx. Hence, $b = \pm a$, so $f(x) = \pm u'(x)v'(x)$. Therefore, $f(x)$ is reducible over $\mathbb{Z}$.
+				The proof is by contrapositive. Suppose $f(x)$ is reducible over $\mathbb{Q}$. Without loss of generality we may assume that $f(x)$ is primitive. Let $f(x) = u(x)v(x)$ with $u(x), v(x) \in \mathbb{Q}[x]$ and $u(x), v(x) \notin \mathbb{Q}$. Then $f(x) = (\frac{a}{b})u'(x)v'(x)$, where $\frac{a}{b} \in \mathbb{Q}$ and $u'(x)$ and $v'(x)$ are primitive polynomials in $\mathbb{Z}[x]$. Then $bf(x) = au'(x)v'(x)$. The $gcd$ of the coefficients of $bf(x)$ is $b$, and the $gcd$ of the coefficients of $au'(x)v'(x)$ is $a$, by xxx. Hence, $b = \pm a$, so $f(x) = \pm u'(x)v'(x)$. Therefore, $f(x)$ is reducible over $\mathbb{Z}$. Having proved the contrapositive, we can then infer that the original statement is true.
 			\end{proof}
 			
 			\begin{prop}
-				Let $f(x) = a_0 + a_1x + \dots + a_{n - 1}x^{n - 1} + x^n \in \mathbb{Z}[x]$ be a monic polynomial, i.e., a polynomial with leading coefficient one. If $f(x)$ has a root $a \in \mathbb{Q}$, then $a \in \mathbb{Z}$ and $a | a_0$.
+				Let $f(x) = a_0 + a_1x + \dots + a_{n - 1}x^{n - 1} + x^n \in \mathbb{Z}[x]$ be a monic polynomial. If $f(x)$ has a root $\alpha \in \mathbb{Q}$, then $\alpha \in \mathbb{Z}$ and $\alpha | a_0$.
 			\end{prop}
 			
 			\begin{proof}
-				Write $a = \alpha / \beta, \text{ where } \alpha, \beta \in \mathbb{Z} \text{ and } (\alpha, \beta) = 1$. Then
+				Write $\alpha = \frac{c}{d}, \text{ where } c, d \in \mathbb{Z} \text{ and } (c, d) = 1$. Then
 				\begin{equation*}
-					a_0 + a_1(\frac{\alpha}{\beta}) + \dots + a_{n - 1}(\frac{\alpha^{n - 1}}{\beta^{n - 1}}) + \frac{\alpha^n}{\beta^n} = 0.
+					a_0 + a_1(\frac{c}{d}) + \dots + a_{n - 1}(\frac{c^{n - 1}}{d^{n - 1}}) + \frac{c^n}{d^n} = 0.
 				\end{equation*}
-				Multiply the above equation by $\beta^{n - 1}$ to obtain
+				Multiply the above equation by $d^{n - 1}$ to obtain
 				\begin{equation*}
-					a_0\beta^{n - 1} + a_1\alpha\beta^{n - 2} + \dots + a_{n - 1}\alpha^{n - 1} = -\frac{\alpha^n}{\beta}.
+					a_0d^{n - 1} + a_1cd^{n - 2} + \dots + a_{n - 1}c^{n - 1} = -\frac{c^n}{d}.
 				\end{equation*}
-				Because $\alpha, \beta \in \mathbb{Z}$, it follows that $\alpha^n / \beta \in \mathbb{Z}$, so $\beta$ must be $\pm 1$. The last equation also shows $\alpha | a_0$. Hence, $a = \pm \alpha \in \mathbb{Z}$ and $a | a_0$.
+				Because $c, d \in \mathbb{Z}$, it follows that $\frac{c^n}{d} \in \mathbb{Z}$, so $d$ must be $\pm 1$. The last equation also shows $c | a_0$. Hence, $\alpha = \pm c \in \mathbb{Z}$ and $\alpha | a_0$.
 			\end{proof}
 			
 			\begin{prop}[Eisenstein's Criterion]
@@ -208,11 +208,11 @@ File name: \fn{ktt.tex}}
 				Suppose\begin{equation*}
 					f(x) = (b_0 + b_1x + \dots + b_rx^r)(c_0 + c_1x + \dots + c_sx^s),
 				\end{equation*}
-				with $b_i, c_i \in \mathbb{Z}$, $b_r \neq 0$, $c_s \neq 0$, $r < n$, and $s < n$. Then $a_0 = b_0c_0$ and $a_n = b_rc_s$. Then since $p | a_0$ and $p^2 \not| a_0$, either $p | b_0$ and $p \not| c_0$ or $p | c_0$ and $p \not| b_0$. Consider the case $p | c_0$ and $p \not| b_0$. Because $p \not| a_n$, it follows that $p \not| b_r$ and $p \not| c_s$. Let $c_m$ be the first coefficient in $c_0 + \dots + c_sx^s$ such that $p \not| c_m$. Then note that $a_m = b_0c_m + b_1c_{m - 1} + \dots + b_mc_0$. From this we see that $p \not| a_m$ (otherwise, $p | c_m$), so $m = n$. Then $n = m \leq s < n$, which is impossible. Similarly, if $p | b_0$ and $p \not| c_0$, we arrive at an absurdity. Hence by Gauss's Lemma, $f(x)$ is irreducible over $\mathbb{Q}$.
+				with $b_i, c_i \in \mathbb{Z}$, $b_r \neq 0$, $c_s \neq 0$, $r < n$, and $s < n$. Then $a_0 = b_0c_0$ and $a_n = b_rc_s$. Then since $p | a_0$ and $p^2 \not| a_0$, either $p | b_0$ and $p \not| c_0$ or $p | c_0$ and $p \not| b_0$. Consider the case $p | c_0$ and $p \not| b_0$. Because $p \not| a_n$, it follows that $p \not| b_r$ and $p \not| c_s$. Let $c_m$ be the first coefficient in $c_0 + \dots + c_sx^s$ such that $p \not| c_m$. Then note that $a_m = b_0c_m + b_1c_{m - 1} + \dots + b_mc_0$. From this we see that $p \not| a_m$ (otherwise, $p | c_m$), so $m = n$. Then $n = m \leq s < n$, which is impossible. Similarly, if $p | b_0$ and $p \not| c_0$, we arrive at an absurdity. Hence by xxx, $f(x)$ is irreducible over $\mathbb{Q}$.
 			\end{proof}
 			
 			\begin{rem}
-			    The last three propositions hold mutatis mutandis with $\mathbb{Z}$ replaced by a unique factorization domain $R$ (replace $\mathbb{Q}$ with the field of fractions of R and $p$ with a prime element of $R$).
+			    The last three propositions hold mutatis mutandis with $\mathbb{Z}$ replaced by a unique factorization domain $R$ (replace $\mathbb{Q}$ with the field of fractions of $R$ and $p$ with a prime element of $R$).
 			\end{rem}
 			
 		\subsection{Adjunction of Roots}
@@ -237,8 +237,8 @@ File name: \fn{ktt.tex}}
 			\end{prop}
 			
 			\begin{proof}
-				Let $\{\alpha_1, \dots, \alpha_m\}$ be a basis of $E/B$, and let $\{\beta_1, \dots, \beta_n\}$ be a basis of $B/F$. It suffices to prove that $\{\beta_j\alpha_i : 1 \leq i \leq m, 1 \leq j \leq n\}$ is a basis of $E/F$.\par
-				This set spans $E$. If $\gamma \in E$, then there are $b_i$ in $B$ with $\gamma = \sum{b_i\alpha_i}$. But each $b_i = \sum{c_{ij}\beta_j}$ for $c_{ij}$ in $F$; hence $\gamma = \sum{c_{ij}\beta_j\alpha_i}$. To see that this set is linearly independent, assume that $\sum{c_{ij}\beta_j\alpha_i} = 0$ for $c_{ij}$ in $F$. Now $b_i = \sum{c_{ij}\beta_j} \in B$, so that independence of the $\alpha_i$ over $B$ implies that $b_i = 0 \text{ for all } i$. Hence $\sum{c_{ij}\beta_j} = 0 \text{ for all } i$, and so the independence of the $\beta_j$ over $F$ implies that $c_{ij} = 0 \text{ for all } i, j$, as desired.
+				Let $\{\alpha_1, \dots, \alpha_n\}$ be a basis of $E/B$, and let $\{\beta_1, \dots, \beta_m\}$ be a basis of $B/F$. It suffices to prove that $\{\beta_j\alpha_i : 1 \leq i \leq n, 1 \leq j \leq m\}$ is a basis of $E/F$.\par
+				This set spans $E$. If $\gamma \in E$; then there are $b_i$ in $B$ with $\gamma = \sum{b_i\alpha_i}$. But each $b_i = \sum{c_{ij}\beta_j}$ for $c_{ij}$ in $F$, hence $\gamma = \sum{c_{ij}\beta_j\alpha_i}$. To see that this set is linearly independent, assume that $\sum{c_{ij}\beta_j\alpha_i} = 0$ for $c_{ij}$ in $F$. Now $b_i = \sum{c_{ij}\beta_j} \in B$, so that independence of the $\alpha_i$ over $B$ implies that $b_i = 0 \text{ for all } i$. Hence $\sum{c_{ij}\beta_j} = 0 \text{ for all } i$, and so the independence of the $\beta_j$ over $F$ implies that $c_{ij} = 0 \text{ for all } i, j$, as desired.
 			\end{proof}
 			
 			\begin{prop}
@@ -247,16 +247,16 @@ File name: \fn{ktt.tex}}
 			
 			\begin{proof}
 				Since $p(x)$ is irreducible, the principle ideal $I = (p(x))$ is a nonzero prime ideal; since $F[x]$ is a PID, $I$ is a maximal ideal, and so $E = F[x]/I$ is a field. Now the map $a \mapsto a + I$ is an isomorphism from $F$ to $F' = {a + I : a \in F} \subset E$.\par
-				Let $\theta = x + I \in E$; we claim that $\theta$ is a root of $p(x)$. Write $p(x) = a_0 + a_1x + \dots + a_nx^n, \text{ where } a_i \in F$. Then, in $E$
+				Let $\alpha = x + I \in E$; we claim that $\alpha$ is a root of $p(x)$. Write $p(x) = a_0 + a_1x + \dots + a_nx^n, \text{ where } a_i \in F$. Then, in $E$
 				\begin{align*}
-					p(\theta) &= (a_0 + I) + (a_1 + I)\theta + \dots + (a_n + I)\theta^n\\
+					p(\alpha) &= (a_0 + I) + (a_1 + I)\alpha + \dots + (a_n + I)\alpha^n\\
 					&= (a_0 + I) + (a_1 + I)(x + I) + \dots + (a_n + I)(x + I)^n\\
 					&= (a_0 + I) + (a_1x + I) + \dots + (a_nx^n + I)\\
 					&= a_0 + a_1x + \dots + a_nx^n + I\\
 					&= p(x) + I\\
 					&= I,
 				\end{align*}
-				because $I = (p(x))$. But $I = 0 + I$ is the zero element of $F[x]/I$, and hence $\theta$ is a root of $p(x)$.
+				because $I = (p(x))$. But $I = 0 + I$ is the zero element of $F[x]/I$, and hence $\alpha$ is a root of $p(x)$.
 			\end{proof}
 			
 			\begin{rem}
@@ -268,72 +268,68 @@ File name: \fn{ktt.tex}}
 			\end{prop}
 			
 			\begin{proof}
-				The proof is by induction on the degree of $\partial(f(x))$. If $\partial(f(x)) = 1$, then $f(x)$ is linear and we can choose $E = F$. If $\partial(f(x)) > 1$, write $f(x) = p(x)g(x)$, where $p(x)$ is irreducible. xxx provides a field $B$ containing $F$ and a root $\theta$ of $p(x)$. Hence $p(x) = (x - \theta)h(x)$ in $B[x]$. By induction, there is a field $E$ containing $B$ in which $h(x)g(x)$, hence $f(x)$ has a root.
+				The proof is by induction on the degree of $f(x)$. If $\partial(f(x)) = 1$, then $f(x)$ is linear and we can choose $E = F$. If $\partial(f(x)) > 1$, write $f(x) = p(x)u(x)$, where $p(x)$ is irreducible. xxx provides a field $B$ containing $F$ and a root $\alpha$ of $p(x)$. Hence $p(x) = (x - \alpha)v(x)$ in $B[x]$. By induction, there is a field $E$ containing $B$ in which $v(x)u(x)$, hence $f(x)$ has a root.
 			\end{proof}
 			
 			\begin{prop}
-				Let $F$ be a field. Let $p(x)$ be an irreducible polynomial in $F[x]$ and $u$ be a root of $p(x)$ in an extension $E$ of $F$. Then
+				Let $F$ be a field. Let $p(x)$ be an irreducible polynomial in $F[x]$ and $\alpha$ be a root of $p(x)$ in an extension $E$ of $F$. Then
 				\begin{enumerate}
 				\renewcommand{\labelenumi}{(\roman{enumi})}
-					\item $F(u)$, the subfield of $E$ generated by $F$ and $u$ is the set
+					\item $F(\alpha)$, the subfield of $E$ generated by $F$ and $\alpha$ is the set
 					\begin{equation*}
-					    F[u] = \{b_0 + b_1u + \dots + b_{m}u^m \in E : b_0 + b_1x + \dots + b_{m}x^m \in F[x] \}
+					    F[\alpha] = \{b_0 + b_1\alpha + \dots + b_{m}\alpha^m \in E : b_0 + b_1x + \dots + b_{m}x^m \in F[x] \}
 					\end{equation*}
-					\item If the degree of $p(x)$ is $n$, the set $\{1, u, \dots, u^{n - 1}\}$ forms a basis of $F(u)$ over $F$; that is, each element of $F(u)$ can be written uniquely as\\$c_0 + c_1u + \dots + c_{n - 1}u^{n - 1}, \text{ where } c_i \in F \text{ and } [F(u):F] = n$.
+					\item If the degree of $p(x)$ is $n$, the set $\{1, \alpha, \dots, \alpha^{n - 1}\}$ forms a basis of $F(\alpha)$ over $F$; that is, each element of $F(\alpha)$ can be written uniquely as\\$a_0 + a_1\alpha + \dots + a_{n - 1}\alpha^{n - 1}, \text{ where } a_i \in F \text{ and } [F(\alpha):F] = n$.
 				\end{enumerate}
 			\end{prop}
 			
 			\begin{proof}
-			    Let $p(x)$ be an irreducible polynomial in $F[x]$ having a root, say u, in an extension $E$ of $F$. We denote by $F(u)$ the subfield of $E$ generated by $F$ and $u$ that is, the smallest subfield of $E$ containing $F$ and $u$. Consider the mapping $\phi : F[x] \to E$ defined by
+			    Let $p(x)$ be an irreducible polynomial in $F[x]$ having a root, say $\alpha$, in an extension $E$ of $F$. We denote by $F(\alpha)$ the subfield of $E$ generated by $F$ and $\alpha$ that is, the smallest subfield of $E$ containing $F$ and $\alpha$. Consider the mapping $\varphi : F[x] \to E$ defined by
 			    \begin{equation*}
-			        \phi(b_0 + b_1x + \dots + b_mx^m) = b_0 + b_1u + \dots + b_mu^m,
+			        \varphi(b_0 + b_1x + \dots + b_mx^m) = b_0 + b_1\alpha + \dots + b_m\alpha^m,
 			    \end{equation*}
-			    where $b_0 + b_1x + \dots + b_mx^m \in F[x]$. Obviously, $\phi$ is a homomorphism whose kernel contains $p(x)$, because $p(u) = 0$. We show that $\textup{Ker}\phi = (p(x))$.\par
-			    Because $F[x]$ is a PID, $\textup{Ker}\phi = (g(x)) \text{ for some } g(x) \in F[x]$. Then $p(x) \in \textup{Ker}\phi$ implies $p(x) = g(x)h(x) \text{ for some } h(x) \in F[x]$. Because $p(x)$ is irreducible over $F$, $h(x) \in F$. Thus $\textup{Ker}\phi = (g(x)) = (p(x))$.\par
+			    where $b_0 + b_1x + \dots + b_mx^m \in F[x]$. Obviously, $\varphi$ is a homomorphism whose kernel contains $p(x)$, because $p(\alpha) = 0$. We show that $\textup{Ker}\varphi = (p(x))$.\par
+			    Because $F[x]$ is a PID, $\textup{Ker}\varphi = (f(x)) \text{ for some } f(x) \in F[x]$. Then $p(x) \in \textup{Ker}\varphi$ implies $p(x) = f(x)g(x) \text{ for some } g(x) \in F[x]$. Because $p(x)$ is irreducible over $F$, $g(x) \in F$. Thus $\textup{Ker}\varphi = (f(x)) = (p(x))$.\par
 			    By xxx,
 			    \begin{align*}
-			        F[x]/(p(x)) &\cong \textup{Im}\phi\\
-			        &= \{b_0 + b_1u + \dots + b_mu^m \in E : b_0 + b_1x + \dots + b_mx^m \in F[x]\}\\
-			        &= F[u],
+			        F[x]/(p(x)) &\cong \textup{Im}\varphi\\
+			        &= \{b_0 + b_1\alpha + \dots + b_m\alpha^m \in E : b_0 + b_1x + \dots + b_mx^m \in F[x]\}\\
+			        &= F[\alpha],
 			    \end{align*}
-			    say. Because $F[x]/(p(x))$ is a field, the set $F[u]$ is a field. Obviously $F[u]$ is the smallest subfield of $E$ containing $F$ and $u$, so $F(u) = F[u]$. If the degree of $p(x)$ is $n$, then $u$ cannot satisfy any polynomial in $F[x]$ of degree less that $n$. This shows that the set
+			    say. Because $F[x]/(p(x))$ is a field, the set $F[\alpha]$ is a field. Obviously $F[\alpha]$ is the smallest subfield of $E$ containing $F$ and $\alpha$, so $F(\alpha) = F[\alpha]$. If the degree of $p(x)$ is $n$, then $\alpha$ cannot satisfy any polynomial in $F[x]$ of degree less that $n$. This shows that the set
 			    \begin{equation*}
-			        \{1, u, \dots, u^{n - 1}\}
+			        \{1, \alpha, \dots, \alpha^{n - 1}\}
 			    \end{equation*}
-			    forms a basis of $F(u)$ over $F$, and $[F(u) : F] = n$.
+			    forms a basis of $F(\alpha)$ over $F$, and $[F(\alpha) : F] = n$.
 			\end{proof}
 			
 		\subsection{Algebraic Extensions}
 		
 		    \begin{defn}
-                Let $E$ be an extension of a field $F$. An element $\alpha \in E$ is said to be algebraic over $F$ if there exist elements $a_0, \dots, a_n$ $(n \geq 1)$ of $F$, not all equal to 0, such that
-                \begin{equation*}
-                    a_0 + a_1\alpha + \dots + a_n\alpha^n = 0.
-                \end{equation*}
-                In other words, an element $\alpha \in E$ is algebraic over $F$ if there exists a nonconstant polynomial $p(x) \in F[x]$ such that $p(\alpha) = 0$.
+                Let $E$ be an extension of a field $F$. An element $\alpha \in E$ is algebraic over $F$ if there exists a nonconstant polynomial $f(x) \in F[x]$ such that $f(\alpha) = 0$.
             \end{defn}
             
-            \begin{thm}
-                Let $E$ be an extension of a field $F$, and let $u \in E$ be algebraic over $F$. Let $p(x) \in F[x]$ be a polynomial of the least degree such that $p(u) = 0$. Then
+            \begin{prop}
+                Let $E$ be an extension of a field $F$, and let $\alpha \in E$ be algebraic over $F$. Let $f(x) \in F[x]$ be a polynomial of the least degree such that $f(\alpha) = 0$. Then
                 \begin{enumerate}
                 \renewcommand{\labelenumi}{(\roman{enumi})}
-                    \item $p(x)$ is irreducible over $F$.
-                    \item If $g(x) \in F[x]$ is such that $g(u) = 0$, then $p(x) | g(x)$.
-                    \item There is exactly one monic polynomial $p(x) \in F[x]$ of least degree such that $p(u) = 0$.
+                    \item $f(x)$ is irreducible over $F$.
+                    \item If $g(x) \in F[x]$ is such that $g(\alpha) = 0$, then $f(x) | g(x)$.
+                    \item There is exactly one monic polynomial $f(x) \in F[x]$ of least degree such that $f(\alpha) = 0$.
                 \end{enumerate}
-            \end{thm}
+            \end{prop}
             
             \begin{proof}
                 \begin{enumerate}
                 \renewcommand{\labelenumi}{(\roman{enumi})}
-                    \item Let $p(x) = p_1(x)p_2(x)$, and $\partial(p_1(x))$, $\partial(p_2(x))$ be less than $\partial(p(x))$. Then $0 = p(u) = p_1(u)p_2(u)$. This gives $p_1(u) = 0$ or $p_2(u) = 0$; that is, $u$ satisfies a polynomial of degree less than that of $p(x)$, a contradiction. So $p(x)$ is irreducible of $F$.
-                    \item By the division algorithm $g(x) = p(x)q(x) + r(x)$, where $r(x) = 0$ or $\partial(r(x)) < \partial(p(x))$. Then $g(u) = p(u)q(u) + r(u)$; that is, $r(u) = 0$. Because $p(x)$ is of the least degree among the polynomials satisfied by $u$, $r(x)$ must be 0. Thus, $p(x) | g(x)$.
-                    \item Let $g(x)$ be a monic polynomial of least degree such that $g(u) = 0$. Then by $(ii)$ $p(x) | g(x)$ and $g(x) | p(x)$, which gives $p(x) = g(x)$ since both are monic polynomials.
+                    \item Let $f(x) = u(x)v(x)$, and $\partial(u(x))$, $\partial(v(x))$ be less than $\partial(f(x))$. Then $0 = f(\alpha) = u(\alpha)v(\alpha)$. This gives $u(\alpha) = 0$ or $v(\alpha) = 0$; that is, $\alpha$ satisfies a polynomial of degree less than that of $f(x)$, a contradiction. So $f(x)$ is irreducible of $F$.
+                    \item By the division algorithm $g(x) = f(x)q(x) + r(x)$, where $r(x) = 0$ or $\partial(r(x)) < \partial(f(x))$. Then $g(\alpha) = f(\alpha)q(\alpha) + r(\alpha)$; that is, $r(\alpha) = 0$. Because $f(x)$ is of the least degree among the polynomials satisfied by $\alpha$, $r(x)$ must be 0. Thus, $f(x) | g(x)$.
+                    \item Let $g(x)$ be a monic polynomial of least degree such that $g(\alpha) = 0$. Then by $(ii)$ $f(x) | g(x)$ and $g(x) | f(x)$, which gives $f(x) = g(x)$ since both are monic polynomials.
                 \end{enumerate}
             \end{proof}
             
             \begin{defn}
-                The monic irreducible polynomial in $F[x]$ of which $u$ is a root will be called the minimal polynomial of $u$ over $F$.
+                The monic irreducible polynomial in $F[x]$ of which $\alpha$ is a root will be called the minimal polynomial of $\alpha$ over $F$.
             \end{defn}
             
             \begin{defn}
@@ -341,14 +337,14 @@ File name: \fn{ktt.tex}}
                 Extensions that are not algebraic are called transcendental extensions.
             \end{defn}
             
-            \begin{thm}
+            \begin{prop}
                 If $E/F$ is a finite extension, then it is an algebraic extension.
-            \end{thm}
+            \end{prop}
             
             \begin{proof}
-                Assume that $[E:F] = n$ and $\alpha \in E$. In any $n$-dimensional vector space, any sequence of $n + 1$ vectors is linearly dependent. There are thus scalars $c_i \in F \text{ for } i = 0, 1, \dots, n$, not all 0, with
+                Assume that $[E:F] = n$ and $\alpha \in E$. In any $n$-dimensional vector space, any sequence of $n + 1$ vectors is linearly dependent. There are thus scalars $a_i \in F \text{ for } i = 0, 1, \dots, n$, not all 0, with
                 \begin{equation*}
-                    \displaystyle\sum_{i = 0}^{n}{c_i\alpha^i} = 0;
+                    \displaystyle\sum_{i = 0}^{n}{a_i\alpha^i} = 0;
                 \end{equation*}
                 there is thus a nonzero polynomial in $F[x]$ having $\alpha$ as a root, and so $\alpha$ is algebraic over $F$.
             \end{proof}
@@ -365,7 +361,7 @@ File name: \fn{ktt.tex}}
             
             \begin{defn}
             
-                An extension $E/F$ is finitely generated if there are elements $\alpha_1, \alpha_2, \dots, \alpha_k$ in $E$ such that $E = F(\alpha_1, \alpha_2, \dots, \alpha_k)$.
+                An extension $E/F$ is finitely generated if there are elements $\alpha_1, \alpha_2, \dots, \alpha_n$ in $E$ such that $E = F(\alpha_1, \alpha_2, \dots, \alpha_n)$.
                 
             \end{defn}
             
@@ -376,65 +372,80 @@ File name: \fn{ktt.tex}}
              \begin{exmp}
                 Let $f(x)$ be a polynomial ring over a field $F$ in a variable $x$. Consider the field of quotients $E$ of $F[x]$. The elements of $E$ are of the form
                 \begin{equation*}
-                    (a_0 + a_1x + \dots + a_mx^m)(b_0 + b_1x + \dots + b_nx^n)^{-1},
+                    (a_0 + a_1x + \dots + a_nx^n)(b_0 + b_1x + \dots + b_mx^m)^{-1},
                 \end{equation*}
                 where $a_i, b_i \in F$ and not all $b_i$ are zero. Thus, $E$ is generated by $x$ over $F$; that is, $E = F(x)$. Clearly, by the definition of a polynomial ring, $x$ cannot be algebraic over $F$. Hence, $E$ is not an algebraic extension.
             \end{exmp}
             
-            \begin{thm}
-                Let $E = f(u_1, \dots, u_r)$ be a finitely generated extension of $F$ such that each $u_i$, $i = 1, \dots, r$, is algebraic over $F$. Then $E$ is finite over $F$ and, hence, an algebraic extension of $F$.
-            \end{thm}
+            \begin{prop}
+                Let $E = F(\alpha_1, \dots, \alpha_n)$ be a finitely generated extension of $F$ such that each $\alpha_i$, $i = 1, \dots, n$, is algebraic over $F$. Then $E$ is finite over $F$ and, hence, an algebraic extension of $F$.
+            \end{prop}
             
             \begin{proof}
-                Set $E_i = F(u_1, \dots, u_i)$, $1 \leq i \leq r$. Observe that if an element in $E$ is algebraic over a field $F$, then, trivially, it is algebraic over any field $K$ such that $E \supset K \supset F$. Therefore, each $u_i$ is algebraic over $E_{i - 1}$, $i = 1, \dots, r$, with $E_0 = F$. Also, $E_i = E_{i - 1}(u_i)$. Therefore, by xxx, $[E_i : E_{i - 1}]$ is finite, say $n_i$. By xxx,
+                Set $E_i = F(\alpha_1, \dots, \alpha_i)$, $1 \leq i \leq n$. Observe that if an element in $E$ is algebraic over a field $F$, then, trivially, it is algebraic over any field $B$ such that $F \subset B \subset E$. Therefore, each $\alpha_i$ is algebraic over $E_{i - 1}$, $i = 1, \dots, n$, with $E_0 = F$. Also, $E_i = E_{i - 1}(\alpha_i)$. Therefore, by xxx, $[E_i : E_{i - 1}]$ is finite, say $d_i$. By xxx,
                 \begin{equation*}
-                    [E:F] = [E:E_{r - 1}][E_{r - 1}:E_{r - 2}] \dots [E_1:F];
+                    [E:F] = [E:E_{n - 1}][E_{n - 1}:E_{n - 2}] \dots [E_1:F];
                 \end{equation*}
                 hence,
                 \begin{equation*}
-                    [E:F] = n_rn_{r - 1} \dots n_1.
+                    [E:F] = d_nd_{n - 1} \dots d_1.
                 \end{equation*}
                 Thus, $E$ is a finite extension of $F$ and therefore algebraic over $F$.
             \end{proof}
             
-            \begin{thm}
-                Let $E$ be an extension of $F$. If $K$ is the subset of $E$ consisting of all the elements that are algebraic over $F$, then $K$ is a subfield of $E$ and an algebraic extension of $F$.
-            \end{thm}
+            \begin{prop}
+                Let $E$ be an extension of $F$. If $A$ is the subset of $E$ consisting of all the elements that are algebraic over $F$, then $A$ is a subfield of $E$ and an algebraic extension of $F$.
+            \end{prop}
             
             \begin{proof}
-                We need only show that if $a, b \in E$ and are algebraic over $F$, then $a \pm b, ab \text{ and } a/b (\text{if } b \neq 0)$ are also algebraic over $F$. This follows from the fact that all these elements lie in $F(a, b)$, which by xxx, is an algebraic extension of $F$.\par
-                Thus, $K$ is an algebraic extension of $F$ in $E$.
+                We need only show that if $\alpha, \beta \in E$ and are algebraic over $F$, then $\alpha \pm \beta, \alpha\beta \text{ and } \alpha\beta^{-1} (\text{if } \beta \neq 0)$ are also algebraic over $F$. This follows from the fact that all these elements lie in $F(\alpha, \beta)$, which by xxx, is an algebraic extension of $F$.\par
+                Thus, $A$ is an algebraic extension of $F$ in $E$.
             \end{proof}
             
-        \subsection{Algebraically Closed Fields}
+        \subsection{Algebraically Closed Fields buradan başla}
         
             \begin{defn}
-                A field $K$ is algebraically closed if it possesses no proper algebraic extensions.
+                A field $F$ is algebraically closed if it possesses no proper algebraic extensions.
             \end{defn}
             
             \begin{defn}
-                A field $K$ is an algebraic closure of a subfield $F$ if it is algebraically closed and algebraic over $F$.
+                A field $E$ is an algebraic closure of a subfield $F$ if it is algebraically closed and algebraic over $F$.
             \end{defn}
             
-            \begin{thm}
+            \begin{prop}
                 Let $F$ be a field. Then there is an extension $E$ of $F$ that is algebraically closed.
-            \end{thm}
+            \end{prop}
             
             \begin{proof}
+                The following proof is due to Emil Artin. The first step is to construct an extension field $F_1$ of $F$, with the property that all nonconstant polynomials in $F[x]$ have a root in $F_1$. To this end, for each nonconstant polynomial $p(x) \in F[x]$, let $X_p$ be an independent variable and consider the ring $R$ of all polynomials in the variables $X_p$ over the field $F$. Let $I$ be the ideal generated by the polynomials $p(X_p)$. We contend that $I$ is not the entire ring $R$. For if it were, then there would exist polynomials $q_1, \dots, q_n \in R$ and $p_1, \dots, p_n \in I$ such that
+                \begin{equation*}
+                    q_1p_1(X_{p_1}) + \dots + q_np_n(X_{p_n}) = 1.
+                \end{equation*}
+                This is an algebraic expression over $F$ in a finite number of independent variables. But there is an extension field $E$ of $F$ in which each of the polynomials $p_1(x), \dots, p_n(x)$ has a root, say $\alpha_1, \dots, \alpha_n$. Setting $X_{p_i} = \alpha_i$ and setting any other variables appearing in the equation above equal to $0$ gives $0 = 1$. This contradiction implies that $I \neq R$.\par
+                Since $I \neq E$, there exists a maximal ideal $J$ such that $I \subseteq J \subset R$. Then $F_1 = R / J$ is a field in which each polynomial $p(x) \in F[x]$ has a root, namely $X_p + J$. (We may think of $F_1$ as an extension of $F$ by identifying $\alpha \in F$ with $\alpha + J$.)\par
+                Using the same technique, we may define a tower of extensions
+                \begin{equation*}
+                    F / F_1 / F_2 / \dots
+                \end{equation*}
+                such that each nonconstant polynomial $p(x) \in F_i[x]$ has a root in $F_{i + 1}$. The union $E = \bigcup F_i$ is an extension field of $F$. Moreover, any polynomial $p(x) \in E[x]$ has all of its coefficients in $F_i$ for some $i$ and so has a root in $F_{i + 1}$, hence in $E$. It follows that every polynomial $p(x) \in E[x]$ factors into linear factors over $E$. Hence $E$ is algebraically closed.
                 
             \end{proof}
             
-            \begin{thm}
-                Let $E/F$ be an extension where $E$ is algebraically closed. Let $E/A$ and $A/F$ where $A$ is an algebraic close of $F$ in $E$. Then $A$ is the only algebraic closure of $F$ that is contained in $E$. Thus, any field has an algebraic closure.
-            \end{thm}
+            \begin{prop}
+                Let $E/F$ be an extension where $E$ is algebraically closed. Let $E/A/F$ where $A$ is an algebraic closure of $F$ in $E$. Then $A$ is the only algebraic closure of $F$ that is contained in $E$. Thus, any field has an algebraic closure.
+            \end{prop}
             
             \begin{proof}
-                
+                By definition, $A$ is an algebraic extension of $F$. 
             \end{proof}
             
-            \begin{thm}
+            \begin{exmp}
+            
+            \end{exmp}
+            
+            \begin{prop}
                 
-            \end{thm}
+            \end{prop}
             
             \begin{proof}
                 
