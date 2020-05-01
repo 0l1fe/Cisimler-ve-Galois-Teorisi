@@ -42,7 +42,7 @@
 - ^^coef: a_i, b_i, ...^^
 - element: a, b
 - ^^degree:  n, m, <-> r, s^^
-- field: F <- E or K, L; int: B <- A
+- field: F <- K, L <- E, E'
 - ^^root: alpha, beta^^ 
 - constant: c
 - index: i, j, <-> r, s,
