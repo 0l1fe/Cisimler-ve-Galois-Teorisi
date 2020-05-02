@@ -169,11 +169,11 @@ File name: \fn{ktt.tex}}
 		    \end{prop}
 		    
 		    \begin{proof}
-		        Assume that the product $f(x)g(x)$ is not primitive, so there is some prime $p$ dividing each of its coefficients. Let $\sigma: \mathbb{Z} \to \mathbb{Z}_p$ be the natural map, and consider the ring map $\sigma^{*}: \mathbb{Z}[x] \to \mathbb{Z}_p[x]$ reducing coefficients mod $p$. Now
+		        Assume that the product $f(x)g(x)$ is not primitive, so there is some prime $p$ dividing each of its coefficients. Let $\varphi: \mathbb{Z} \to \mathbb{Z}_p$ be the natural map, and consider the ring map $\varphi^{*}: \mathbb{Z}[x] \to \mathbb{Z}_p[x]$ reducing coefficients mod $p$. Now
 		        \begin{equation*}
-		            \sigma^{*}(f(x)g(x)) = \sigma^{*}(f(x))\sigma^{*}(g(x)).
+		            \varphi^{*}(f(x)g(x)) = \varphi^{*}(f(x))\varphi^{*}(g(x)).
 		        \end{equation*}
-		        But $\sigma^{*}(f(x)g(x)) = 0$ in $\mathbb{Z}_p[x]$ while $\sigma^{*}(f(x)) \neq 0$ and $\sigma^{*}(g(x)) \neq 0$, and this contradicts the fact that $\mathbb{Z}[x]$ is a domain.
+		        But $\varphi^{*}(f(x)g(x)) = 0$ in $\mathbb{Z}_p[x]$ while $\varphi^{*}(f(x)) \neq 0$ and $\varphi^{*}(g(x)) \neq 0$, and this contradicts the fact that $\mathbb{Z}[x]$ is a domain.
 		    \end{proof}
 			
 			\begin{prop}[Gauss's Lemma (Irreducibility)]
@@ -439,20 +439,37 @@ File name: \fn{ktt.tex}}
                 By xxx, $K$ is an algebraic extension of $F$. Let $f(x) \in K[x]$. Then $f(x)$ has a root $\alpha \in E$ because $E$ is algebraically closed. But then $\alpha \in E$ is algebraic over $K$, and because $K$ is algebraic over $F$, we obtain, that $\alpha$ is algebraic over $F$. Hence, $\alpha \in K$. Thus, $K$ is algebraically closed, which proves that $K$ is an algebraic closure of $F$.
             \end{proof}
             
-            \begin{prop}
-                
-            \end{prop}
+            \begin{lem}
+                Let $f$ be a field and let $\varphi: F \to E$ be an embedding of $F$ into an algebraically closed field $E$. Let $K = F(\alpha)$ be an algebraic extension of $F$. Then $\varphi$ can be extended to an embedding $\phi: K \to E$, and the number of such extensions is equal to the number of distinct roots of the minimal polynomial of $\alpha$.
+            \end{lem}
             
             \begin{proof}
-                
+                Let $p(x) = a_0 + a_1 + \dots + a_{n - 1} + a_n$ be the minimal polynomial of $\alpha$ over $F$. Let
+                \begin{equation*}
+                    p^\varphi(x) = \varphi(a_0) + \varphi(a_1)x + \dots + \varphi(a_{n - 1})x^{n - 1} + x^n \in E[x].
+                \end{equation*}
+                Let $\beta$ be a root of $p^\varphi(x)$ in $E$. Recall that if $\alpha$ is algebraic over a field $F$, then a typical element of the field $F(\alpha)$ can be written uniquely as $b_0 + b_1\alpha + \dots + b_m\alpha^m$, where $m$ < degree of the minimal polynomial of $\alpha$ over $F$, and $b_i \in F$, $i = 1, \dots, m$.\par
+                Define $\phi: F(\alpha) \to E$ by the rule
+                \begin{equation*}
+                    \phi(b_0 + b_1\alpha + \dots + b_m\alpha^m) = \varphi(b_0) + \varphi(b_1)\beta + \dots + \varphi(b_m)\beta^m.
+                \end{equation*}\par
+                Then $\phi$ is a well defined mapping. Routine computation shows that $\phi$ is a homomorphism. Thus $\phi$ is an embedding of $F(\alpha)$ into $E$, and it extends $\varphi$. Clearly, there is a 1-1 correspondence between the set of distinct roots of $p^\varphi(x)$ in $E$ and the set of embeddings $\phi$ of $F(\alpha)$ into $E$ that extends $\varphi$. This proves the last assertion.
             \end{proof}
             
             \begin{prop}
-                
+                Let $K$ be an algebraic extension of a field $F$, and let $\varphi: F \to E$ be an embedding of $F$ into an algebraically closed field $E$. Then $\varphi$ can be extended to an embedding $\phi: K \to E$.
             \end{prop}
             
             \begin{proof}
-                
+                Let $S$ be the set of all pairs $(L, \Phi)$, where $L$ is a subfield of $K$ containing $F$, and $\Phi$ is an extension of $\varphi$ to an embedding of $L$ into $E$. If $(L, \Phi)$ and $(L', \Phi')$ are in $S$, we write $(L, \Phi) \leq (L', \Phi')$ if $L \subset L'$ and $\Phi'$ restricted to $L$ is $\Phi$. Because $(F, \varphi) \in S$, $S \neq \varnothing$. Also, if $\{(L_i, \Phi_i)\}$ is a chain in $S$, we set $L = \bigcup L_i$ and define $\Phi$ on $L$ as follows. Let $a \in L$. Then $a \in L_i$ for some $i$, and we define $\Phi(a) = \Phi_i(a)$. $\Phi$ is well defined. Let $a \in L_i$ and $a \in L_j$. Because either $L_i \subset L_j$ or $L_j \subset L_i$ by definition of a chain in $S$, we get $\Phi_i(a) = \Phi_j(a)$. Hence, $\Phi$ is well defined. Then $(L, \Phi)$ is an upper bound for the chain $\{(L_i, \Phi_i)\}$. Using Zorn's Lemma, let $(L, \phi)$ be a maximal element in $S$. Then $\phi$ is an extension of $\varphi$, and we contend that $L = K$. Otherwise, there exists $\alpha \in K$, $\alpha \notin L$. Then by xxx the embedding $\phi: L \to E$ has an extension $\phi^{*}: L(\alpha) \to E$, thereby contradicting the maximality of $(L, \phi)$. Hence, $L = K$, which proves the theorem.
+            \end{proof}
+            
+            \begin{prop}
+                Let $E$ and $E'$ be algebraic closures of a field $F$. Then $E \cong E'$ under an isomorphism that is an identity on $F$.
+            \end{prop}
+            
+            \begin{proof}
+                Let $\varphi: F \to E$ be the injection; that is, $\varphi(a) = a \text{ for all } a \in F$. By xxx, $\varphi$ can be extended to an embedding $\varphi^{*}: E' \to E$. Now $E' \cong \varphi^{*}(E')$. Hence, $\varphi^{*}(E')$ is also an algebraically closed field containing $F$. Because $E$ is an algebraic extension of $F$, $E$ is also an algebraic extension of $\varphi^{*}(E')$, which lies between $F$ and $E$. But then $\varphi^{*}(E') = E$, so $\varphi^{*}$ is an isomorphism of $E'$ onto $E$, as desired.
             \end{proof}
             
 	\section{Normal and Separable Extensions}
