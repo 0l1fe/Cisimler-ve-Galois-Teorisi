@@ -42,8 +42,7 @@
 \documentclass[draft]{article}
 \pagestyle{headings}
 
-\title{Fields and Galois Theory\\
-File name: \fn{ktt.tex}}
+\title{Cisimler ve Galois Teorisi}
 \author{Utkan Utkaner}
 
 \usepackage{amsmath,amsthm}
@@ -69,19 +68,19 @@ File name: \fn{ktt.tex}}
 %       Theorem environments
 
 %% \theoremstyle{plain} %% This is the default
-\newtheorem{thm}{Theorem}[section]
-\newtheorem{cor}[thm]{Corollary}
+\newtheorem{thm}{Teorem}[section]
+\newtheorem{cor}[thm]{Sonuç}
 \newtheorem{lem}[thm]{Lemma}
-\newtheorem{prop}[thm]{Proposition}
-\newtheorem{ax}{Axiom}
+\newtheorem{prop}[thm]{Önerme}
+\newtheorem{ax}{Aksiyom}
 
-\newtheorem{exmp}{Example}
+\newtheorem{exmp}{Örnek}
 
 \theoremstyle{definition}
-\newtheorem{defn}{Definition}[section]
+\newtheorem{defn}{Tanım}[section]
 
 \theoremstyle{remark}
-\newtheorem{rem}{Remark}[section]
+\newtheorem{rem}{Uyarı}[section]
 \newtheorem*{notation}{Notation}
 
 %\numberwithin{equation}{section}
@@ -140,341 +139,343 @@ File name: \fn{ktt.tex}}
 
 \begin{document}
 	\maketitle
-	\markboth{Fields and Galois Theory}
-	{Fields and Galois Theory}
+	\markboth{Cisimler ve Galois Teorisi}
+	{Cisimler ve Galois Teorisi}
 	\renewcommand{\sectionmark}[1]{}
 	
-	\section{Basic Definitions and Results}
+	\section{Temel Tanımlar ve Sonuçlar}
 		
-        \subsection{Symmetry}
+        \subsection{Simetri}
 		
-        \subsection{Rings}
+        \subsection{Halkalar}
 		
-        \subsection{Domains and Fields}
+        \subsection{Tamlık Bölegeleri ve Cisimler}
 		
-        \subsection{Homomorphisms and Ideals}
+        \subsection{Homomorfizmalar ve İdealler}
 		
-        \subsection{Quotient Rings}
+        \subsection{Bölüm Halkaları}
 		
-        \subsection{Polynomial Rings over Fields}
+        \subsection{Cisimler Üzerinde Polinom Halkaları}
 		
-        \subsection{Prime Ideals and Maximal Ideals}
+        \subsection{Asal İdealler ve Maksimal İdealler}
 		    
-	\section{Algebraic Extensions of Fields}
+	\section{Cisimlerin Cebirsel Genişlemeleri}
 	
-		\subsection{Factoring Polynomials}
+		\subsection{Polinomların Çarpanlara Ayrılması}
 		
-		    \begin{prop}[Gauss's Lemma (Primitivity)]
-		        The product of two primitive polynomials $f(x)$ and $g(x)$ is itself primitive.
+		    \begin{prop}[Gauss Lemma (İlkellik)]
+		        İlkel iki polinomun çarpımı da ilkeldir.
 		    \end{prop}
 		    
-		    \begin{proof}
-		        Assume that the product $f(x)g(x)$ is not primitive, so there is some prime $p$ dividing each of its coefficients. Let $\varphi: \mathbb{Z} \to \mathbb{Z}_p$ be the natural map, and consider the ring map $\varphi^{*}: \mathbb{Z}[x] \to \mathbb{Z}_p[x]$ reducing coefficients mod $p$. Now
+		    \begin{proof}[İspat]
+		        İlk olarak $f(x)g(x)$ çarpımının ilkel olmadığını kabul edelim. O zaman $f(x)g(x)$ polinomunun her bir katsayısını bölen bir $p$ asalı vardır.
+		        $\varphi: \mathbb{Z} \to \mathbb{Z}_p$ doğal homomorfizma olsun ve $\varphi^{*}: \mathbb{Z}[x] \to \mathbb{Z}_p[x]$ halka homomorfizmasını alalım.
 		        \begin{equation*}
 		            \varphi^{*}(f(x)g(x)) = \varphi^{*}(f(x))\varphi^{*}(g(x)).
 		        \end{equation*}
-		        But $\varphi^{*}(f(x)g(x)) = 0$ in $\mathbb{Z}_p[x]$ while $\varphi^{*}(f(x)) \neq 0$ and $\varphi^{*}(g(x)) \neq 0$, and this contradicts the fact that $\mathbb{Z}[x]$ is a domain.
+		        Ama $\varphi^{*}(f(x)) \neq 0$ ve $\varphi^{*}(g(x)) \neq 0$ iken $\varphi^{*}(f(x)g(x)) = 0$ olur ve bu $\mathbb{Z}[x]$ polinomlar halkasının tamlık bölgesi olmasıyla çelişir.
 		    \end{proof}
 			
-			\begin{prop}[Gauss's Lemma (Irreducibility)]
-				Let $f(x) \in \mathbb{Z}[x]$. If $f(x)$ is irreducible over $\mathbb{Z}$, then it is also irreducible over $\mathbb{Q}$.
+			\begin{prop}[Gauss Lemma (İndirgenemezlik)]
+			    Diyelim ki $f(x) \in \mathbb{Z}[x]$ olsun. Eğer $f(x)$ $\mathbb{Q}$ üzerinde indirgenebilir ise, o zaman $\mathbb{Z}$ üzerinde de indirgenebiliridir.
 			\end{prop}
 			
-			\begin{proof}
-				The proof is by contrapositive. Suppose $f(x)$ is reducible over $\mathbb{Q}$. Without loss of generality we may assume that $f(x)$ is primitive. Let $f(x) = u(x)v(x)$ with $u(x), v(x) \in \mathbb{Q}[x]$ and $u(x), v(x) \notin \mathbb{Q}$. Then $f(x) = (\frac{a}{b})u'(x)v'(x)$, where $\frac{a}{b} \in \mathbb{Q}$ and $u'(x)$ and $v'(x)$ are primitive polynomials in $\mathbb{Z}[x]$. Then $bf(x) = au'(x)v'(x)$. The $gcd$ of the coefficients of $bf(x)$ is $b$, and the $gcd$ of the coefficients of $au'(x)v'(x)$ is $a$, by xxx. Hence, $b = \pm a$, so $f(x) = \pm u'(x)v'(x)$. Therefore, $f(x)$ is reducible over $\mathbb{Z}$. Having proved the contrapositive, we can then infer that the original statement is true.
+			\begin{proof}[İspat]
+			    Genellik bozulmadan $f(x)$ polinomunun ilkel olduğunu kabul edebiliriz. İlk olarak $f(x)$ $\mathbb{Q}$ üzerinde indirgenebilir olsun. Diyelim ki $u(x), v(x) \in \mathbb{Q}[x]$ ve $u(x), v(x) \notin \mathbb{Q}$ olmak üzere $f(x) = u(x)v(x)$ olsun. O zaman $\frac{a}{b} \in \mathbb{Q}$ ve $u'(x)$ ile $v'(x)$ $\mathbb{Z}[x]$ polinomlar halkasında ilkel polinomlar olmak üzere $f(x) = (\frac{a}{b})u'(x)v'(x)$ olur. O halde $bf(x) = au'(x)v'(x)$ olur. Burada $bf(x)$ polinomunun katsayılarının en büyük ortak böleni $b$ ve ilkel iki polinomun çarpımı da ilkel olacağından $au'(x)v'(x)$ polinomunun katsayılarının en büyük ortak böleni $a$ olur. O halde $b = \pm a$ ve buradan $f(x) = \pm u'(x)v'(x)$ olur. Demek ki $f(x)$ $\mathbb{Z}$ üzerinde indirgenebilirdir.
 			\end{proof}
 			
 			\begin{prop}
-				Let $f(x) = a_0 + a_1x + \dots + a_{n - 1}x^{n - 1} + x^n \in \mathbb{Z}[x]$ be a monic polynomial. If $f(x)$ has a root $\alpha \in \mathbb{Q}$, then $\alpha \in \mathbb{Z}$ and $\alpha | a_0$.
+			    Diyelim ki $f(x) = a_0 + a_1x + \dots + a_{n - 1}x^{n - 1} + x^n \in \mathbb{Z}[x]$ monik polinom olsun. Eğer $f(x)$ polinomunun bir $\alpha \in \mathbb{Q}$ kökü varsa, o zaman $\alpha \in \mathbb{Z}$ ve $\alpha | a_0$ olur.
 			\end{prop}
 			
-			\begin{proof}
-				Write $\alpha = \frac{c}{d}, \text{ where } c, d \in \mathbb{Z} \text{ and } (c, d) = 1$. Then
+			\begin{proof}[İspat]
+			    Eğer $\alpha \in \mathbb{Q}$ ise, o zaman $c, d \in \mathbb{Z}$ ve $(c, d) = 1$ olmak üzere $\alpha = \frac{c}{d}$ yazabiliriz. O halde
 				\begin{equation*}
-					a_0 + a_1(\frac{c}{d}) + \dots + a_{n - 1}(\frac{c^{n - 1}}{d^{n - 1}}) + \frac{c^n}{d^n} = 0.
+					a_0 + a_1(\frac{c}{d}) + \dots + a_{n - 1}(\frac{c^{n - 1}}{d^{n - 1}}) + \frac{c^n}{d^n} = 0
 				\end{equation*}
-				Multiply the above equation by $d^{n - 1}$ to obtain
+				olur. Bu denklemi $d^{n - 1}$ ile çarparsak
 				\begin{equation*}
-					a_0d^{n - 1} + a_1cd^{n - 2} + \dots + a_{n - 1}c^{n - 1} = -\frac{c^n}{d}.
+					a_0d^{n - 1} + a_1cd^{n - 2} + \dots + a_{n - 1}c^{n - 1} = -\frac{c^n}{d}
 				\end{equation*}
-				Because $c, d \in \mathbb{Z}$, it follows that $\frac{c^n}{d} \in \mathbb{Z}$, so $d$ must be $\pm 1$. The last equation also shows $c | a_0$. Hence, $\alpha = \pm c \in \mathbb{Z}$ and $\alpha | a_0$.
+				denklemini elde ederiz. Burada $c, d \in \mathbb{Z}$ olduğundan $\frac{c^n}{d} \in \mathbb{Z}$ ve böylece $d = \pm 1$ olmalıdır. Ayrıca $c | a_0$ olduğu görülür. O halde $\alpha = \pm c \in \mathbb{Z}$ ve $\alpha | a_0$ olur.
 			\end{proof}
 			
-			\begin{prop}[Eisenstein's Criterion]
-				Let $f(x) = a_0 + a_1x + \dots + a_{n}x^n \in \mathbb{Z}[x]$ for $n \geq 1$. If there is a prime $p$ such that $p^2 \not| a_0$, $p | a_1, \dots, p | a_{n - 1}$, $p \not| a_n$, then $f(x)$ is irreducible over $\mathbb{Q}$.
+			\begin{prop}[Eisenstein Kriteri]
+				Diyelim ki $n \geq 1$ için $f(x) = a_0 + a_1x + \dots + a_{n}x^n \in \mathbb{Z}[x]$ olsun. Eğer $p^2 \not| a_0$, $p | a_1, \dots, p | a_{n - 1}$, $p \not| a_n$ olacak şekilde bir $p$ asalı varsa, o zaman $f(x)$ $\mathbb{Q}$ üzerinde indirgenemezdir.
 			\end{prop}
 			
-			\begin{proof}
-				Suppose\begin{equation*}
+			\begin{proof}[İspat]
+				Kabul edelim ki $b_i, c_i \in \mathbb{Z}$, $b_r \neq 0$, $c_s \neq 0$, $r < n$, ve $s < n$ olmak üzere
+				\begin{equation*}
 					f(x) = (b_0 + b_1x + \dots + b_rx^r)(c_0 + c_1x + \dots + c_sx^s),
 				\end{equation*}
-				with $b_i, c_i \in \mathbb{Z}$, $b_r \neq 0$, $c_s \neq 0$, $r < n$, and $s < n$. Then $a_0 = b_0c_0$ and $a_n = b_rc_s$. Then since $p | a_0$ and $p^2 \not| a_0$, either $p | b_0$ and $p \not| c_0$ or $p | c_0$ and $p \not| b_0$. Consider the case $p | c_0$ and $p \not| b_0$. Because $p \not| a_n$, it follows that $p \not| b_r$ and $p \not| c_s$. Let $c_m$ be the first coefficient in $c_0 + \dots + c_sx^s$ such that $p \not| c_m$. Then note that $a_m = b_0c_m + b_1c_{m - 1} + \dots + b_mc_0$. From this we see that $p \not| a_m$ (otherwise, $p | c_m$), so $m = n$. Then $n = m \leq s < n$, which is impossible. Similarly, if $p | b_0$ and $p \not| c_0$, we arrive at an absurdity. Hence by xxx, $f(x)$ is irreducible over $\mathbb{Q}$.
+				olsun. O zaman $p | a_0$ ve $p^2 \not| a_0$ olduğundan ya $p | b_0$ ve $p \not| c_0$ ya da $p | c_0$ ve $p \not| b_0$ olur. Burada $p | c_0$ ve $p \not| b_0$ olduğu durumu alalım. Hipotezden $p \not| a_n$ olduğundan $p \not| b_r$ ve $p \not| c_s$ olur. Diyelim ki $c_0 + \dots + c_sx^s$ polinomunun $p$ asalının bölmediği ilk katsayısı $c_m$ olsun. O zaman $a_m = b_0c_m + b_1c_{m - 1} + \dots + b_mc_0$ olur. Öyleyse $p \not| a_m$ ve buradan $m = n$ olduğu görülür. O halde $n = m \leq s < n$ olur ki bu imkansızdır. Benzer şekilde $p | b_0$ ve $p \not| c_0$ olması durumunda da çelişkiye varırız. xxx'ten $f(x)$ $\mathbb{Q}$ üzerinde indirgenemezdir.
 			\end{proof}
 			
 			\begin{rem}
-			    The last three propositions hold mutatis mutandis with $\mathbb{Z}$ replaced by a unique factorization domain $R$ (replace $\mathbb{Q}$ with the field of fractions of $R$ and $p$ with a prime element of $R$).
+			    Son üç önerme $\mathbb{Z}$ halkasının bir $R$ tek türlü çarpanlara ayırma bölgesiyle yer değiştirmesi durumunda da geçerlidir ($\mathbb{Q}$ $R$ halkasının kesirler cismiyle ve $p$ $R$ halkasının bir asal elemanıyla yer değiştirir).
 			\end{rem}
 			
-		\subsection{Adjunction of Roots}
+		\subsection{Köklerin Eklenmesi}
 		
 			\begin{defn}
-				If $F$ is a subfield of a field $E$, one also says that $E$ is an extension of $F$, and one writes $E/F$ is an extension.
+			    Eğer $E$ bir cisim ve $F$ $E$ cisminin bir alt cismi ise, o zaman $E$ $F$ cisminin bir cisim genişlemesidir ve $E/F$ ile gösterilir.
 			\end{defn}
 			
 			\begin{defn}
-				Let $E/F$ be an extension. The dimension of $E$ viewed as a vector space over F is called the degree of $E$ over $F$ and it is denoted by $[E : F]$. One says that $E/F$ is a finite extension if $[E : F]$ is finite.
+			    Diyelim ki $E/F$ bir cisim genişlemesi olsun. Vektör uzayı olarak $E$ cisminin $F$ üzerindeki boyutuna $E$ cisminin $F$ üzerindeki derecesi denir ve $[E:F]$ ile gösterilir.\par
+			    Eğer $[E : F]$ sonluysa, o zaman $E/F$ cisim genişlemesine sonlu genişleme denir. Aksi halde $E/F$ cisim genişlemesine sonsuz genişleme denir.
 			\end{defn}
 			
-			\begin{defn}
-			    When $E$ and $E'$ are extensions of a field $F$, an $F$-homomorphism of $E$ into $E'$ or an embedding of $E$ in $E'$ over $F$ is a homomorphism $\varphi: E \to E'$ such that $\varphi(c) = c \text{ for all } c \in F$. 
-			\end{defn}
-			
-			\begin{prop}[Multiplicativity of Degrees]
-				If $F \subset K \subset E$ are fields with $[E : K]$ and $[K : F]$ finite, then $E/F$ is a finite extension and
+			\begin{prop}
+				Eğer $F \subset K \subset E$ cisimleri için $[E : K]$ ve $[K : F]$ sonlu ise, o zaman $E/F$ sonlu genişlemedir ve
 				\begin{equation*}
-					[E : F] = [E : K][K : F].
+					[E : F] = [E : K][K : F]
 				\end{equation*}
+				olur.
 			\end{prop}
 			
-			\begin{proof}
-				Let $\{\alpha_1, \dots, \alpha_n\}$ be a basis of $E/K$, and let $\{\beta_1, \dots, \beta_m\}$ be a basis of $K/F$. It suffices to prove that $\{\beta_j\alpha_i : 1 \leq i \leq n, 1 \leq j \leq m\}$ is a basis of $E/F$.\par
-				This set spans $E$. If $\gamma \in E$; then there are $b_i$ in $K$ with $\gamma = \sum{b_i\alpha_i}$. But each $b_i = \sum{c_{ij}\beta_j}$ for $c_{ij}$ in $F$, hence $\gamma = \sum{c_{ij}\beta_j\alpha_i}$. To see that this set is linearly independent, assume that $\sum{c_{ij}\beta_j\alpha_i} = 0$ for $c_{ij}$ in $F$. Now $b_i = \sum{c_{ij}\beta_j} \in K$, so that independence of the $\alpha_i$ over $K$ implies that $b_i = 0 \text{ for all } i$. Hence $\sum{c_{ij}\beta_j} = 0 \text{ for all } i$, and so the independence of the $\beta_j$ over $F$ implies that $c_{ij} = 0 \text{ for all } i, j$, as desired.
+			\begin{proof}[İspat]
+			    Diyelim ki $E/K$ cisim genişlemesinin bir bazı $\{\alpha_1, \dots, \alpha_n\}$ ve $K/F$ cisim genişlemesinin bir bazı $\{\beta_1, \dots, \beta_m\}$ olsun. O zaman $\{\beta_j\alpha_i : 1 \leq i \leq n, 1 \leq j \leq m\}$ kümesinin $E/F$ cisim genişlemesinin bir bazı olduğunu göstermek yeterlidir.\par
+			    Bu küme $E/F$ vektör uzayını gerer. Eğer $\gamma \in E$ ise, o zaman $\gamma = \sum{b_i\alpha_i}$ olacak şekilde $b_i \in K$ vardır. Öyle $c_{ij} \in F$ için $b_i = \sum{c_{ij}\beta_j}$ olduğundan $\gamma = \sum{c_{ij}\beta_j\alpha_i}$ olur. Bu kümenin lineer bağımsız olduğunu görmek için $\sum{c_{ij}\beta_j\alpha_i} = 0$ olduğunu kabul edelim. O zaman $b_i = \sum{c_{ij}\beta_j} \in K$ ve $\{\alpha_i\}$ $K$ üzerinde lineer bağımsız olduğundan $b_i = 0$ olur. O halde $\sum{c_{ij}\beta_j} = 0$ ve $\{\beta_j\}$ $F$ üzerinde lineer bağımsız olduğundan $c_{ij} = 0$ olur.
 			\end{proof}
 			
 			\begin{prop}
-				If $F$ is a field and $p(x) \in F[x]$ is irreducible, then the quotient ring $F[x]/(p(x))$ is a field containing (an isomorphic copy of) $F$ and a root of $p(x)$.
+			    Eğer $F$ bir cisim ve $p(x) \in F[x]$ indirgenemez ise, o zaman $F[x]/(p(x))$ bölüm halkası $F$ cisminin bir izomorfik görüntüsünü ve $p(x)$ polinomunun bir kökünü içeren bir cisimdir.
 			\end{prop}
 			
-			\begin{proof}
-				Since $p(x)$ is irreducible, the principle ideal $I = (p(x))$ is a nonzero prime ideal; since $F[x]$ is a PID, $I$ is a maximal ideal, and so $E = F[x]/I$ is a field. Now the map $a \mapsto a + I$ is an isomorphism from $F$ to $F' = {a + I : a \in F} \subset E$.\par
-				Let $\alpha = x + I \in E$; we claim that $\alpha$ is a root of $p(x)$. Write $p(x) = a_0 + a_1x + \dots + a_nx^n, \text{ where } a_i \in F$. Then, in $E$
+			\begin{proof}[İspat]
+			    Eğer $p(x)$ indirgenemez ise, o zaman $I = (p(x))$ esas ideali bir asal idealdir. O halde $F[x]$ bir esas idealler bölgesi olduğundan $I$ bir maksimal ideal olur ve böylece $E = F[x]/I$ bir cisimdir. Şimdi $F \to F' = \{a + I : a \in F\} \subset E$ olmak üzere $a \mapsto a + I$ dönüşümü bir izomorfizmadır.\par
+			    Diyelim ki $\alpha = x + I \in E$ olsun. Burada $\alpha$ elemanının $p(x)$ polinomunun bir kökü olduğunu göstereceğiz. Eğer $a_i \in F$ için $p(x) = a_0 + a_1x + \dots + a_nx^n$ dersek, $I = (p(x))$ olduğundan $E$ cisminde
 				\begin{align*}
 					p(\alpha) &= (a_0 + I) + (a_1 + I)\alpha + \dots + (a_n + I)\alpha^n\\
 					&= (a_0 + I) + (a_1 + I)(x + I) + \dots + (a_n + I)(x + I)^n\\
 					&= (a_0 + I) + (a_1x + I) + \dots + (a_nx^n + I)\\
 					&= a_0 + a_1x + \dots + a_nx^n + I\\
 					&= p(x) + I\\
-					&= I,
+					&= I
 				\end{align*}
-				because $I = (p(x))$. But $I = 0 + I$ is the zero element of $F[x]/I$, and hence $\alpha$ is a root of $p(x)$.
+				olur. Fakat $I = 0 + I$ $F[x]/I$ cisminin sıfır elemanı olduğundan $\alpha$ $p(x)$ polinomunun bir köküdür.
 			\end{proof}
 			
 			\begin{rem}
-			    One usually identifies $F$ with the subfield $F'$ of $E$ in xxx. Henceforth, whenever there is an embedding of a field $F$ into a field $E$, we say that $E$ is an extension of $F$.
+			    Bir $F$ cisminden bir $E$ cismine birebir homomorfizma varsa, $E$ cismi $F$ cisminin bir cisim genişlemesi olarak alınabilir.
 			\end{rem}
 			
-			\begin{prop}[Kronecker Theorem]
-				Let $f(x) \in F[x]$, where $F$ is a field. There exists an extension $E$ of $F$ in which $f(x)$ has a root.
+			\begin{prop}[Kronecker Teoremi]
+			    Diyelim ki $F$ bir cisim olmak üzere $f(x) \in F[x]$ olsun. O zaman $f(x)$ polinomunun üzerinde lineer çarpanlara ayrıldığı $F$ cisminin bir $E$ cisim genişlemesi vardır.
 			\end{prop}
 			
-			\begin{proof}
-				The proof is by induction on the degree of $f(x)$. If $\partial(f(x)) = 1$, then $f(x)$ is linear and we can choose $E = F$. If $\partial(f(x)) > 1$, write $f(x) = p(x)u(x)$, where $p(x)$ is irreducible. xxx provides a field $B$ containing $F$ and a root $\alpha$ of $p(x)$. Hence $p(x) = (x - \alpha)v(x)$ in $B[x]$. By induction, there is a field $E$ containing $B$ in which $v(x)u(x)$, hence $f(x)$ has a root.
+			\begin{proof}[İspat]
+			    Bunu $f(x)$ polinomunun derecesi üzerinden tümevarım ile gösterelim. Eğer $\partial(f(x)) = 1$ ise, o zaman $f(x)$ lineerdir ve $E = F$ alabiliriz. Eğer $\partial(f(x)) > 1$ ise, o zaman $p(x)$ indirgenemez olmak üzere $f(x) = p(x)u(x)$ olsun. Önerme 2.2 den $F$ cismini ve $p(x)$ polinomunun bir $\alpha$ kökünü içeren bir $K$ cismi vardır. Öyleyse $K[x]$ polinomlar halkasında $p(x) = (x - \alpha)v(x)$ olur. Tümevarımdan $K$ cismini içeren ve üzerinde $v(x)u(x)$ polinunun ve böylece $f(x)$ polinomunun lineer çarpanlara ayrıldığı bir $E$ cismi vardır.
 			\end{proof}
 			
 			\begin{prop}
-				Let $F$ be a field. Let $p(x)$ be an irreducible polynomial in $F[x]$ and $\alpha$ be a root of $p(x)$ in an extension $E$ of $F$. Then
+			    Diyelim ki $F$ bir cisim, $p(x)$ $F[x]$ polinomlar halkasında indirgenemez bir polinom ve $\alpha$ $F$ cisminin bir $E$ cisim genişlemesinde $p(x)$ polinomunun bir kökü olsun. O zaman
 				\begin{enumerate}
 				\renewcommand{\labelenumi}{(\roman{enumi})}
-					\item $F(\alpha)$, the subfield of $E$ generated by $F$ and $\alpha$ is the set
+				    \item $F(\alpha)$, $E$ cisminin $F$ ve $\alpha$ ile üretilen alt cismi
 					\begin{equation*}
 					    F[\alpha] = \{b_0 + b_1\alpha + \dots + b_{m}\alpha^m \in E : b_0 + b_1x + \dots + b_{m}x^m \in F[x] \}
 					\end{equation*}
-					\item If the degree of $p(x)$ is $n$, the set $\{1, \alpha, \dots, \alpha^{n - 1}\}$ forms a basis of $F(\alpha)$ over $F$; that is, each element of $F(\alpha)$ can be written uniquely as\\$a_0 + a_1\alpha + \dots + a_{n - 1}\alpha^{n - 1}, \text{ where } a_i \in F \text{ and } [F(\alpha):F] = n$.
+					olur.
+					\item Eğer $p(x)$ polinomunun derecesi $n$ ise, o zaman $\{1, \alpha, \dots, \alpha^{n - 1}\}$ kümesi $F$ üzerinde $F(\alpha)$ için bir baz olur. Öyleyse $F(\alpha)$ cisminin her elemanı $a_i \in F$ olmak üzere $a_0 + a_1\alpha + \dots + a_{n - 1}\alpha^{n - 1}$ olarak tek türlü yazılır ve $[F(\alpha):F] = n$ olur.
 				\end{enumerate}
+				olur.
 			\end{prop}
 			
-			\begin{proof}
-			    Let $p(x)$ be an irreducible polynomial in $F[x]$ having a root, say $\alpha$, in an extension $E$ of $F$. We denote by $F(\alpha)$ the subfield of $E$ generated by $F$ and $\alpha$ that is, the smallest subfield of $E$ containing $F$ and $\alpha$. Consider the mapping $\varphi : F[x] \to E$ defined by
+			\begin{proof}[İspat]
+			    Diyelim ki $F$ cisminin bir $E$ cisim genişlemesinde $p(x) \in F[x]$ indirgenemez polinomunun bir $\alpha$ kökü olsun. O zaman $E$ cisminin $F$ ve $\alpha$ ile üretilen alt cismini, yani $E$ cisminin $F$ cismini ve $\alpha$ elemanını içeren en küçük alt cismini $F(\alpha)$ ile gösterelim. Şimdi $\varphi : F[x] \to E$ dönüşümü $b_0 + b_1x + \dots + b_mx^m \in F[x]$ için
 			    \begin{equation*}
-			        \varphi(b_0 + b_1x + \dots + b_mx^m) = b_0 + b_1\alpha + \dots + b_m\alpha^m,
+			        \varphi(b_0 + b_1x + \dots + b_mx^m) = b_0 + b_1\alpha + \dots + b_m\alpha^m
 			    \end{equation*}
-			    where $b_0 + b_1x + \dots + b_mx^m \in F[x]$. Obviously, $\varphi$ is a homomorphism whose kernel contains $p(x)$, because $p(\alpha) = 0$. We show that $\textup{Ker}\varphi = (p(x))$.\par
-			    Because $F[x]$ is a PID, $\textup{Ker}\varphi = (f(x)) \text{ for some } f(x) \in F[x]$. Then $p(x) \in \textup{Ker}\varphi$ implies $p(x) = f(x)g(x) \text{ for some } g(x) \in F[x]$. Because $p(x)$ is irreducible over $F$, $g(x) \in F$. Thus $\textup{Ker}\varphi = (f(x)) = (p(x))$.\par
-			    By xxx,
+			    ile tanımlansın. Burada $p(\alpha) = 0$ olduğundan $\varphi$ dönüşümünün çekirdeği $p(x)$ polinomunu içeren bir homomorfizma olduğu açıktır. Şimdi $\textup{Ker}\varphi = (p(x))$ olduğunu gösterelim.\par
+			    Burada $F[x]$ bir esas idealler bölgesi olduğundan öyle $f(x) \in F[x]$ için $\textup{Ker}\varphi = (f(x))$ olur. O halde $p(x) \in \textup{Ker}\varphi$ olduğundan öyle $g(x) \in F[x]$ için $p(x) = f(x)g(x)$ olur. Burada $p(x)$ $F$ üzerinde indirgenemez olduğundan $g(x) \in F$ olmalıdır. Öyleyse $\textup{Ker}\varphi = (f(x)) = (p(x))$ olur.\par
+			    Birinci İzomorfizma Teoreminden
 			    \begin{align*}
 			        F[x]/(p(x)) &\cong \textup{Im}\varphi\\
 			        &= \{b_0 + b_1\alpha + \dots + b_m\alpha^m \in E : b_0 + b_1x + \dots + b_mx^m \in F[x]\}\\
-			        &= F[\alpha],
+			        &= F[\alpha]
 			    \end{align*}
-			    say. Because $F[x]/(p(x))$ is a field, the set $F[\alpha]$ is a field. Obviously $F[\alpha]$ is the smallest subfield of $E$ containing $F$ and $\alpha$, so $F(\alpha) = F[\alpha]$. If the degree of $p(x)$ is $n$, then $\alpha$ cannot satisfy any polynomial in $F[x]$ of degree less that $n$. This shows that the set
+			    elde edilir. Öyleyse $F[x]/(p(x))$ bir cisim olduğundan $F[\alpha]$ kümesi bir cisimdir. Açıkça $F[\alpha]$ $F$ cismini ve $\alpha$ elemanını içeren en küçük alt cisimdir ve $F(\alpha) = F[\alpha]$ olur. Eğer $p(x)$ polinomunun derecesi $n$ ise, o zaman $\alpha$ $F[x]$ polinomlar halkasında derecesi $n$ doğal sayısından küçük olan hiçbir polinomun kökü olamaz. Bu ise
 			    \begin{equation*}
 			        \{1, \alpha, \dots, \alpha^{n - 1}\}
 			    \end{equation*}
-			    forms a basis of $F(\alpha)$ over $F$, and $[F(\alpha) : F] = n$.
+			    kümesinin $F$ üzerinde $F(\alpha)$ için bir baz olduğunu gösterir ve $[F(\alpha) : F] = n$ olur.
 			\end{proof}
 			
-		\subsection{Algebraic Extensions}
+		\subsection{Cebirsel Genişlemeler}
 		
 		    \begin{defn}
-                Let $E$ be an extension of a field $F$. An element $\alpha \in E$ is algebraic over $F$ if there exists a nonconstant polynomial $f(x) \in F[x]$ such that $f(\alpha) = 0$.
+		        Diyelim ki $E$ $F$ cisminin bir cisim genişlemesi olsun. Eğer bir $\alpha \in E$ elemanı için $f(\alpha) = 0$ olacak şekilde sabit olmayan bir $f(x) \in F[x]$ polinomu varsa, o zaman $\alpha \in E$ $F$ üzerinde cebirseldir.\par
+		        Eğer $\alpha \in E$ $F$ üzerinde cebirsel değilse, o zaman $F$ üzerinde aşkındır.
             \end{defn}
             
             \begin{prop}
-                Let $E$ be an extension of a field $F$, and let $\alpha \in E$ be algebraic over $F$. Let $f(x) \in F[x]$ be a polynomial of the least degree such that $f(\alpha) = 0$. Then
+                Diyelim ki $E$ $F$ cisminin bir cisim genişlemesi ve  $\alpha \in E$ $F$ üzerinde cebirsel olsun. Ayrıca $f(x) \in F[x]$ $f(\alpha) = 0$ olacak şekilde en küçük dereceli bir polinom olsun.
                 \begin{enumerate}
                 \renewcommand{\labelenumi}{(\roman{enumi})}
-                    \item $f(x)$ is irreducible over $F$.
-                    \item If $g(x) \in F[x]$ is such that $g(\alpha) = 0$, then $f(x) | g(x)$.
-                    \item There is exactly one monic polynomial $f(x) \in F[x]$ of least degree such that $f(\alpha) = 0$.
+                    \item O zaman $f(x)$ $F$ üzerinde indirgenemezdir.
+                    \item Eğer $g(x) \in F[x]$ ve $g(\alpha) = 0$ ise, o zaman $f(x) | g(x)$ olur.
+                    \item O zaman $f(\alpha) = 0$ olacak şekilde en küçük dereceli yalnız bir $f(x) \in F[x]$ monik polinomu vardır.
                 \end{enumerate}
             \end{prop}
             
-            \begin{proof}
+            \begin{proof}[İspat]
                 \begin{enumerate}
                 \renewcommand{\labelenumi}{(\roman{enumi})}
-                    \item Let $f(x) = u(x)v(x)$, and $\partial(u(x))$, $\partial(v(x))$ be less than $\partial(f(x))$. Then $0 = f(\alpha) = u(\alpha)v(\alpha)$. This gives $u(\alpha) = 0$ or $v(\alpha) = 0$; that is, $\alpha$ satisfies a polynomial of degree less than that of $f(x)$, a contradiction. So $f(x)$ is irreducible of $F$.
-                    \item By the division algorithm $g(x) = f(x)q(x) + r(x)$, where $r(x) = 0$ or $\partial(r(x)) < \partial(f(x))$. Then $g(\alpha) = f(\alpha)q(\alpha) + r(\alpha)$; that is, $r(\alpha) = 0$. Because $f(x)$ is of the least degree among the polynomials satisfied by $\alpha$, $r(x)$ must be 0. Thus, $f(x) | g(x)$.
-                    \item Let $g(x)$ be a monic polynomial of least degree such that $g(\alpha) = 0$. Then by $(ii)$ $f(x) | g(x)$ and $g(x) | f(x)$, which gives $f(x) = g(x)$ since both are monic polynomials.
-                \end{enumerate}
+                    \item Diyelim ki $f(x) = u(x)v(x)$, $\partial(u(x)) < \partial(f(x))$ ve $\partial(v(x)) < \partial(f(x))$ olsun. O zaman $0 = f(\alpha) = u(\alpha)v(\alpha)$ olur. Buradan $u(\alpha) = 0$ veya $v(\alpha) = 0$ elde ederiz. Yani $\alpha$ $f(x)$ polinomunun dercesinden daha küçük dereceli bir polinomun kökü olur. Bu bir çelişkidir. O halde $f(x)$ $F$ üzerinde indirgenemezdir.
+                    \item Bölme algoritmasından $g(x) = f(x)q(x) + r(x)$, $r(x) = 0$ veya $\partial(r(x)) < \partial(f(x))$ olur. O zaman $g(\alpha) = f(\alpha)q(\alpha) + r(\alpha)$ yani $r(\alpha) = 0$ olur. Fakat $f(x)$ $\alpha$ elemanını kök kabul eden en küçük dereceli polinomlardan olduğundan $r(x) = 0$ olmalıdır. Öyleyse $f(x) | g(x)$ olur.
+                    \item Diyelim ki $g(x)$ $g(\alpha) = 0$ olacak şekilde en küçük dereceli bir monik polinom olsun. O zaman $(ii)$ şıkkından $f(x) | g(x)$ ve $g(x) | f(x)$ ve her ikisi de monik polinom olduğundan $f(x) = g(x)$ elde edilir.
+                    \end{enumerate}
             \end{proof}
             
             \begin{defn}
-                The monic irreducible polynomial in $F[x]$ of which $\alpha$ is a root will be called the minimal polynomial of $\alpha$ over $F$.
+                Bir $F$ cismi üzerinde bir $\alpha$ elemanını kök kabul eden monik indirgenemez polinom $\alpha$ elemanının $F$ üzerindeki minimal polinomu olarak adlandırılır.
             \end{defn}
             
             \begin{defn}
-                An extension $E$ of a field $F$ is called algebraic if each element of $E$ is algebraic over $F$.\par
-                Extensions that are not algebraic are called transcendental extensions.
+                Eğer bir $F$ cisminin bir $E$ cisim genişlemesinin her elemanı $F$ üzerinde cebirsel ise, o zaman $E$ cebirseldir denir.\par
+                Cebirsel olmayan genişlemelere aşkın genişleme denir.
             \end{defn}
             
             \begin{prop}
-                If $E/F$ is a finite extension, then it is an algebraic extension.
+                Eğer $E/F$ sonlu genişleme ise, o zaman cebirsel genişlemedir.
             \end{prop}
             
-            \begin{proof}
-                Assume that $[E:F] = n$ and $\alpha \in E$. In any $n$-dimensional vector space, any sequence of $n + 1$ vectors is linearly dependent. There are thus scalars $a_i \in F \text{ for } i = 0, 1, \dots, n$, not all 0, with
+            \begin{proof}[İspat]
+                Diyelim ki $[E:F] = n$ ve $\alpha \in E$ olsun. Herhangi bir $n$-boyutlu vektör uzayında herhangi $n + 1$ vektör lineer bağımlıdır.
+                O zaman
                 \begin{equation*}
-                    \displaystyle\sum_{i = 0}^{n}{a_i\alpha^i} = 0;
+                    \displaystyle\sum_{i = 0}^{n}{a_i\alpha^i} = 0
                 \end{equation*}
-                there is thus a nonzero polynomial in $F[x]$ having $\alpha$ as a root, and so $\alpha$ is algebraic over $F$.
+                olacak şekilde hepsi sıfır olmayan $a_i \in F$ skalerleri vardır. Böylece $F[x]$ polinomlar halkasında $\alpha$ elemanını kök kabul eden sıfırdan farklı bir polinom vardır. O halde $\alpha$ $F$ üzerinde cebirseldir.
             \end{proof}
             
             \begin{rem}
-                Not every algebraic extension is finite.
+                Her cebirsel genişleme sonlu değildir.
             \end{rem}
             
             \begin{exmp}
-            
-                Define the algebraic numbers $\mathbb{A}$ to be the set of all those complex numbers that are algebraic over $\mathbb{Q}$. Than $\mathbb{A}/\mathbb{Q}$ is an algebraic extension that is not finite.
+                Cebirsel sayılar kümesi $\mathbb{A}$ $\mathbb{Q}$ üzerinde cebirsel olan kompleks sayıların kümesi olarak tanımlansın. O zaman $\mathbb{A}/\mathbb{Q}$ sonlu olmayan bir cebirsel genişlemedir.
                 
             \end{exmp}
             
             \begin{defn}
-            
-                An extension $E/F$ is finitely generated if there are elements $\alpha_1, \alpha_2, \dots, \alpha_n$ in $E$ such that $E = F(\alpha_1, \alpha_2, \dots, \alpha_n)$.
-                
+                Eğer bir $F$ cisminin bir $E$ cisim genişlemesinde $E = F(\alpha_1, \alpha_2, \dots, \alpha_n)$ olacak şekilde $\alpha_1, \alpha_2, \dots, \alpha_n$ elemanları varsa, o zaman $E/F$ sonlu üretilmiştir.
             \end{defn}
             
             \begin{rem}
-                A finitely generated extension need not be algebraic.
+                Sonlu üretilmiş bir cisim genişlemesi cebirsel olmak zorunda değildir.
             \end{rem}
             
              \begin{exmp}
-                Let $f(x)$ be a polynomial ring over a field $F$ in a variable $x$. Consider the field of quotients $E$ of $F[x]$. The elements of $E$ are of the form
+                Diyelim ki $F(x)$ bir $F$ cismi üzerinde bir polinomlar halkası olsun. O zaman $F[x]$ polinomlar halkasının $E$ kesirler cismini alalım. $E$ kesirler cisminin elemanları $a_i, b_i \in F$ ve bazı $b_i$ elemanları sıfırdan farklı olmak üzere
                 \begin{equation*}
-                    (a_0 + a_1x + \dots + a_nx^n)(b_0 + b_1x + \dots + b_mx^m)^{-1},
+                    (a_0 + a_1x + \dots + a_nx^n)(b_0 + b_1x + \dots + b_mx^m)^{-1}
                 \end{equation*}
-                where $a_i, b_i \in F$ and not all $b_i$ are zero. Thus, $E$ is generated by $x$ over $F$; that is, $E = F(x)$. Clearly, by the definition of a polynomial ring, $x$ cannot be algebraic over $F$. Hence, $E$ is not an algebraic extension.
+                formundadır. Öyleyse $E$ $F$ üzerinde $x$ ile üretilmiştir yani $E = F(x)$ olur. Polinomlar halkası tanımından $x$ elemanının $F$ üzerinde cebirsel olmadığı açıkça görülür. O halde, $E$ bir cebirsel genişleme değildir.
             \end{exmp}
             
             \begin{prop}
-                Let $E = F(\alpha_1, \dots, \alpha_n)$ be a finitely generated extension of $F$ such that each $\alpha_i$, $i = 1, \dots, n$, is algebraic over $F$. Then $E$ is finite over $F$ and, hence, an algebraic extension of $F$.
+                Diyelim ki $E = F(\alpha_1, \dots, \alpha_n)$ $F$ cisminin her $\alpha_i$ $F$ üzerinde cebirsel olmak üzere sonlu üretilmiş bir cisim genişlemesi olsun. O zaman $E$ $F$ üzerinde sonludur ve böylece $F$ cisminin bir cebirsel genişlemesi olur.
             \end{prop}
             
-            \begin{proof}
-                Set $E_i = F(\alpha_1, \dots, \alpha_i)$, $1 \leq i \leq n$. Observe that if an element in $E$ is algebraic over a field $F$, then, trivially, it is algebraic over any field $B$ such that $F \subset B \subset E$. Therefore, each $\alpha_i$ is algebraic over $E_{i - 1}$, $i = 1, \dots, n$, with $E_0 = F$. Also, $E_i = E_{i - 1}(\alpha_i)$. Therefore, by xxx, $[E_i : E_{i - 1}]$ is finite, say $d_i$. By xxx,
+            \begin{proof}[İspat]
+                Diyelim ki $E_i = F(\alpha_1, \dots, \alpha_i)$, $1 \leq i \leq n$ olsun. Eğer $E$ cisminin bir elemanı $F$ üzerinde cebirsel ise, aynı zamanda $F \subset B \subset E$ olacak şekilde her $B$ cismi üzerinde de cebirsel olur. O halde her $\alpha_i$ $i = 1, \dots, n$ için $E_{i - 1}$ üzerinde cebirsel ve $E_0 = F$ olur. Ayrıca $E_i = E_{i - 1}(\alpha_i)$ olur. Öyleyse xxx'ten $[E_i : E_{i - 1}]$ sonludur. Burada $[E_i : E_{i - 1}] = d_i$ diyelim. xxx'ten
                 \begin{equation*}
-                    [E:F] = [E:E_{n - 1}][E_{n - 1}:E_{n - 2}] \dots [E_1:F];
+                    [E:F] = [E:E_{n - 1}][E_{n - 1}:E_{n - 2}] \dots [E_1:F]
                 \end{equation*}
-                hence,
+                ve buradan
                 \begin{equation*}
-                    [E:F] = d_nd_{n - 1} \dots d_1.
+                    [E:F] = d_nd_{n - 1} \dots d_1
                 \end{equation*}
-                Thus, $E$ is a finite extension of $F$ and therefore algebraic over $F$.
+                elde edilir. O halde $E$ $F$ cisminin sonlu genişlemesidir ve böylece $F$ üzerinde cebirseldir.
             \end{proof}
             
             \begin{prop}
-                Let $E$ be an extension of $F$. If $K$ is the subset of $E$ consisting of all the elements that are algebraic over $F$, then $K$ is a subfield of $E$ and an algebraic extension of $F$.
+                Diyelim ki $E$ $F$ cisminin bir cisim genişlemesi olsun. Eğer $K$ $E$ cisminin $F$ üzerinde cebirsel olan elemanlardan oluşan alt kümesi ise, o zaman $K$ $E$ cisminin bir alt cismidir ve $F$ cisminin bir cebirsel genişlemesidir.
             \end{prop}
             
-            \begin{proof}
-                We need only show that if $\alpha, \beta \in E$ and are algebraic over $F$, then $\alpha \pm \beta, \alpha\beta \text{ and } \alpha\beta^{-1} (\text{if } \beta \neq 0)$ are also algebraic over $F$. This follows from the fact that all these elements lie in $F(\alpha, \beta)$, which by xxx, is an algebraic extension of $F$.\par
-                Thus, $K$ is an algebraic extension of $F$ in $E$.
+            \begin{proof}[İspat]
+                Eğer $\alpha, \beta \in E$ $F$ üzerinde cebirsel ise, o zaman $\alpha \pm \beta, \alpha\beta $ ve $\beta \neq 0$ olmak üzere $\alpha\beta^{-1}$ elemanlarının da $F$ üzerinde cebirsel olduğunu göstermek yeterlidir. Bu elemanlar $F(\alpha, \beta)$ cisminin elemanlarıdır ve xxx'ten $F(\alpha, \beta)$ $F$ cisminin bir cebirsel genişlemesidir.\par
+                O halde $K$ $E$ cisminin bir alt cismidir ve $F$ cisminin bir cebirsel genişlemesidir.
             \end{proof}
             
-        \subsection{Algebraically Closed Fields}
+        \subsection{Cebirsel Kapalı Cisimler}
         
             \begin{defn}
-                A field $F$ is algebraically closed if it possesses no proper algebraic extensions.
+                Eğer bir $F$ cisminin öz cebirsel genişlemesi yoksa, o zaman $F$ cismi cebirsel kapalıdır.
             \end{defn}
             
             \begin{defn}
-                A field $E$ is an algebraic closure of a subfield $F$ if it is algebraically closed and algebraic over $F$.
+                Eğer bir $F$ cisminin bir $E$ cisim genişlemesi cebirsel kapalı ve $F$ üzerinde cebirsel ise, o zaman $E$ $F$ alt cisminin cebirsel kapanışıdır.
             \end{defn}
             
             \begin{prop}
-                Let $F$ be a field. Then there is an extension $E$ of $F$ that is algebraically closed.
+                Diyelim ki $F$ bir cisim olsun. O zaman $F$ cisminin cebirsel kapalı bir $E$ cisim genişlemesi vardır.
             \end{prop}
             
-            \begin{proof}
-                The following proof is due to Emil Artin. The first step is to construct an extension field $F_1$ of $F$, with the property that all nonconstant polynomials in $F[x]$ have a root in $F_1$. To this end, for each nonconstant polynomial $p(x) \in F[x]$, let $x_p$ be an independent variable and consider the ring $R$ of all polynomials in the variables $x_p$ over the field $F$. Let $I$ be the ideal generated by the polynomials $p(x_p)$. We contend that $I$ is not the entire ring $R$. For if it were, then there would exist polynomials $q_1, \dots, q_n \in R$ and $p_1, \dots, p_n \in I$ such that
+            \begin{proof}[İspat]
+                İlk olarak $F[x]$ polinomlar halkasındaki her sabit olmayan polinomun bir kökünü içeren $F$ cisminin bir $F_1$ genişlemesini oluşturalım. Bu nedenle her sabit olmayan $p(x) \in F[x]$ polinomu için $x_p$ bir bağımsız değişken olsun ve $F$ üzerinde $x_p$ bağımsız değişkenlerine sahip tüm polinomların halkasını $R$ ile gösterelim. Ayrıca $I$ $p(x_p)$ polinomları ile üretilen ideal olsun. O zaman $I$ idealinin $R$ halkasına eşit olmadığını ileri sürüyoruz. Eğer eşit olsaydı, o zaman
                 \begin{equation*}
-                    q_1p_1(x_{p_1}) + \dots + q_np_n(x_{p_n}) = 1.
+                    q_1p_1(x_{p_1}) + \dots + q_np_n(x_{p_n}) = 1
                 \end{equation*}
-                This is an algebraic expression over $F$ in a finite number of independent variables. But there is an extension field $E$ of $F$ in which each of the polynomials $p_1(x), \dots, p_n(x)$ has a root, say $\alpha_1, \dots, \alpha_n$. Setting $x_{p_i} = \alpha_i$ and setting any other variables appearing in the equation above equal to $0$ gives $0 = 1$. This contradiction implies that $I \neq R$.\par
-                Since $I \neq E$, there exists a maximal ideal $J$ such that $I \subseteq J \subset R$. Then $F_1 = R / J$ is a field in which each polynomial $p(x) \in F[x]$ has a root, namely $x_p + J$. (We may think of $F_1$ as an extension of $F$ by identifying $\alpha \in F$ with $\alpha + J$.)\par
-                Using the same technique, we may define a tower of extensions
+                olacak şekilde $q_1, \dots, q_n \in R$ ve $p_1, \dots, p_n \in I$ polinomları olurdu. Fakat $F$ cisminin her bir $p_1(x), \dots, p_n(x)$ polinomunun bir $\alpha_1, \dots, \alpha_n$ kökünü içeren bir $E$ cisim genişlemesi vardır. Eğer $x_{p_i} = \alpha_i$ ve diğer değişkenleri $0$ alırsak $0 = 1$ elde ederiz. Bu çelişki $I \neq R$ olmasını gerektirir.\par
+                Şimdi $I \neq E$ olduğundan $I \subseteq J \subset R$ olacak şekilde bir $J$ maksimal ideali vardır. O zaman $F_1 = R / J$ her $p(x) \in F[x]$ polinomunun bir $x_p + J$ kökünü içereb bir cisimdir. (Burada $\alpha \in F$ elemanını $\alpha + J$ ile eşleyerek $F_1$ cismini $F$ cisminin bir cisim genişlemesi olarak düşünebiliriz.)\par
+                Aynı tekniği kullanarak her sabit olmayan $p(x) \in F_i[x]$ polinomunun $F_{i + 1}$ cisminde bir kökünün olduğu
                 \begin{equation*}
                     F / F_1 / F_2 / \dots
                 \end{equation*}
-                such that each nonconstant polynomial $p(x) \in F_i[x]$ has a root in $F_{i + 1}$. The union $E = \bigcup F_i$ is an extension field of $F$. Moreover, any polynomial $p(x) \in E[x]$ has all of its coefficients in $F_i$ for some $i$ and so has a root in $F_{i + 1}$, hence in $E$. It follows that every polynomial $p(x) \in E[x]$ factors into linear factors over $E$. Hence $E$ is algebraically closed.
+                cisim genişlemelerini oluşturabiliriz. O zaman $E = \bigcup F_i$ birleşimi $F$ cisminin bir cisim genişlemesi olur. Ayrıca her $p(x) \in E[x]$ polinomunun katsayıları bir $i$ için $F_i$ cismindedir ve böylece $p(x) \in E[x]$ polinomunun $F_{i + 1}$ ve dolayısıyla $E$ cisminde bir kökü vardır. Öyleyse her $p(x) \in E[x]$ polinomu $E$ üzerinde lineer çarpanlara ayrılır. O halde $E$ cebirsel kapalıdır.
                 
             \end{proof}
             
             \begin{prop}
-                Let $E/F$ be an extension where $E$ is algebraically closed. Then the collection of elements $K$ of $E$ that are algebraic over $F$ is an algebraic closure of $F$. An algebraic closure of $F$ is unique up to homomorphism.
+                Diyelim ki $E$ cebirsel kapalı olmak üzere $E/F$ bir cisim genişlemesi olsun. O zaman $E$ cisminin $F$ üzerinde cebirsel elemanlarının $K$ kümesi $F$ cisminin cebirsel kapanışıdır. Ayrıca $F$ cisminin cebirsel kapanışı izomorfizma altında tektir.
             \end{prop}
             
-            \begin{proof}
-                By xxx, $K$ is an algebraic extension of $F$. Let $f(x) \in K[x]$. Then $f(x)$ has a root $\alpha \in E$ because $E$ is algebraically closed. But then $\alpha \in E$ is algebraic over $K$, and because $K$ is algebraic over $F$, we obtain, that $\alpha$ is algebraic over $F$. Hence, $\alpha \in K$. Thus, $K$ is algebraically closed, which proves that $K$ is an algebraic closure of $F$.
+            \begin{proof}[İspat]
+                xxx'ten $K$ $F$ cisminin cebirsel genişlemesidir. Diyelim ki $f(x) \in K[x]$ olsun. O zaman $E$ cebirsel kapalı olduğundan $f(x)$ polinomunun bir $\alpha \in E$ kökü vardır. Öyleyse $\alpha \in E$ $K$ üzerinde cebirseldir ve $K$ $F$ üzerinde cebirsel olduğundan $\alpha$ $F$ üzerinde cebirseldir. O halde $\alpha \in K$ olur. Böylece $K$ cebirsel kapalıdır ve $F$ cisminin cebirsel kapanışı olur.
             \end{proof}
             
             \begin{lem}
-                Let $f$ be a field and let $\varphi: F \to E$ be an embedding of $F$ into an algebraically closed field $E$. Let $K = F(\alpha)$ be an algebraic extension of $F$. Then $\varphi$ can be extended to an embedding $\phi: K \to E$, and the number of such extensions is equal to the number of distinct roots of the minimal polynomial of $\alpha$.
+                Diyelim ki $F$ bir cisim ve $\varphi: F \to E$ $F$ cisminden cebirsel kapalı bir $E$ cismine birebir homomorfizma olsun. Ayrıca $K = F(\alpha)$ $F$ cisminin bir cebirsel genişlemesi olsun. O zaman $\varphi$ bir $\phi: K \to E$ birebir homomorfizmasına genişletilebilir ve bu genişlemelerin sayısı $\alpha$ elemanının minimal polinomunun farklı köklerinin sayısına eşittir.
             \end{lem}
             
-            \begin{proof}
-                Let $p(x) = a_0 + a_1 + \dots + a_{n - 1} + a_n$ be the minimal polynomial of $\alpha$ over $F$. Let
+            \begin{proof}[İspat]
+                Diyelim ki $p(x) = a_0 + a_1 + \dots + a_{n - 1} + a_n$ $\alpha$ elemanının $F$ üzerindeki minimal polinomu olsun. Ayrıca
                 \begin{equation*}
-                    p^\varphi(x) = \varphi(a_0) + \varphi(a_1)x + \dots + \varphi(a_{n - 1})x^{n - 1} + x^n \in E[x].
+                    p^\varphi(x) = \varphi(a_0) + \varphi(a_1)x + \dots + \varphi(a_{n - 1})x^{n - 1} + x^n \in E[x]
                 \end{equation*}
-                Let $\beta$ be a root of $p^\varphi(x)$ in $E$. Recall that if $\alpha$ is algebraic over a field $F$, then a typical element of the field $F(\alpha)$ can be written uniquely as $b_0 + b_1\alpha + \dots + b_m\alpha^m$, where $m$ < degree of the minimal polynomial of $\alpha$ over $F$, and $b_i \in F$, $i = 1, \dots, m$.\par
-                Define $\phi: F(\alpha) \to E$ by the rule
+                diyelim. Burada $p^\varphi(x)$ polinomu için $E$ cisminde bir kök $\beta$ olsun. Eğer $\alpha$ $F$ cismi üzerinde cebirsel ise, o zaman $F(\alpha)$ cisminin bir elemanı $m$ $\alpha$ elemanının minimal polinomunun derecesinden küçük olmak üzere $b_0 + b_1\alpha + \dots + b_m\alpha^m$ olarak tek türlü yazılır.\par
+                Şimdi
                 \begin{equation*}
-                    \phi(b_0 + b_1\alpha + \dots + b_m\alpha^m) = \varphi(b_0) + \varphi(b_1)\beta + \dots + \varphi(b_m)\beta^m.
-                \end{equation*}\par
-                Then $\phi$ is a well defined mapping. Routine computation shows that $\phi$ is a homomorphism. Thus $\phi$ is an embedding of $F(\alpha)$ into $E$, and it extends $\varphi$. Clearly, there is a 1-1 correspondence between the set of distinct roots of $p^\varphi(x)$ in $E$ and the set of embeddings $\phi$ of $F(\alpha)$ into $E$ that extends $\varphi$. This proves the last assertion.
+                    \phi(b_0 + b_1\alpha + \dots + b_m\alpha^m) = \varphi(b_0) + \varphi(b_1)\beta + \dots + \varphi(b_m)\beta^m
+                \end{equation*}
+                olmak üzere $\phi: F(\alpha) \to E$ dönüşümünü tanımlayalım.\par
+                Burada $\phi$ dönüşümünün bir homomorfizma olduğu kolayca görülür. O halde $\phi$ $F(\alpha)$ cisminden $E$ cismine birebir homomorfizmadır ve $\varphi$ birebir homomorfizmasını genişletir. Açıkça $p^\varphi(x)$ polinomunun $E$ cismindeki farklı köklerinin kümesi ile $\varphi$ birebir homomorfizmalarının $\phi$ genişlemelerinin kümesi arasında birebir eşleme vardır. Bu son ifadeyi kanıtlar.
             \end{proof}
             
             \begin{prop}
-                Let $K$ be an algebraic extension of a field $F$, and let $\varphi: F \to E$ be an embedding of $F$ into an algebraically closed field $E$. Then $\varphi$ can be extended to an embedding $\phi: K \to E$.
+                Diyelim ki $K$ bir $F$ cisminin bir cebirsel genişlemesi ve $\varphi: F \to E$ $F$ cisminden cebirsel kapalı bir $E$ cismine birebir homomorfizma olsun. O zaman $\varphi$ bir $\phi: K \to E$ birebir homomorfizmasına genişletilebilir.
             \end{prop}
             
-            \begin{proof}
-                Let $S$ be the set of all pairs $(L, \Phi)$, where $L$ is a subfield of $K$ containing $F$, and $\Phi$ is an extension of $\varphi$ to an embedding of $L$ into $E$. If $(L, \Phi)$ and $(L', \Phi')$ are in $S$, we write $(L, \Phi) \leq (L', \Phi')$ if $L \subset L'$ and $\Phi'$ restricted to $L$ is $\Phi$. Because $(F, \varphi) \in S$, $S \neq \varnothing$. Also, if $\{(L_i, \Phi_i)\}$ is a chain in $S$, we set $L = \bigcup L_i$ and define $\Phi$ on $L$ as follows. Let $a \in L$. Then $a \in L_i$ for some $i$, and we define $\Phi(a) = \Phi_i(a)$. $\Phi$ is well defined. Let $a \in L_i$ and $a \in L_j$. Because either $L_i \subset L_j$ or $L_j \subset L_i$ by definition of a chain in $S$, we get $\Phi_i(a) = \Phi_j(a)$. Hence, $\Phi$ is well defined. Then $(L, \Phi)$ is an upper bound for the chain $\{(L_i, \Phi_i)\}$. Using Zorn's Lemma, let $(L, \phi)$ be a maximal element in $S$. Then $\phi$ is an extension of $\varphi$, and we contend that $L = K$. Otherwise, there exists $\alpha \in K$, $\alpha \notin L$. Then by xxx the embedding $\phi: L \to E$ has an extension $\phi^{*}: L(\alpha) \to E$, thereby contradicting the maximality of $(L, \phi)$. Hence, $L = K$, which proves the theorem.
+            \begin{proof}[İspat]
+                Diyelim ki $L$ $K$ cisminin $F$ cismini içeren bir alt cismi ve $\Phi$ $\varphi$ birebir homomorfizmasının $L$ cisminden $E$ cismine bir genişlemesi olmak üzere $S$ tüm $(L, \Phi)$ ikililerinin kümesi olsun. Eğer $(L, \Phi)$ ve $(L', \Phi')$ $S$ kümesinde olmak üzere $L \subset L'$ ve $\Phi'$ birebir homomorfizmasının $L$ cismine kısıtlanışı $\Phi$ ise, o zaman $(L, \Phi) \leq (L', \Phi')$ olsun. Burada $(F, \varphi) \in S$ olduğundan $S \neq \varnothing$ olur. Ayrıca $\{(L_i, \Phi_i)\}$ $S$ kümesinde bir zincir olmak üzere $L = \bigcup L_i$ olsun. Eğer $a \in L$ ise, o zaman bir $i$ için $a \in L_i$ olur ve $L$ üzerinde $\Phi$ $\Phi(a) = \Phi_i(a)$ olarak tanımlansın. Diyelim ki $a \in L_i$ ve $a \in L_j$ olsun. O zaman $S$ kümesindeki zincir tanımından ya $L_i \subset L_j$ ya da $L_j \subset L_i$ olduğundan $\Phi_i(a) = \Phi_j(a)$ elde edilir. Öyleyse $\Phi$ iyi tanımlıdır. O halde $(L, \Phi)$ $\{(L_i, \Phi_i)\}$ zinciri için bir üst sınırdır. Zorn Lemmasından $(L, \phi)$ ikilisinin $S$ kümesindeki bir maksimal eleman olduğunu kabul edelim. O zaman $\phi$ $\varphi$ birebir homomorfizmasının bir genişlemesidir ve $L = K$ olur. Aksi halde öyle $\alpha \in K$ için $\alpha \notin L$ olmalıdır. O zaman xxx'ten $\phi: L \to E$ birebir homomorfizmasının bir $\phi^{*}: L(\alpha) \to E$ genişlemesi olur ve bu $(L, \phi)$ ikilisinin maksimalliği ile çelişir. O halde $L = K$ olmalıdır ve ispat tamamlanır.
             \end{proof}
             
             \begin{prop}
-                Let $E$ and $E'$ be algebraic closures of a field $F$. Then $E \cong E'$ under an isomorphism that is an identity on $F$.
+                Diyelim ki $E$ ve $E'$ bir $F$ cisminin cebirsel kapanışları olsun. O zaman $F$ üzerinde birim olan bir izomorfizma altında $E \cong E'$ olur.
             \end{prop}
             
-            \begin{proof}
-                Let $\varphi: F \to E$ be the injection; that is, $\varphi(a) = a \text{ for all } a \in F$. By xxx, $\varphi$ can be extended to an embedding $\varphi^{*}: E' \to E$. Now $E' \cong \varphi^{*}(E')$. Hence, $\varphi^{*}(E')$ is also an algebraically closed field containing $F$. Because $E$ is an algebraic extension of $F$, $E$ is also an algebraic extension of $\varphi^{*}(E')$, which lies between $F$ and $E$. But then $\varphi^{*}(E') = E$, so $\varphi^{*}$ is an isomorphism of $E'$ onto $E$, as desired.
+            \begin{proof}[İspat]
+                Diyelim ki $\varphi: F \to E$ her $a \in F$ için $\varphi(a) = a$ olacak şekilde birebir homomorfizma olsun. xxx'ten $\varphi$ bir $\varphi^{*}: E' \to E$ birebir homomorfizmasına genişletilebilir. O zaman $E' \cong \varphi^{*}(E')$ olur. Öyleyse $\varphi^{*}(E')$ $F$ cismini içeren cebirsel kapalı bir cisimdir. Burada $E$ $F$ cisminin bir cebirsel genişlemesi olduğundan aynı zamanda $\varphi^{*}(E')$ cisminin de cebirsel genişlemesidir ve $F$ ile $E$ arasında yer alır. O halde $\varphi^{*}(E') = E$ yani $\varphi^{*}$ $E'$ cisminden $E$ cismine bir izomorfizma olur.
             \end{proof}
             
-	\section{Normal and Separable Extensions}
+	\section{Normal ve Ayrılabilir Genişlemeler}
 	
-	\section{Galois Theory}
+	\section{Galois Teorisi}
 	
 \newpage
 
