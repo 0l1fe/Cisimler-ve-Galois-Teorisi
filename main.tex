@@ -169,19 +169,19 @@
 		    
 		    \begin{proof}[İspat]
 		        İlk olarak $f(x)g(x)$ çarpımının ilkel olmadığını kabul edelim. O zaman $f(x)g(x)$ polinomunun her bir katsayısını bölen bir $p$ asalı vardır.
-		        $\varphi: \mathbb{Z} \to \mathbb{Z}_p$ doğal homomorfizma olsun ve $\varphi^{*}: \mathbb{Z}[x] \to \mathbb{Z}_p[x]$ halka homomorfizmasını alalım.
+		        $\varphi: \mathbb{Z} \to \mathbb{Z}_p$ doğal homomorfizma olsun ve $\phi: \mathbb{Z}[x] \to \mathbb{Z}_p[x]$ halka homomorfizmasını alalım.
 		        \begin{equation*}
-		            \varphi^{*}(f(x)g(x)) = \varphi^{*}(f(x))\varphi^{*}(g(x)).
+		            \phi(f(x)g(x)) = \phi(f(x))\phi(g(x)).
 		        \end{equation*}
-		        Ama $\varphi^{*}(f(x)) \neq 0$ ve $\varphi^{*}(g(x)) \neq 0$ iken $\varphi^{*}(f(x)g(x)) = 0$ olur ve bu $\mathbb{Z}[x]$ polinomlar halkasının tamlık bölgesi olmasıyla çelişir.
+		        Ama $\phi(f(x)) \neq 0$ ve $\phi(g(x)) \neq 0$ iken $\phi(f(x)g(x)) = 0$ olur ve bu $\mathbb{Z}[x]$ polinomlar halkasının tamlık bölgesi olmasıyla çelişir.
 		    \end{proof}
 			
 			\begin{prop}[Gauss Lemma (İndirgenemezlik)]
-			    Diyelim ki $f(x) \in \mathbb{Z}[x]$ olsun. Eğer $f(x)$ $\mathbb{Q}$ üzerinde indirgenebilir ise, o zaman $\mathbb{Z}$ üzerinde de indirgenebiliridir.
+			    Diyelim ki $f(x) \in \mathbb{Z}[x]$ olsun. Eğer $f(x)$ $\mathbb{Z}$ üzerinde indirgenemez ise, o zaman $\mathbb{Q}$ üzerinde de indirgenemezdir.
 			\end{prop}
 			
 			\begin{proof}[İspat]
-			    Genellik bozulmadan $f(x)$ polinomunun ilkel olduğunu kabul edebiliriz. İlk olarak $f(x)$ $\mathbb{Q}$ üzerinde indirgenebilir olsun. Diyelim ki $u(x), v(x) \in \mathbb{Q}[x]$ ve $u(x), v(x) \notin \mathbb{Q}$ olmak üzere $f(x) = u(x)v(x)$ olsun. O zaman $\frac{a}{b} \in \mathbb{Q}$ ve $u'(x)$ ile $v'(x)$ $\mathbb{Z}[x]$ polinomlar halkasında ilkel polinomlar olmak üzere $f(x) = (\frac{a}{b})u'(x)v'(x)$ olur. O halde $bf(x) = au'(x)v'(x)$ olur. Burada $bf(x)$ polinomunun katsayılarının en büyük ortak böleni $b$ ve ilkel iki polinomun çarpımı da ilkel olacağından $au'(x)v'(x)$ polinomunun katsayılarının en büyük ortak böleni $a$ olur. O halde $b = \pm a$ ve buradan $f(x) = \pm u'(x)v'(x)$ olur. Demek ki $f(x)$ $\mathbb{Z}$ üzerinde indirgenebilirdir.
+			    Önermenin karşıt tersini gösterelim. Genellik bozulmadan $f(x)$ polinomunun ilkel olduğunu kabul edebiliriz. İlk olarak $f(x)$ $\mathbb{Q}$ üzerinde indirgenebilir olsun. Diyelim ki $u(x), v(x) \in \mathbb{Q}[x]$ ve $u(x), v(x) \notin \mathbb{Q}$ olmak üzere $f(x) = u(x)v(x)$ olsun. O zaman $\frac{a}{b} \in \mathbb{Q}$ ve $u'(x)$ ile $v'(x)$ $\mathbb{Z}[x]$ polinomlar halkasında ilkel polinomlar olmak üzere $f(x) = (\frac{a}{b})u'(x)v'(x)$ olur. O halde $bf(x) = au'(x)v'(x)$ olur. Burada $bf(x)$ polinomunun katsayılarının en büyük ortak böleni $b$ ve ilkel iki polinomun çarpımı da ilkel olacağından $au'(x)v'(x)$ polinomunun katsayılarının en büyük ortak böleni $a$ olur. O halde $b = \pm a$ ve buradan $f(x) = \pm u'(x)v'(x)$ olur. Demek ki $f(x)$ $\mathbb{Z}$ üzerinde indirgenebilirdir.
 			\end{proof}
 			
 			\begin{prop}
@@ -209,14 +209,14 @@
 				\begin{equation*}
 					f(x) = (b_0 + b_1x + \dots + b_rx^r)(c_0 + c_1x + \dots + c_sx^s),
 				\end{equation*}
-				olsun. O zaman $p | a_0$ ve $p^2 \not| a_0$ olduğundan ya $p | b_0$ ve $p \not| c_0$ ya da $p | c_0$ ve $p \not| b_0$ olur. Burada $p | c_0$ ve $p \not| b_0$ olduğu durumu alalım. Hipotezden $p \not| a_n$ olduğundan $p \not| b_r$ ve $p \not| c_s$ olur. Diyelim ki $c_0 + \dots + c_sx^s$ polinomunun $p$ asalının bölmediği ilk katsayısı $c_m$ olsun. O zaman $a_m = b_0c_m + b_1c_{m - 1} + \dots + b_mc_0$ olur. Öyleyse $p \not| a_m$ ve buradan $m = n$ olduğu görülür. O halde $n = m \leq s < n$ olur ki bu imkansızdır. Benzer şekilde $p | b_0$ ve $p \not| c_0$ olması durumunda da çelişkiye varırız. xxx'ten $f(x)$ $\mathbb{Q}$ üzerinde indirgenemezdir.
+				olsun. O zaman $p | a_0$ ve $p^2 \not| a_0$ olduğundan ya $p | b_0$ ve $p \not| c_0$ ya da $p | c_0$ ve $p \not| b_0$ olur. Burada $p | c_0$ ve $p \not| b_0$ olduğu durumu alalım. Hipotezden $p \not| a_n$ olduğundan $p \not| b_r$ ve $p \not| c_s$ olur. Diyelim ki $c_0 + \dots + c_sx^s$ polinomunun $p$ asalının bölmediği ilk katsayısı $c_m$ olsun. O zaman $a_m = b_0c_m + b_1c_{m - 1} + \dots + b_mc_0$ olur. Öyleyse $p \not| a_m$ ve buradan $m = n$ olduğu görülür. O halde $n = m \leq s < n$ olur ki bu imkansızdır. Benzer şekilde $p | b_0$ ve $p \not| c_0$ olması durumunda da çelişkiye varırız. Önerme 2.2 ile $f(x)$ $\mathbb{Q}$ üzerinde indirgenemezdir.
 			\end{proof}
 			
 			\begin{rem}
 			    Son üç önerme $\mathbb{Z}$ halkasının bir $R$ tek türlü çarpanlara ayırma bölgesiyle yer değiştirmesi durumunda da geçerlidir ($\mathbb{Q}$ $R$ halkasının kesirler cismiyle ve $p$ $R$ halkasının bir asal elemanıyla yer değiştirir).
 			\end{rem}
 			
-		\subsection{Köklerin Eklenmesi}
+		\subsection{Köklerin İlavesi}
 		
 			\begin{defn}
 			    Eğer $E$ bir cisim ve $F$ $E$ cisminin bir alt cismi ise, o zaman $E$ $F$ cisminin bir cisim genişlemesidir ve $E/F$ ile gösterilir.
@@ -271,10 +271,10 @@
 			\end{proof}
 			
 			\begin{prop}
-			    Diyelim ki $F$ bir cisim, $p(x)$ $F[x]$ polinomlar halkasında indirgenemez bir polinom ve $\alpha$ $F$ cisminin bir $E$ cisim genişlemesinde $p(x)$ polinomunun bir kökü olsun. O zaman
+			    Diyelim ki $F$ bir cisim, $p(x)$ $F[x]$ polinomlar halkasında indirgenemez bir polinom ve $\alpha$ $F$ cisminin bir $E$ cisim genişlemesinde $p(x)$ polinomunun bir kökü olsun.
 				\begin{enumerate}
 				\renewcommand{\labelenumi}{(\roman{enumi})}
-				    \item $F(\alpha)$, $E$ cisminin $F$ ve $\alpha$ ile üretilen alt cismi
+				    \item O zaman $F(\alpha)$, $E$ cisminin $F$ ve $\alpha$ ile üretilen alt cismi
 					\begin{equation*}
 					    F[\alpha] = \{b_0 + b_1\alpha + \dots + b_{m}\alpha^m \in E : b_0 + b_1x + \dots + b_{m}x^m \in F[x] \}
 					\end{equation*}
@@ -382,7 +382,7 @@
             \end{prop}
             
             \begin{proof}[İspat]
-                Diyelim ki $E_i = F(\alpha_1, \dots, \alpha_i)$, $1 \leq i \leq n$ olsun. Eğer $E$ cisminin bir elemanı $F$ üzerinde cebirsel ise, aynı zamanda $F \subset B \subset E$ olacak şekilde her $B$ cismi üzerinde de cebirsel olur. O halde her $\alpha_i$ $i = 1, \dots, n$ için $E_{i - 1}$ üzerinde cebirsel ve $E_0 = F$ olur. Ayrıca $E_i = E_{i - 1}(\alpha_i)$ olur. Öyleyse xxx'ten $[E_i : E_{i - 1}]$ sonludur. Burada $[E_i : E_{i - 1}] = d_i$ diyelim. xxx'ten
+                Diyelim ki $E_i = F(\alpha_1, \dots, \alpha_i)$, $1 \leq i \leq n$ olsun. Eğer $E$ cisminin bir elemanı $F$ üzerinde cebirsel ise, aynı zamanda $F \subset B \subset E$ olacak şekilde her $B$ cismi üzerinde de cebirsel olur. O halde her $\alpha_i$ $i = 1, 2, \dots, n$ için $E_{i - 1}$ üzerinde cebirsel ve $E_0 = F$ olur. Ayrıca $E_i = E_{i - 1}(\alpha_i)$ olur. Öyleyse Önerme 2.8 ile $[E_i : E_{i - 1}]$ sonludur. Burada $[E_i : E_{i - 1}] = d_i$ diyelim. Önerme 2.5 ile
                 \begin{equation*}
                     [E:F] = [E:E_{n - 1}][E_{n - 1}:E_{n - 2}] \dots [E_1:F]
                 \end{equation*}
@@ -398,8 +398,16 @@
             \end{prop}
             
             \begin{proof}[İspat]
-                Eğer $\alpha, \beta \in E$ $F$ üzerinde cebirsel ise, o zaman $\alpha \pm \beta, \alpha\beta $ ve $\beta \neq 0$ olmak üzere $\alpha\beta^{-1}$ elemanlarının da $F$ üzerinde cebirsel olduğunu göstermek yeterlidir. Bu elemanlar $F(\alpha, \beta)$ cisminin elemanlarıdır ve xxx'ten $F(\alpha, \beta)$ $F$ cisminin bir cebirsel genişlemesidir.\par
+                Eğer $\alpha, \beta \in E$ $F$ üzerinde cebirsel ise, o zaman $\alpha \pm \beta, \alpha\beta $ ve $\beta \neq 0$ olmak üzere $\alpha\beta^{-1}$ elemanlarının da $F$ üzerinde cebirsel olduğunu göstermek yeterlidir. Bu elemanlar $F(\alpha, \beta)$ cisminin elemanlarıdır ve Önerme 2.11 ile $F(\alpha, \beta)$ $F$ cisminin bir cebirsel genişlemesidir.\par
                 O halde $K$ $E$ cisminin bir alt cismidir ve $F$ cisminin bir cebirsel genişlemesidir.
+            \end{proof}
+            
+            \begin{prop}
+                Diyelim ki $E$ bir $F$ cisminin bir cebirsel genişlemesi ve $\varphi: E \to E$ birebir homomorfizma olsun. O zaman $\varphi$ örtendir ve böylece $E$ cisminin bir otomorfizması olur.
+            \end{prop}
+            
+            \begin{proof}
+                Diyelim ki $p(x)$ bir $\alpha \in E$ elemanının $F$ üzerindeki minimal polinomu olsun. Ayrıca $K$ $E$ cisminin $F$ cismini içeren ve $p(x)$ polinomunun $E$ cismindeki kökleriyle $F$ üzerinde üretilen alt cismi olsun. O zaman $K$ $F$ üzerinde $E$ cisminin $F$ üzerinde cebirsel olan elemanlarının sonlu bir kümesi ile üretilir. Önerme 2.11 ile $K$ $F$ cisminin sonlu bir cebirsel genşilemesidir. Ayrıca $\varphi$ $p(x)$ polinomunun köklerini birbiriyle eşler. O halde $\varphi$ birebir olduğundan $\varphi(K) \cong K$ olur. Öyleyse $[\varphi(K) : F] = [K : F]$ olur. Burada $\varphi(K)$ $K$ cisminin bir alt cismi olduğundan $\varphi(K) = K$ olmalıdır. Öyleyse bir $\beta \in K$ için $\varphi(\beta) = \alpha$ olur. O halde $\varphi$ örtendir ve ispat tamamlanır.
             \end{proof}
             
         \subsection{Cebirsel Kapalı Cisimler}
@@ -419,7 +427,7 @@
             \begin{proof}[İspat]
                 İlk olarak $F[x]$ polinomlar halkasındaki her sabit olmayan polinomun bir kökünü içeren $F$ cisminin bir $F_1$ genişlemesini oluşturalım. Bu nedenle her sabit olmayan $p(x) \in F[x]$ polinomu için $x_p$ bir bağımsız değişken olsun ve $F$ üzerinde $x_p$ bağımsız değişkenlerine sahip tüm polinomların halkasını $R$ ile gösterelim. Ayrıca $I$ $p(x_p)$ polinomları ile üretilen ideal olsun. O zaman $I$ idealinin $R$ halkasına eşit olmadığını ileri sürüyoruz. Eğer eşit olsaydı, o zaman
                 \begin{equation*}
-                    q_1p_1(x_{p_1}) + \dots + q_np_n(x_{p_n}) = 1
+                    q_1p_1(x_{p_1}) + q_2p_2(x_{p_2}) + \dots + q_np_n(x_{p_n}) = 1
                 \end{equation*}
                 olacak şekilde $q_1, \dots, q_n \in R$ ve $p_1, \dots, p_n \in I$ polinomları olurdu. Fakat $F$ cisminin her bir $p_1(x), \dots, p_n(x)$ polinomunun bir $\alpha_1, \dots, \alpha_n$ kökünü içeren bir $E$ cisim genişlemesi vardır. Eğer $x_{p_i} = \alpha_i$ ve diğer değişkenleri $0$ alırsak $0 = 1$ elde ederiz. Bu çelişki $I \neq R$ olmasını gerektirir.\par
                 Şimdi $I \neq E$ olduğundan $I \subseteq J \subset R$ olacak şekilde bir $J$ maksimal ideali vardır. O zaman $F_1 = R / J$ her $p(x) \in F[x]$ polinomunun bir $x_p + J$ kökünü içereb bir cisimdir. (Burada $\alpha \in F$ elemanını $\alpha + J$ ile eşleyerek $F_1$ cismini $F$ cisminin bir cisim genişlemesi olarak düşünebiliriz.)\par
@@ -428,7 +436,6 @@
                     F / F_1 / F_2 / \dots
                 \end{equation*}
                 cisim genişlemelerini oluşturabiliriz. O zaman $E = \bigcup F_i$ birleşimi $F$ cisminin bir cisim genişlemesi olur. Ayrıca her $p(x) \in E[x]$ polinomunun katsayıları bir $i$ için $F_i$ cismindedir ve böylece $p(x) \in E[x]$ polinomunun $F_{i + 1}$ ve dolayısıyla $E$ cisminde bir kökü vardır. Öyleyse her $p(x) \in E[x]$ polinomu $E$ üzerinde lineer çarpanlara ayrılır. O halde $E$ cebirsel kapalıdır.
-                
             \end{proof}
             
             \begin{prop}
@@ -436,7 +443,7 @@
             \end{prop}
             
             \begin{proof}[İspat]
-                xxx'ten $K$ $F$ cisminin cebirsel genişlemesidir. Diyelim ki $f(x) \in K[x]$ olsun. O zaman $E$ cebirsel kapalı olduğundan $f(x)$ polinomunun bir $\alpha \in E$ kökü vardır. Öyleyse $\alpha \in E$ $K$ üzerinde cebirseldir ve $K$ $F$ üzerinde cebirsel olduğundan $\alpha$ $F$ üzerinde cebirseldir. O halde $\alpha \in K$ olur. Böylece $K$ cebirsel kapalıdır ve $F$ cisminin cebirsel kapanışı olur.
+                Önerme 2.12 ile $K$ $F$ cisminin cebirsel genişlemesidir. Diyelim ki $f(x) \in K[x]$ olsun. O zaman $E$ cebirsel kapalı olduğundan $f(x)$ polinomunun bir $\alpha \in E$ kökü vardır. Öyleyse $\alpha \in E$ $K$ üzerinde cebirseldir ve $K$ $F$ üzerinde cebirsel olduğundan $\alpha$ $F$ üzerinde cebirseldir. O halde $\alpha \in K$ olur. Böylece $K$ cebirsel kapalıdır ve $F$ cisminin cebirsel kapanışı olur.
             \end{proof}
             
             \begin{lem}
@@ -462,7 +469,7 @@
             \end{prop}
             
             \begin{proof}[İspat]
-                Diyelim ki $L$ $K$ cisminin $F$ cismini içeren bir alt cismi ve $\Phi$ $\varphi$ birebir homomorfizmasının $L$ cisminden $E$ cismine bir genişlemesi olmak üzere $S$ tüm $(L, \Phi)$ ikililerinin kümesi olsun. Eğer $(L, \Phi)$ ve $(L', \Phi')$ $S$ kümesinde olmak üzere $L \subset L'$ ve $\Phi'$ birebir homomorfizmasının $L$ cismine kısıtlanışı $\Phi$ ise, o zaman $(L, \Phi) \leq (L', \Phi')$ olsun. Burada $(F, \varphi) \in S$ olduğundan $S \neq \varnothing$ olur. Ayrıca $\{(L_i, \Phi_i)\}$ $S$ kümesinde bir zincir olmak üzere $L = \bigcup L_i$ olsun. Eğer $a \in L$ ise, o zaman bir $i$ için $a \in L_i$ olur ve $L$ üzerinde $\Phi$ $\Phi(a) = \Phi_i(a)$ olarak tanımlansın. Diyelim ki $a \in L_i$ ve $a \in L_j$ olsun. O zaman $S$ kümesindeki zincir tanımından ya $L_i \subset L_j$ ya da $L_j \subset L_i$ olduğundan $\Phi_i(a) = \Phi_j(a)$ elde edilir. Öyleyse $\Phi$ iyi tanımlıdır. O halde $(L, \Phi)$ $\{(L_i, \Phi_i)\}$ zinciri için bir üst sınırdır. Zorn Lemmasından $(L, \phi)$ ikilisinin $S$ kümesindeki bir maksimal eleman olduğunu kabul edelim. O zaman $\phi$ $\varphi$ birebir homomorfizmasının bir genişlemesidir ve $L = K$ olur. Aksi halde öyle $\alpha \in K$ için $\alpha \notin L$ olmalıdır. O zaman xxx'ten $\phi: L \to E$ birebir homomorfizmasının bir $\phi^{*}: L(\alpha) \to E$ genişlemesi olur ve bu $(L, \phi)$ ikilisinin maksimalliği ile çelişir. O halde $L = K$ olmalıdır ve ispat tamamlanır.
+                Diyelim ki $L$ $K$ cisminin $F$ cismini içeren bir alt cismi ve $\Phi$ $\varphi$ birebir homomorfizmasının $L$ cisminden $E$ cismine bir genişlemesi olmak üzere $S$ tüm $(L, \Phi)$ ikililerinin kümesi olsun. Eğer $(L, \Phi)$ ve $(L', \Phi')$ $S$ kümesinde olmak üzere $L \subset L'$ ve $\Phi'$ birebir homomorfizmasının $L$ cismine kısıtlanışı $\Phi$ ise, o zaman $(L, \Phi) \leq (L', \Phi')$ olsun. Burada $(F, \varphi) \in S$ olduğundan $S \neq \varnothing$ olur. Ayrıca $\{(L_i, \Phi_i)\}$ $S$ kümesinde bir zincir olmak üzere $L = \bigcup L_i$ olsun. Eğer $a \in L$ ise, o zaman bir $i$ için $a \in L_i$ olur ve $L$ üzerinde $\Phi$ $\Phi(a) = \Phi_i(a)$ olarak tanımlansın. Diyelim ki $a \in L_i$ ve $a \in L_j$ olsun. O zaman $S$ kümesindeki zincir tanımından ya $L_i \subset L_j$ ya da $L_j \subset L_i$ olduğundan $\Phi_i(a) = \Phi_j(a)$ elde edilir. Öyleyse $\Phi$ iyi tanımlıdır. O halde $(L, \Phi)$ $\{(L_i, \Phi_i)\}$ zinciri için bir üst sınırdır. Zorn Lemmasından $(L, \phi)$ ikilisinin $S$ kümesindeki bir maksimal eleman olduğunu kabul edelim. O zaman $\phi$ $\varphi$ birebir homomorfizmasının bir genişlemesidir ve $L = K$ olur. Aksi halde öyle $\alpha \in K$ için $\alpha \notin L$ olmalıdır. O zaman Lemma 2.15 ile $\phi: L \to E$ birebir homomorfizmasının bir $\phi^{*}: L(\alpha) \to E$ genişlemesi olur ve bu $(L, \phi)$ ikilisinin maksimalliği ile çelişir. O halde $L = K$ olmalıdır ve ispat tamamlanır.
             \end{proof}
             
             \begin{prop}
@@ -470,12 +477,224 @@
             \end{prop}
             
             \begin{proof}[İspat]
-                Diyelim ki $\varphi: F \to E$ her $a \in F$ için $\varphi(a) = a$ olacak şekilde birebir homomorfizma olsun. xxx'ten $\varphi$ bir $\varphi^{*}: E' \to E$ birebir homomorfizmasına genişletilebilir. O zaman $E' \cong \varphi^{*}(E')$ olur. Öyleyse $\varphi^{*}(E')$ $F$ cismini içeren cebirsel kapalı bir cisimdir. Burada $E$ $F$ cisminin bir cebirsel genişlemesi olduğundan aynı zamanda $\varphi^{*}(E')$ cisminin de cebirsel genişlemesidir ve $F$ ile $E$ arasında yer alır. O halde $\varphi^{*}(E') = E$ yani $\varphi^{*}$ $E'$ cisminden $E$ cismine bir izomorfizma olur.
+                Diyelim ki $\varphi: F \to E$ her $a \in F$ için $\varphi(a) = a$ olacak şekilde birebir homomorfizma olsun. Lemma 2.16 ile $\varphi$ bir $\phi: E' \to E$ birebir homomorfizmasına genişletilebilir. O zaman $E' \cong \phi(E')$ olur. Öyleyse $\phi(E')$ $F$ cismini içeren cebirsel kapalı bir cisimdir. Burada $E$ $F$ cisminin bir cebirsel genişlemesi olduğundan aynı zamanda $\phi(E')$ cisminin de cebirsel genişlemesidir ve $F$ ile $E$ arasında yer alır. O halde $\phi(E') = E$ yani $\phi$ $E'$ cisminden $E$ cismine bir izomorfizma olur.
             \end{proof}
             
 	\section{Normal ve Ayrılabilir Genişlemeler}
 	
-	\section{Galois Teorisi}
+    	\subsection{Parçalanış Cisimleri}
+    	
+        	\begin{defn}
+    	        Diyelim ki $F$ bir cisim olsun. Bir $f(x) \in F[x]$ polinomunun parçalanış cismi $f(x)$ polinomunun üzerinde lineer çarpanlara ayrıldığı ama hiçbir öz alt cisminde lineer çarpanlara ayrılmadığı $F$ cisminin bir $E$ cisim genişlemesidir.
+    	    \end{defn}
+    	    
+    	    \begin{prop}
+    	        Diyelim ki $F$ bir cisim olsun. O zaman her $f(x) \in F[x]$ polinomunun bir parçalanış cismi vardır.
+    	    \end{prop}
+    	    
+    	    \begin{proof}
+    	        Önerme 2.7 ile $f(x)$ polinomunun üzerinde lineer çarpanlara ayrıldığı $F$ cisminin bir $E$ cisim genişlemesi vardır. Diyelim ki $f(x)$ polinomunun $E$ cismindeki kökleri $\alpha_1, \alpha_2, \dots, \alpha_n$ ve $K = F(\alpha_1, \alpha_2, \dots, \alpha_n)$ olsun. O zaman $f(x)$ polinomunun $K$ üzerinde lineer çarpanlara ayrıldığı ama $K$ cisminin hiçbir öz alt cisminde lineer çarpanlara ayrılmadığı görülür.
+    	    \end{proof}
+    	    
+    	    \begin{prop}
+    	        Diyelim ki $F$ bir cisim olmak üzere $E$ bir $f(x) \in F[x]$ polinomunun parçalanış cismi olsun. Eğer $E'$ $f(x) \in F[x]$ polinomunun bir diğer parçalanış cismiyse, o zaman $F$ üzerinde birim olan bir $\varphi: E' \to E$ izomorfizması vardır.
+    		\end{prop}
+    		
+    		\begin{proof}
+    	        Diyelim ki $K$ $E$ cisminin bir cebirsel kapanışı olsun. O zaman $K$ $E$ üzerinde cebirseldir. Ayrıca $E$ $F$ üzerinde cebirsel olduğundan $K$ $F$ üzerinde cebirseldir. O halde $K$ $F$ cisminin bir cebirsel kapanışıdır. Önerme 2.11 ile $E'$ $F$ cisminin bir cebirsel genişlemesi olacağından Önerme 2.17 ile $F$ üzerindeki birim dönüşüm bir $\varphi: E' \to K$ birebir homomorfizmasına genişletilebilir. Diyelim ki $f(x) = a_0 + a_1 + \dots + a_nx^n \in F[x]$ olsun ve $f^\varphi(x) = \varphi(a_0) + \varphi(a_1)x + \dots + \varphi(a_n)x^n$ diyelim. O zaman $\varphi$ $F$ üzerinde birim olduğundan $f^\varphi(x) = f(x)$ olur. O halde $i = 1, 2, \dots, n$ için $\alpha_i \in E'$ ve $c \in F$ olmak üzere
+    	        \begin{equation*}
+    	            f(x) = c (x - \alpha_1) (x - \alpha_2) \dots (x - \alpha_n)
+    	        \end{equation*}
+    	        olur. Burada $f^\varphi(x) = f(x)$ ve $c \in F$ olduğundan $f(x)$ polinomu $K[x]$ polinomlar halkasında
+    	        \begin{equation*}
+    	            f(x) = c (x - \varphi(\alpha_1)) (x - \varphi(\alpha_2)) \dots (x - \varphi(\alpha_n))
+    	        \end{equation*}
+    	        olarak tek türlü çarpanlara ayrılır. Ayrıca $i = 1, 2, \dots, n$ için $\beta_i \in E$ olmak üzere $f(x)$ polinomu $E[x]$ polinomlar halkasında
+    	        \begin{equation*}
+    	            f(x) = c (x - \beta_1) (x - \beta_2) \dots (x - \beta_n)
+    	        \end{equation*}
+    	        olarak çarpanlara ayrıldığından $\{\varphi(\alpha_1), \varphi(\alpha_2), \dots, \varphi(\alpha_n)\}$ ile $\{\beta_1, \beta_2, \dots, \beta_n\}$ kümeleri eşittir. Böylece
+    	        \begin{align*}
+    	            E &= F(\beta_1, \beta_2, \dots, \beta_n)\\
+    	            &= F(\varphi(\alpha_1), \varphi(\alpha_2), \dots, \varphi(\alpha_n))\\\
+    	            &= \varphi(F(\alpha_1, \alpha_2, \dots, \alpha_n))\\
+    	            &= \varphi(E')
+    	        \end{align*}
+    	        olur. O halde $\varphi$ $E'$ cisminden $E$ cismine bir izomorfizmadır.
+    	    \end{proof}
+	        
+    	\subsection{Normal Genişlemeler}
+    	
+    	    \begin{prop}
+    	        Diyelim ki $K$ bir $F$ cisminin bir $E$ cebirsel kapanışının altında kalan cisim genişlemesi olsun. O zaman aşağıdakiler denktir.
+    	        \begin{enumerate}
+				\renewcommand{\labelenumi}{(\roman{enumi})}
+				    \item Eğer bir indirgenemez $f(x) \in F[x]$ polinomunun $K$ cisminde bir kökü varsa, o zaman bu polinom $K$ üzerinde lineer çarpanlara ayrılır.
+				    \item Bir $\{f_i(x)\}_{i \in I} \subset F[x]$ polinomlar ailesinin parçalanış cismi $E$ olur.
+				    \item Eğer bir $\varphi : K \to E$ birebir homomorfizması $F$ üzerinde birim ise, o zaman $\varphi$ $K$ cisminin bir otomorfizması olarak alınabilir.
+				\end{enumerate}
+    	    \end{prop}
+    	    
+    	    \begin{proof}
+    	        İlk olarak $(i) \implies (ii)$ olduğunu görelim. Diyelim ki $\alpha \in K$ ve $p(x)$ $\alpha \in K$ elemanının $F$ üzerindeki minimal polinomu olsun. Eğer $(i)$ sağlanıyorsa, o zaman $p(x)$ $K$ üzerinde lineer bölenlere ayrılır. Öyleyse $K$ $(p(x))$ polinomlar ailesinin bir parçalanış cismidir.\par
+    	        Şimdi $(ii) \implies (iii)$ olduğunu görelim. Diyelim ki $K$ bir $\{f_i(x)\}_{i \in I}$ polinomlar ailesinin parçalanış cismi olsun. Eğer $\alpha \in K$ öyle $f_i(x)$ için bir kök ise, o zaman $F$ üzerinde birim olan bir $\varphi: K \to E$ birebir homomorfizması için $\varphi(\alpha)$ $f_i(x)$ için bir kök olur. O halde $K$ $f_i(x)$ polinomlarının tüm kökleri ile üretildiğinden Önerme 2.13 ile $\varphi$ $K$ cisminin bir otomorfizması olur.\par
+    	        Son olarak $(iii) \implies (i)$ olduğunu görelim. Diyelim ki $\alpha \in K$ $F$ üzerinde bir indirgenemez $p(x) \in F[x]$ polinomu için bir kök olsun. Ayrıca $\beta \in E$ $p(x)$ polinomunun bir diğer kökü olsun. O zaman $\beta \in K$ olduğunu gösterelim. Burada $\alpha$ ve $\beta$ aynı indirgenemez $p(x)$ polinomunun kökleri olduğundan
+    	        \begin{equation*}
+    	            F(\alpha) \cong F[x]/(p(x)) \cong F(\beta)
+    	        \end{equation*}
+    	        olur. Diyelim ki $\varphi: F(\alpha) \to F(\beta)$ izomorfizması olsun. O zaman $\varphi(\alpha) = \beta$ ve her $a \in F$ için $\varphi(a) = a$ olur. Önerme 2.16 ile $\varphi$ bir $\phi: K \to E$ birebir homomorfizmasına genişletilebilir. Eğer $(iii)$ sağlanıyorsa, o zaman $\phi$ $K$ cisminin bir otomorfizması ve $\phi(\alpha) = \varphi(\alpha) = \beta \in K$ olur. Böylece ispat tamamlanır.
+    	    \end{proof}
+    	    
+    	    \begin{defn}
+    	        Eğer bir $F$ cisminin bir $E$ genişlemesi için Önerme 3.5 sağlanıyorsa, o zaman $E$ $F$ cisminin bir normal genişlemesidir.
+    	    \end{defn}
+	        
+    	\subsection{Katlı Kökler}
+    	
+    	    \begin{defn}
+    	        Diyelim ki $F$ bir cisim olmak üzere bir $f(x) \in F[x]$ polinomunun bir parçalanış cismi $E$ ve bir kökü $\alpha$ olsun. O zaman $E[x]$ polinomlar halkasında $(x - \alpha)^n | f(x)$ olacak şekilde en büyük pozitif $n$ tam sayısına $\alpha$ elemanının katlılığı denir. Eğer $n = 1$ ise, o zaman $\alpha$ $f(x)$ polinomunun basit köküdür. Eğer $n > 1$ ise, o zaman $\alpha$ $f(x)$ polinomunun katlı köküdür.
+    	    \end{defn}
+    	    
+    	    \begin{prop}
+    	        Diyelim ki $F$ bir cisim olsun. O zaman sabit olmayan bir indirgenemez $f(x) \in F[x]$ polinomu için aşağıdakiler denktir.
+    	        \begin{enumerate}
+				\renewcommand{\labelenumi}{(\roman{enumi})}
+				    \item Bu polinomun katlı kökü vardır.
+				    \item Bu polinomun türevi ile en büyük ortak böleni $(f(x), f'(x))$ olmak üzere $(f(x), f'(x)) \neq 1$ olur.
+				    \item Bir $p$ asalı için $F$ cisminin karakteristiği $p$ ve $g(x) \in F[x]$ olmak üzere $f(x) = g(x^p)$ olur.
+				    \item Bu polinomun tüm kökleri katlıdır.
+				\end{enumerate}
+    	    \end{prop}
+    	    
+    	    \begin{proof}
+    	        İlk olarak $(i) \implies (ii)$ olduğunu görelim. Diyelim ki $\alpha$ $f(x)$ polinomunun katlı bir kökü olsun ve $F$ cisminin bir cisim genişlemesinde $n > 1$ olmak üzere $f(x) = (x - \alpha)^ng(x)$ olsun. O zaman
+    	        \begin{equation*}
+    	            f'(x) = n(x - \alpha)^{n - 1}g(x) + (x - \alpha)^ng'(x)
+    	        \end{equation*}
+    	        olur. Öyleyse $f(x)$ ve $f'(x)$ $x - \alpha$ ortak bölenine sahiptir.\par
+    	        Şimdi $(ii) \implies (iii)$ olduğunu görelim. Burada $f(x)$ indirgenemez olduğundan ve $\partial(f'(x)) < \partial(f(x))$ olacağından
+    	        \begin{equation*}
+    	            (f(x), f'(x)) \neq 1 \implies f'(x) = 0
+    	        \end{equation*}
+    	        olur. Diyelim ki $n \geq 1$ olmak üzere $f(x) = a_0 + a_1x + \dots + a_nx^n$ olsun. O zaman $f'(x) = a_1 + a_2x + \dots + ia_ix^{i - 1} + \dots + na_nx^{n - 1}$ sıfır polinomdur ancak ve ancak bir $p$ asalı için $F$ cisminin karakteristiği $p$ ve $p \not| i$ olmak üzere her $i$ için $a_i = 0$ olur.\par
+    	        Şimdi $(iii) \implies (iv)$ olduğunu görelim. Hipotezden $g(x) \in F[x]$ olmak üzere $f(x) = g(x^p)$ olur. Diyelim ki $F$ cisminin bir cisim genişlemesinde $g(x) = \prod{(x - \alpha_i)^{n_i}}$ olsun. O zaman $\alpha_i = \beta_i^p$ olacak şekilde $F$ cisminin bir cisim genişlemesi vardır. Öyleyse
+    	        \begin{equation*}
+    	            f(x) = g(x^p) = \prod{(x^p - \alpha_i)^{n_i}} = \prod{(x - \beta_i)^{pn_i}}
+    	        \end{equation*}
+    	        olur ve buradan $f(x)$ polinomunun her kökünün katlılığının en az $p$ olduğu görülür.\par
+    	        Son olarak $(iv) \implies (i)$ olduğu açıktır.
+    	    \end{proof}
+    	    
+    	    \begin{prop}
+    	        Diyelim ki $F$ bir cisim olsun. O zaman sıfırdan farklı bir $f(x) \in F[x]$ polinomu için aşağıdakiler denktir.
+    	        \begin{enumerate}
+				\renewcommand{\labelenumi}{(\roman{enumi})}
+				    \item Bu polinomun türevi ile en büyük ortak böleni $(f(x), f'(x))$ olmak üzere $(f(x), f'(x)) = 1$ olur.
+				    \item Bu polinomun tüm kökleri basittir.
+				\end{enumerate}
+    	    \end{prop}
+    	    
+    	    \begin{proof}
+    	        Diyelim ki $E$ $f(x) \in F[x]$ polinomunun bir parçalanış cismi olsun. Bir önceki ispatta görüldüğü üzere $f(x)$ polinomunun bir $\alpha \in E$ kökü katlıdır ancak ve ancak $\alpha \in E$ $f'(x)$ polinomunun bir köküdür.\par
+    	        Eğer $(f(x), f'(x)) = 1$ ise, o zaman xxx'ten $f(x)$ ve $f'(x)$ polinomlarının $E[x]$ polinomlar halkasında ortak böleni ve dolayısıyla ortak kökü yoktur. O halde $f(x)$ polinomunun tüm kökleri basittir.\par
+    	        Eğer $f(x)$ polinomunun tüm kökleri basitse, o zaman $(f(x), f'(x))$ sabit polinom olmalıdır. Aksi halde $E$ cisminde bir köke sahip olur ve bu kök $f(x)$ ile $f'(x)$ polinomlarının ortak kökü olur.
+    	    \end{proof}
+	        
+    	\subsection{Sonlu Cisimler}
+    	
+    	    \begin{prop}
+    	        Diyelim ki $F$ bir sonlu cisim olsun.
+    	        \begin{enumerate}
+				\renewcommand{\labelenumi}{(\roman{enumi})}
+				    \item O zaman bir $p$ asalı için $F$ cisminin karakteristiği $p$ olur ve $F$ cisminin $F_p \cong \mathbb{Z}_p$ olacak şekilde bir $F_p$ alt cismi vardır.
+				    \item O zaman $F$ cisminin eleman sayısı bir $n$ pozitif tam sayısı için $p^n$ olur.
+				\end{enumerate}
+    	    \end{prop}
+    	    
+    	    \begin{proof}
+    	        Önerme xxx ile $(i)$ şıkkı görülür.\par
+    	        Şimdi $(ii)$ şıkkını görmek için $F$ cismini asal cismi $F_p$ üzerinde bir vektör uzayı olarak alalım. Diyelim ki $\{\alpha_1, \alpha_2, \dots, \alpha_n\}$ $F_p$ üzerinde $F$ vektör uzayı için bir baz olsun. O zaman her $\beta \in F$ elemanı $i = 1, 2, \dots, n$ için $a_i \in F_p$ olmak üzere
+    	        \begin{equation*}
+    	            \beta = a_1\alpha_1 + a_2\alpha_2 + \dots + a_n\alpha_n
+    	        \end{equation*}
+    	        olarak tek türlü yazılır. Burada $p$ $F_p$ cisminin eleman sayısı olmak üzere her $a_i$ elemanı $p$ şekilde seçilebilir. Sonuç olarak $F$ cisminin eleman sayısı $p^n$ olur.
+    	    \end{proof}
+    	    
+    	    \begin{prop}
+    	        Her $p^n$ elemanlı $F$ sonlu cismi $x^{p^n} - x \in F_p[x]$ polinomunun bir parçalanış cismidir. O halde $p^n$ elemanlı iki sonlu cisim izomorftur.
+    	    \end{prop}
+    	    
+    	    \begin{proof}
+    	        İlk olarak $p^n$ elemanlı $F$ sonlu cisminin sıfırdan farklı elemanları $p^n - 1$ mertebeli bir çarpımsal grup oluştururlar. O halde $0 \neq \alpha \in F$ olmak üzere $\alpha^{p^n - 1} = 1$ ve böylece $\alpha^{p^n} = \alpha$ olur. Ayrıca eğer $\alpha = 0$ ise, o zaman $\alpha^{p^n} = \alpha$ olur. Öyleyse $F$ cisminin her elemanı $x^{p^n} - x$ polinomunun bir köküdür. Burada $x^{p^n} - x \in F_p[x]$ polinomunun sadece $p^n$ kökü olduğundan $F$ cismi $x^{p^n} - x \in F_p[x]$ polinomunun köklerinin kümesiyle örtüşür.\par
+    	        Diyelim ki $E$ ve $E'$ $p^n$ elemanlı iki sonlu cisim olsun. O zaman Önerme 3.6 ile $E$ ve $E'$ cisimlerinin $p$ elemanlı sırasıyla $E_p$ ve $E'_p$ alt cisimleri vardır. Ayrıca $E$ ve $E'$ $x^{p^n} - x$ polinomunun sırasıyla $E_p$ ve $E'_p$ alt cisimleri üzerindeki parçalanış cisimleridir. Fakat $E_p \cong E'_p$ olduğundan ve parçalanış cisimlerinin izomorfizma altında tekliğinden $E \cong E'$ olur.
+    	    \end{proof}
+    	    
+    	    \begin{prop}
+    	        Her $p$ asalı ve $n$ pozitif tam sayısı için $x^{p^n} - x \in \mathbb{Z}_p[x]$ polinomunun $\mathbb{Z}_p$ üzerindeki parçalanış cismindeki köklerinin tamamı farklıdır ve $p^n$ elemanlı bir $F$ cismini oluşturur. Ayrıca $F$ $x^{p^n} - x$ polinomunun $\mathbb{Z}_p$ üzerindeki parçalanış cismidir.
+    	    \end{prop}
+    	    
+    	    \begin{proof}
+    	        Diyelim ki $f(x) = x^{p^n} - x$ olsun. O zaman $f'(x) = p^n x^{p^n - 1} - 1$ olmak üzere $(f(x), f'(x)) = 1$ olduğundan $f(x)$ polinomunun katlı kökleri yoktur. O halde $f(x)$ polinomunun tüm $p^n$ sayıdaki kökleri farklıdır. Bu köklerin $f(x)$ polinomunun $Z_p$ üzerindeki parçalanış cismini oluşturduğunu görelim. Diyelim ki $\alpha$ ve $\beta$ iki kök ve $\beta \neq 0$ olsun. O zaman
+    	        \begin{align*}
+    	            (\alpha \pm \beta)^{p^n} &= \alpha^{p^n} \pm \beta^{p^n}\\
+    	            &= \alpha \pm \beta
+    	        \end{align*}
+    	        ve
+    	        \begin{align*}
+    	            (\alpha \beta^{-1})^{p^n} &= \alpha^{p^n} (\beta^{p^n})^{-1}\\
+    	            &= \alpha \beta^{-1}
+    	        \end{align*}
+    	        olur. Öyleyse köklerin kümesi parçalanış cisminin bir alt cismini oluşturur ve böylece parçalanış cismiyle örtüşür.
+    	    \end{proof}
+    	    
+    	    \begin{prop}
+    	        Diyelim ki $F$ $p^n$ elemanlı bir sonlu cisim ve $m$ bir pozitif tam sayı olsun. O zaman $F$ cisminin $[E : F] = m$ olacak şekilde bir $E$ cisim genişlemesi vardır. Eğer $E'$ $F$ cisminin $[E' : F] = m$ olacak şekilde bir diğer cisim genişlemesiyse, o zaman $E$ ile $E'$ izomorftur.
+    	    \end{prop}
+    	    
+    	    \begin{proof}
+    	        Diyelim ki $K$ $F$ cisminin bir cebirsel kapanışı ve $f(x) = x^{p^{mn}} - x \in F[x]$ olsun. Eğer $0 \neq \alpha \in E$ ise, o zaman $F$ cisminin çarpımsal grubunun mertebesi $p^n - 1$ olduğundan $\alpha^{p^n - 1} = 1$ olur. Ayrıca $n | mn$ olduğundan $p^n - 1 | p^{mn} - 1$ olur. O halde $\alpha^{p^{mn} - 1} = 1$ yani $\alpha^{p^{mn}} = \alpha$ olmalıdır. Buradan $F$ cisminin her elemanının $f(x)$ polinomunun bir kökü olduğu görülür.\par
+    	        Önerme 3.8 ile $f(x)$ polinomunun tüm $p^{mn}$ sayıdaki kökleri farklıdır ve bir $E$ cismini oluşturur. O halde $[F : F_p] = n$ ve $[E : F] = m$ olmak üzere
+    	        \begin{equation*}
+    	            K / E / F / F_p \cong \mathbb{Z}_p
+    	        \end{equation*}
+    	        cisimlerini genişlemelerini elde ederiz. Önerme 3.7 ile eğer $E'$ $F$ cisminin $[E' : F] = m$ olacak şekilde bir diğer cisim genişlemesiyse, o zaman $E$ ile $E'$ cisimlerinin izomorf olduğu görülür.
+    	    \end{proof}
+    	    
+    	    \begin{prop}
+    	        Bir sonlu cismin sıfırdan farklı elemanlarının çarpımsal grubu devirlidir.
+    	    \end{prop}
+    	    
+    	    \begin{proof}
+    	        Diyelim ki $F^*$ $F$ cisminin sıfırdan farklı elemanlarının çarpımsal grubu olsun. O zaman $F^*$ çarpımsal grubunun tüm elemanlarının mertebelerinin en küçük ortak katına $n$ dersek Önerme xxx ile mertebesi $n$ olan bir $\alpha \in F^*$ elemanı vardır. O halde $F^*$ çarpımsal grubunun her elemanının mertebesi $n$ sayısını böler. Öyleyse her $a \in F^*$ için $a^n = 1$ olur. Böylece $x^n - 1$ polinomunun $F$ cisminde en çok $n$ kökü olduğundan $F^*$ çarpımsal grubunun elemanlarının sayısı $n$ sayısından küçüktür veya $n$ sayısına eşittir. Fakat $1, \alpha, \dots, \alpha^{n - 1}$ $F^*$ çarpımsal grubunun farklı elemanları olduğundan $F^*$ $\alpha$ ile üretilir.
+    	    \end{proof}
+    	    
+    	    \begin{cor}
+    	        Diyelim ki $E$ bir $F$ sonlu cisminin bir sonlu cisim genişlemesi olsun. O zaman bir $\alpha \in E$ için $E = F(\alpha)$ olur.
+    	    \end{cor}
+    	    
+    	    \begin{proof}
+    	        Diyelim ki $E$ cisminin sıfırdan farklı elemanlarının çarpımsal grubu bir $\alpha \in E$ elemanıyla üretilsin. O zaman $E$ cisminin $F$ cismini ve $\alpha$ elemanını içeren en küçük alt cismi $F(\alpha)$ $E$ cisminin kendisidir.
+    	    \end{proof}
+    	    
+    	    \begin{prop}
+    	        Diyelim ki $F$ bir sonlu cisim olsun. O zaman $F$ üzerinde her dereceden bir indirgenemez polinom vardır.
+    	    \end{prop}
+    	    
+    	    \begin{proof}
+    	        Önerme 3.9 ile $F$ cisminin derecesi $n$ olan bir $E$ cisim genişlemesini alalım. Sonuç 3.11 ile bir $\alpha \in E$ için $E = F(\alpha)$ olur. Öyleyse $E$ $F$ cisminin bir sonlu genişlemesi olduğundan $\alpha \in E$ $F$ üzerinde cebirseldir. Diyelim ki $p(x)$ $\alpha$ elemanının $F$ üzerindeki minimal polinomu olsun. O zaman $[F(\alpha) : F]$ $p(x)$ polinomunun derecesine eşittir. Fakat $F(\alpha) = E$ ve $[E : F] = n$ olduğundan $p(x)$ $F$ üzerinde derecesi $n$ olan bir indirgenemez polinomdur.
+    	    \end{proof}
+	        
+    	\subsection{Ayrılabilir Genişlemeler}
+    	
+    	    
+	
+    \section{Galois Teorisi}
+    	
+    	\subsection{Cisimlerin Otomorfizma Grupları}
+    	
+    	\subsection{Galois Teorisinin Temel Teoremi}
+    	
+    	\subsection{Cebirin Temel Teoremi}
 	
 \newpage
 
