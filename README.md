@@ -27,7 +27,17 @@
     - ## Cebirsel Kapalı Cisimler
         - **add?** We will denote an algebraic closure...\overline{F}
 - # 3  Normal ve Ayrılabilir Genişlemeler
-    - ## 
+    - ## rotman thm 33
+    - xxx
+    - türev
+    - rotman defn prime field thm 31 defn characteristic
+    - rotman lem 32
+    - r derivative + .
+    - gcd in F[x] = gcd in E[x]
+    - F cong Q or Zp
+    - Zp vs Z/(p) !!
+    - **Önerme 3.10**
+    - Basit genişleme???
 - # 4  Galois Teorisi
     - ## 
 - 
@@ -46,5 +56,3 @@
 - constant: c
 - index: i, j, <-> r, s,
 - set: S
-
-
