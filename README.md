@@ -39,7 +39,9 @@
     - **Önerme 3.10**
     - Basit genişleme???
 - # 4  Galois Teorisi
-    - ## 
+    - corollary 18 Rotman
+- 
+- **SUM**
 - 
 - src: önerme, xxx
 - 
@@ -56,3 +58,4 @@
 - constant: c
 - index: i, j, <-> r, s,
 - set: S
+
