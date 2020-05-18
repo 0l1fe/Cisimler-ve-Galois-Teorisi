@@ -278,7 +278,7 @@
 			    Diyelim ki $F$ bir cisim, $p(x)$ $F[x]$ polinomlar halkasında indirgenemez bir polinom ve $\alpha$ $F$ cisminin bir $E$ cisim genişlemesinde $p(x)$ polinomunun bir kökü olsun.
 				\begin{enumerate}
 				\renewcommand{\labelenumi}{(\roman{enumi})}
-				    \item O zaman $F(\alpha)$, $E$ cisminin $F$ ve $\alpha$ ile üretilen alt cismi
+				    \item O zaman $F(\alpha)$, $E$ cisminin $F$ üzerinde $\alpha$ ile üretilen alt cismi
 					\begin{equation*}
 					    F[\alpha] = \{b_0 + b_1\alpha + \dots + b_{m}\alpha^m \in E : b_0 + b_1x + \dots + b_{m}x^m \in F[x] \}
 					\end{equation*}
@@ -289,7 +289,7 @@
 			\end{prop}
 			
 			\begin{proof}[İspat]
-			    Diyelim ki $F$ cisminin bir $E$ cisim genişlemesinde $p(x) \in F[x]$ indirgenemez polinomunun bir $\alpha$ kökü olsun. O zaman $E$ cisminin $F$ ve $\alpha$ ile üretilen alt cismini, yani $E$ cisminin $F$ cismini ve $\alpha$ elemanını içeren en küçük alt cismini $F(\alpha)$ ile gösterelim. Şimdi $\varphi : F[x] \to E$ dönüşümü $b_0 + b_1x + \dots + b_mx^m \in F[x]$ için
+			    Diyelim ki $F$ cisminin bir $E$ cisim genişlemesinde $p(x) \in F[x]$ indirgenemez polinomunun bir $\alpha$ kökü olsun. O zaman $E$ cisminin $F$ üzerinde $\alpha$ ile üretilen alt cismini, yani $E$ cisminin $F$ cismini ve $\alpha$ elemanını içeren en küçük alt cismini $F(\alpha)$ ile gösterelim. Şimdi $\varphi : F[x] \to E$ dönüşümü $b_0 + b_1x + \dots + b_mx^m \in F[x]$ için
 			    \begin{equation*}
 			        \varphi(b_0 + b_1x + \dots + b_mx^m) = b_0 + b_1\alpha + \dots + b_m\alpha^m
 			    \end{equation*}
@@ -530,7 +530,7 @@
     	\subsection{Normal Genişlemeler}
     	
     	    \begin{prop}
-    	        Diyelim ki $K$ bir $F$ cisminin bir $E$ cebirsel kapanışının altında kalan cisim genişlemesi olsun. O zaman aşağıdakiler denktir.
+    	        Diyelim ki $K$ bir $F$ cisminin bir $E$ cebirsel kapanışının altında kalan cisim genişlemesi olsun. O zaman aşağıdakiler denktir:
     	        \begin{enumerate}
 				\renewcommand{\labelenumi}{(\roman{enumi})}
 				    \item Eğer bir indirgenemez $f(x) \in F[x]$ polinomunun $K$ cisminde bir kökü varsa, o zaman bu polinom $K$ üzerinde lineer çarpanlara ayrılır.
@@ -541,7 +541,7 @@
     	    
     	    \begin{proof}[İspat]
     	        İlk olarak $(i) \implies (ii)$ olduğunu görelim. Diyelim ki $\alpha \in K$ ve $p(x)$ $\alpha \in K$ elemanının $F$ üzerindeki minimal polinomu olsun. Eğer $(i)$ sağlanıyorsa, o zaman $p(x)$ $K$ üzerinde lineer bölenlere ayrılır. Öyleyse $K$ $(p(x))$ polinomlar ailesinin bir parçalanış cismidir.\par
-    	        Şimdi $(ii) \implies (iii)$ olduğunu görelim. Diyelim ki $K$ bir $\{f_i(x)\}_{i \in I}$ polinomlar ailesinin parçalanış cismi olsun. Eğer $\alpha \in K$ öyle $f_i(x)$ için bir kök ise, o zaman $F$ üzerinde birim olan bir $\varphi: K \to E$ birebir homomorfizması için $\varphi(\alpha)$ $f_i(x)$ için bir kök olur. O halde $K$ $f_i(x)$ polinomlarının tüm kökleri ile üretildiğinden Önerme 2.13 ile $\varphi$ $K$ cisminin bir otomorfizması olur.\par
+    	        Şimdi $(ii) \implies (iii)$ olduğunu görelim. Diyelim ki $K$ bir $\{f_i(x)\}_{i \in I}$ polinomlar ailesinin parçalanış cismi olsun. Eğer $\alpha \in K$ öyle $f_i(x)$ için bir kök ise, o zaman $F$ üzerinde birim olan bir $\varphi: K \to E$ birebir homomorfizması için $\varphi(\alpha)$ $f_i(x)$ için bir kök olur. O halde $K$ $F$ üzerinde $f_i(x)$ polinomlarının tüm kökleri ile üretildiğinden Önerme 2.13 ile $\varphi$ $K$ cisminin bir otomorfizması olur.\par
     	        Son olarak $(iii) \implies (i)$ olduğunu görelim. Diyelim ki $\alpha \in K$ $F$ üzerinde bir indirgenemez $p(x) \in F[x]$ polinomu için bir kök olsun. Ayrıca $\beta \in E$ $p(x)$ polinomunun bir diğer kökü olsun. O zaman $\beta \in K$ olduğunu gösterelim. Burada $\alpha$ ve $\beta$ aynı indirgenemez $p(x)$ polinomunun kökleri olduğundan
     	        \begin{equation*}
     	            F(\alpha) \cong F[x]/(p(x)) \cong F(\beta)
@@ -560,7 +560,7 @@
     	    \end{defn}
     	    
     	    \begin{prop}
-    	        Diyelim ki $F$ bir cisim olsun. O zaman sabit olmayan bir indirgenemez $f(x) \in F[x]$ polinomu için aşağıdakiler denktir.
+    	        Diyelim ki $F$ bir cisim olsun. O zaman sabit olmayan bir indirgenemez $f(x) \in F[x]$ polinomu için aşağıdakiler denktir:
     	        \begin{enumerate}
 				\renewcommand{\labelenumi}{(\roman{enumi})}
 				    \item Bu polinomun katlı kökü vardır.
@@ -590,7 +590,7 @@
     	    \end{proof}
     	    
     	    \begin{prop}
-    	        Diyelim ki $F$ bir cisim olsun. O zaman sıfırdan farklı bir $f(x) \in F[x]$ polinomu için aşağıdakiler denktir.
+    	        Diyelim ki $F$ bir cisim olsun. O zaman sıfırdan farklı bir $f(x) \in F[x]$ polinomu için aşağıdakiler denktir:
     	        \begin{enumerate}
 				\renewcommand{\labelenumi}{(\roman{enumi})}
 				    \item Bu polinomun türevi ile en büyük ortak böleni $(f(x), f'(x))$ olmak üzere $(f(x), f'(x)) = 1$ olur.
@@ -719,7 +719,7 @@
     	    \end{proof}
     	    
     	    \begin{prop}
-    	        Diyelim ki $E$ bir $F$ cisminin bir sonlu genişlemesi olsun. O zaman aşağıdakiler denktir.
+    	        Diyelim ki $E$ bir $F$ cisminin bir sonlu genişlemesi olsun. O zaman aşağıdakiler denktir:
     	         \begin{enumerate}
 				\renewcommand{\labelenumi}{(\roman{enumi})}
 				    \item Bir $\alpha \in E$ için $E = F(\alpha)$ olur.
@@ -870,7 +870,7 @@
     		\end{cor}
     		
     		\begin{proof}[İspat]
-    	        Eğer $\varphi \in G$ ise, o zaman $\varphi$ elemanının $F^G$ için birim olduğu açıktır. Diğer taraftan diyelim ki $\varphi \notin G$ olmak üzere $\varphi$ $F^G$ için birim olsun. Eğer $G \bigcup \{\varphi\}$ kümesinin $n + 1$ sayıda elemanı $F^G$ için birimse, o zaman Lemma 4.3 ve Teorem 4.4 ile
+    	        Eğer $\varphi \in G$ ise, o zaman $\varphi$ elemanının $F^G$ için birim olduğu açıktır. Diğer taraftan $\varphi \notin G$ olmak üzere $\varphi$ $F^G$ için birim olsun. Eğer $G \bigcup \{\varphi\}$ kümesinin $n + 1$ sayıda elemanı $F^G$ için birimse, o zaman Lemma 4.3 ve Teorem 4.4 ile
     	        \begin{align*}
     	            n &= \abs{G}\\
     	            &= [F : F^G]\\
@@ -882,42 +882,93 @@
     	    \end{proof}
     		
     		\begin{thm}
-    		    Diyelim ki $E/F$ bir sonlu genişleme olsun. O zaman aşağıdakiler denktir.
+    		    Diyelim ki $E/F$ bir sonlu genişleme olsun. O zaman aşağıdakiler denktir:
     		    \begin{enumerate}
     				\renewcommand{\labelenumi}{(\roman{enumi})}
-    				\item Cisim genişlemesinin $F$-otomorfizmalarının grubu $G(E/F)$ olmak üzere $F = E^{G(E/F)}$ olur.
+    				\item Cisim genişlemesinin $F$-otomorfizmalarının grubu $G = G(E/F)$ olmak üzere $F = E^G$ olur.
     				\item Eğer bir $p(x) \in F[x]$ indirgenemez polinomunun $E$ cisminde bir kökü varsa, o zaman $p(x)$ ayrılabilirdir ve $p(x)$ polinomunun tüm kökleri $E$ cismindedir.
     				\item Bir $f(x) \in F[x]$ ayrılabilir polinomunun parçalanış cismi $E$ olur.
     			\end{enumerate}
     		\end{thm}
     		
     		\begin{proof}[İspat]
-    	        İlk olarak $(i) \implies (ii)$ olduğunu görelim. Diyelim ki $p(x) \in F[x]$ bir $\alpha \in E$ kökü olan bir indirgenemez polinom ve $\{\varphi(\alpha) : \varphi \in G(E/F)\}$ kümesinin elemanları $\alpha_1, \alpha_2, \dots, \alpha_n$ olsun. Ayrıca bir $f(x) \in E[x]$ polinomunu
+    	        İlk olarak $(i) \implies (ii)$ olduğunu görelim. Diyelim ki $p(x) \in F[x]$ bir $\alpha \in E$ kökü olan bir indirgenemez polinom ve $\{\varphi(\alpha) : \varphi \in G\}$ kümesinin elemanları $\alpha_1, \alpha_2, \dots, \alpha_n$ olsun. Ayrıca bir $f(x) \in E[x]$ polinomunu
     	        \begin{equation*}
     	            f(x) = \prod{(x - \alpha_i)}
     	        \end{equation*}
-    	        ile tanımlayalım. Her $\varphi \in G(E/F)$ elemanı $\alpha_i$ elemanlarını permüte ettiğinden $f(x)$ polinomunun katsayılarını sabitler. O halde $f(x)$ polinomunun katsayıları $E^{G(E/F)} = F$ cismindedir. Öyleyse $f(x) \in F[x]$ olur. Ayrıca $p(x)$ ve $f(x)$ polinomlarının $E$ üzerinde bir ortak kökü olduğundan bu iki polinomun $E[x]$ polinomlar halkasında en büyük ortak böleni 1 değildir. O zaman Önerme xxx ile bu iki polinomun $F[x]$ polinomlar halkasında da en büyük ortak böleni 1 değildir. Ayrıca $p(x)$ indirgenemez olduğundan $f(x)$ polinomunu böler. Öyleyse $f(x)$ polinomunun katlı kökleri olmadığından $p(x)$ polinomunun da katlı kökleri yoktur. Böylece $p(x)$ ayrılabilirdir ve $p(x)$ polinomunun tüm kökleri $E$ cismindedir.\par
+    	        ile tanımlayalım. Her $\varphi \in G$ elemanı $\alpha_i$ elemanlarını permüte ettiğinden $f(x)$ polinomunun katsayılarını sabitler. O halde $f(x)$ polinomunun katsayıları $E^G = F$ cismindedir. Öyleyse $f(x) \in F[x]$ olur. Ayrıca $p(x)$ ve $f(x)$ polinomlarının $E$ üzerinde bir ortak kökü olduğundan bu iki polinomun $E[x]$ polinomlar halkasında en büyük ortak böleni 1 değildir. O zaman Önerme xxx ile bu iki polinomun $F[x]$ polinomlar halkasında da en büyük ortak böleni 1 değildir. Ayrıca $p(x)$ indirgenemez olduğundan $f(x)$ polinomunu böler. Öyleyse $f(x)$ polinomunun katlı kökleri olmadığından $p(x)$ polinomunun da katlı kökleri yoktur. Böylece $p(x)$ ayrılabilirdir ve $p(x)$ polinomunun tüm kökleri $E$ cismindedir.\par
     	        Şimdi $(ii) \implies (iii)$ olduğunu görelim. Diyelim ki $\alpha_1 \notin F$ olmak üzere $\alpha_1 \in E$ olsun. Burada $E/F$ bir sonlu genişleme olduğundan $\alpha_1$ $F$ üzerinde cebirseldir. Diyelim ki $p_1(x) \in F[x]$ $\alpha_1$ elemanının minimal polinomu olsun. Hipotezden $p_1(x)$ ayrılabilirdir ve $p_1(x)$ polinomunun tüm kökleri $E$ cismindedir. Diyelim ki $K_1 \subset E$ $p_1(x)$ polinomunun parçalanış cismi olsun. Eğer $K_1 = E$ ise, o zaman ispat tamamlanır. Aksi halde $\alpha_2 \notin K_1$ olmak üzere $\alpha_2 \in E$ olsun. Hipotezden $\alpha_2$ elemanını kök kabul eden bir ayrılabilir indirgenemez $p_2(x) \in F[x]$ polinomu vardır. Diyelim ki $K_2 \subset E$ $p_1(x)p_2(x)$ ayrılabilir polinomunun parçalanış cismi olsun. Eğer $K_2 = E$ ise ispat tamamlanır. Aksi halde bu yapı yinelenir. Böylece $E/F$ bir sonlu genişleme olduğundan bir $n$ için $K_n = E$ elde edilir.\par
-    	        Son olarak $(iii) \implies (i)$ olduğunu görelim. Lemma 2.16 ile 
-    	        
-    	        
-    	        
-    	        ---$\abs{G(E/F)} = [E : F]$. Teorem 4.4 ile $\abs{G(E/F)} = [E : E^{G(E/F)}]$ olduğu görülür. Öyleyse $[E : F] = [E : E^{G(E/F)}]$ olur ve $F \subset E^{G(E/F)}$ olduğundan $F = E^{G(E/F)}$ elde edilir.
+    	        Son olarak $(iii) \implies (i)$ olduğunu görelim. xxx
     	    \end{proof}
     	    
     	\subsection{Galois Teorisinin Temel Teoremi}
     	
-    	    \begin{thm}
+    	    \begin{defn}
+    	        Diyelim ki $F$ bir cisim olmak üzere $E$ bir $f(x) \in F[x]$ polinomunun parçalanış cismi olsun. O zaman $E$ cisminin $F$ otomorfizmalarının grubu $G(E/F)$ $f(x)$ polinomunun $F$ üzerindeki Galois grubudur.
+    	    \end{defn}
+    	    
+    	    \begin{defn}
+    	        Diyelim ki $F$ bir cisim olmak üzere $E$ $F$ cisminin sonlu, normal ve ayrılabilir genişlemesi olsun. O zaman $E$ $F$ cisminin bir Galois genişlemesidir.
+    	    \end{defn}
+    	    
+    	    \begin{defn}
     	        
+    	    \end{defn}
+    	
+    	    \begin{thm}[Galois Teorisinin Temel Teoremi]
+    	        Diyelim ki $F$ bir cisim olmak üzere $E$ $F$ cisminin bir Galois genişlemesi ve $G = G(E/F)$ olsun. O zaman $G$ grubunun $H$ alt gruplarının kümesiyle $E/F$ cisim genişlemesinin $K/F$ alt genişlemeleri arasında $H \mapsto E^H$ ile tanımlı dönüşüm birebir ve örtendir ve tersi $K \mapsto G(E/K)$ ile tanımlıdır. Ayrıca $H_1$ ile $H_2$ $G$ grubunun alt grupları ve $\varphi \in G$ olmak üzere
+    	        \begin{enumerate}
+    				\renewcommand{\labelenumi}{(\roman{enumi})}
+    				\item $H_2 \subset H_1 \iff E^{H_1} \subset E^{H_2}$
+    				\item $(H_1 : H_2) = [E^{H_2} : E^{H_1}]$
+    				\item $E^{\varphi H \varphi^{-1}} = \varphi(E^H)$ ve $G(E/\varphi K) = \varphi G(E/K) \varphi^{-1}$
+    				\item $H$ normal alt grup $\iff$ $E^H/F$ normal genişleme ve $G/H \cong G(E^H/F)$
+    			\end{enumerate}
+    	        olur.
     	    \end{thm}
     	    
     	    \begin{proof}[İspat]
-    	        
+    	        İlk olarak $H$ $G$ grubunun bir alt grubu olsun. Sonuç 4.5 ile $G(E/E^H) = H$ olur. Diyelim ki $K/F$ $E/F$ cisim genişlemesinin bir alt genişlemesi olsun. Eğer $E$ $F$ cisminin bir Galois genişlemesiyse, o zaman $E$ cisminin $K$ cisminin de bir Galois genişlemesi olacağı açıktır. O halde $E^{G(E/K)} = K$ elde edilir.
+    	        \begin{enumerate}
+    				\renewcommand{\labelenumi}{(\roman{enumi})}
+    				\item Burada
+    				\begin{align*}
+    				    H_2 \subset H_1 &\implies E^{H_1} \subset E^{H_2}\\
+    				    &\implies G(E/E^{H_2}) \subset G(E/E^{H_1})
+    				\end{align*}
+    				olduğu açıktır. Ayrıca $G(E/E^{H_i}) = H_i$ olduğundan sonuç görülür.
+    				\item Diyelim ki $H$ $G$ grubunun bir alt grubu olsun. Teorem 4.4 ile
+    				\begin{equation*}
+    				    \abs{H} = [E : E^H]
+    				\end{equation*}
+    			    olur ve $H_2 = 1$ için sonuç görülür. Önerme 2.5 ile
+    			    \begin{equation*}
+    			        [E : E^{H_1}] = [E : E^{H_2}][E^{H_2} : E^{H_1}]
+    			    \end{equation*}
+    			    olur ve genel sonuç
+    			    \begin{align*}
+    			        (H_1 : 1) &= (H_1 : H_2)(H_2 : 1)\\
+    			        [E : E^{H_1}] &= [E : E^{H_2}][E^{H_2} : E^{H_1}]
+    			    \end{align*}
+    			    denklemlerinden elde edilir.
+    			    \item Eğer $\phi \in G$ ve $\alpha \in E$ ise, o zaman
+    			    \begin{equation*}
+    			        \phi \alpha = \alpha \iff \varphi \phi \varphi^{-1}(\varphi \alpha) = \varphi \alpha
+    			    \end{equation*}
+    			    olur. Öyleyse $\phi$ $K$ üzerinde birimdir ancak ve ancak $\varphi \phi \varphi^{-1}$ $\varphi K$ üzerinde birimdir. Buradan $E^{\varphi H \varphi^{-1}} = \varphi(E^H)$ ve $G(E/\varphi K) = \varphi G(E/K) \varphi^{-1}$ olduğu görülür.
+    			    \item Diyelim ki $H$ $G$ grubunun bir normal alt grubu olsun. O zaman her $\varphi \in G$ için $\varphi H \varphi^{-1} = H$ olduğundan $(iii)$ ile her $\varphi \in G$ için $\varphi E^H = E^H$ olur. Öyleyse çekirdeği $H$ olan bir
+    			    \begin{align*}
+    			        G &\to G(E^H/F)\\
+    			        \varphi &\mapsto \varphi|E^H
+    			    \end{align*}
+    			    örten grup homomorfizması vardır ve $G/H \cong G(E^H/F)$ olur. Ayrıca $(E^H)^{G/H} = F$ olduğundan Teorem 4.6 ile $E^H$ $F$ cisminin bir normal genişlemesidir.\par
+    			    Diğer taraftan $K$ $F$ cisminin bir normal genişlemesi olsun ve $F$ üzerinde $\alpha_1, \alpha_2, \dots, \alpha_n$ elemanlarıyla üretilsin. O zaman $\varphi \in G$ ve $\varphi \alpha_i$ $\alpha_i$ elemanının $F$ üzerindeki minimal polinomunun bir kökü olduğundan $K$ cismindedir. Böylece $\varphi K = K$ ve $(iii)$ ile $\varphi H \varphi^{-1} = H$ elde edilir.
+    			\end{enumerate}
     	    \end{proof}
     	    
     	\subsection{Cebirin Temel Teoremi}
     	
-    	    \begin{thm}
+    	    \begin{thm}[Cebirin Temel Teoremi]
     	        
     	    \end{thm}
     	    
