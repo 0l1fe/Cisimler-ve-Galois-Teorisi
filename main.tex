@@ -44,6 +44,7 @@
 
 \title{Cisimler ve Galois Teorisi}
 \author{Utkan Utkaner}
+\date{01/06/2020}
 
 \usepackage{amsmath,amsthm}
 \usepackage{amssymb}
@@ -138,26 +139,204 @@
 \let\norm=\enVert
 
 \begin{document}
-	\maketitle
+
+    \maketitle
+	
+	\newpage
+	
+	\renewcommand{\contentsname}{İçindekiler}
+	\tableofcontents
+	
+	\newpage
+	
 	\markboth{Cisimler ve Galois Teorisi}
 	{Cisimler ve Galois Teorisi}
 	\renewcommand{\sectionmark}[1]{}
 	
+	\section{Giriş}
+	
+	    Évariste Galois (25 Ekim 1811 - 31 Mayıs 1832) bir Fransız matematikçi ve siyasi aktivisttir. Henüz gençlik yıllarındayken, bir polinomun radikaller tarafından çözülebilmesi için gerekli ve yeterli bir durumu belirleyebildi ve böylece 350 yıldır ayakta olan bir problemi çözdü. Çalışmaları soyut cebirin iki ana dalı olan Galois teorisi ve grup teorisi ile Galois bağlantıları alt dalının temellerini attı. Bir düelloda aldığı yaralardan 20 yaşında öldü.
+	
 	\section{Temel Tanımlar ve Sonuçlar}
+	
+	    \subsection{Halkalar}
+	
+    	    \begin{defn}
+    	        Bir $R$ halkası $(r, s) \mapsto r + s$ ile tanımlı toplama ve $(r, s) \mapsto rs$ ile tanımlı çarpma işlemleri altında aşağıdaki koşulları sağlayan bir kümedir:
+    	        \begin{enumerate}
+        	    \renewcommand{\labelenumi}{(\roman{enumi})}
+        			\item Toplama işlemi altında $R$ bir abel gruptur.
+        			\item Çarpma işlemi birleşmelidir.
+        			\item Çarpma işlemi toplama işlemi üzerine dağılmalıdır.
+        		\end{enumerate}
+        		Eğer çarpma işleminin bir birim elemanı varsa, o zaman $R$ halkası birimlidir.
+        		Eğer çarpma işlemi değişmeliyse, o zaman $R$ halkası değişmelidir.
+        	\end{defn}
+        	
+        	\begin{defn}
+        	    Diyelim ki $R$ bir halka olsun. O zaman katsayıları $R$ halkasında olan bir $f(x)$ polinomu yani $R$ halkası üzerinde tanımlı bir $f(x)$ polinomu her $i$ için $a_i \in R$ ve $i > n$ için $a_i = 0$ olmak üzere
+        	    \begin{equation*}
+        	        f(x) = (a_0, a_1, \dots, a_n, 0, 0, \dots)
+        	    \end{equation*}
+        	    dizisi ile tanımlanır. Burada $a_0$ $f(x)$ polinomunun sabit terimi, $a_n$ $f(x)$ polinomunun baş katsayısı ve $\partial(f(x)) = n$ $f(x)$ polinomunun derecesi olarak adlandırılır.\par
+        	    Ayrıca $R$ halkası üzerinde tanımlı tüm polinomların kümesi $R[x]$
+        	    \begin{equation*}
+        	        (a_0, a_1, \dots) + (b_0, b_1, \dots) = (a_0 + b_0, a_1 + b_1, \dots) 
+        	    \end{equation*}
+        	    ve $k = i + j$ için $c_k = \sum{a_ib_j}$ olmak üzere
+        	    \begin{equation*}
+        	        (a_0, a_1, \dots)(b_0, b_1, \dots) = (c_0, c_1, \dots)
+        	    \end{equation*}
+        	    ile tanımlı toplama ve çarpma işlemleri ile birlikte bir halkadır ve $R$ üzerinde polinomlar halkası olarak adlandırılır.\par
+        	    Burada $x = (0, 1, 0, 0, \dots)$ ile tanımlanır ve bir $f(x) = (a_0, a_1, \dots, a_n, 0, 0, \dots)$ polinomu aynı zamanda
+        	    \begin{equation*}
+        	        f(x) = a_0 + a_1x + \dots + a_nx^n
+        	    \end{equation*}
+        	    olarak ifade edilebilir.
+        	\end{defn}
+        	
+        	\begin{defn}
+        	    Baş katsayısı 1 olan polinoma monik polinom denir.
+        	\end{defn}
+        		
+        	\begin{defn}
+        	    Diyelim ki $f(x) = a_0 + a_1x + \dots + a_n$ bir $R$ halkası üzerinde bir polinom olsun. O zaman $f(x)$ polinomunun $R$ halkasındaki bir kökü
+        	    \begin{equation*}
+    			    a_0 + a_1\alpha + \dots + a_n\alpha^n = 0
+    			\end{equation*}
+    			eşitliğini sağlayan bir $\alpha \in R$ elemanıdır.
+    		\end{defn}
+    		
+    		\begin{defn}
+    		    Diyelim ki $R$ bir halka ve $f(x) = a_0 + a_1x + \dots + a_nx^n \in R[x]$ olsun. O zaman $f(x)$ polinomunun türevi
+    		    \begin{equation*}
+    		        f'(x) = a_1 + 2a_2x+ \dots + na_nx^{n - 1}
+    		    \end{equation*}
+    		    ile tanımlanır. Ayrıca
+    		    \begin{equation*}
+    		        (f(x) + g(x))' = f'(x) + g'(x)
+    		    \end{equation*}
+    		    ve
+    		    \begin{equation*}
+    		        (f(x)g(x))' = f(x)g'(x) + f'(x)g(x)
+    		    \end{equation*}
+    		    eşitlikleri sağlanır.
+    		\end{defn}
 		
-        \subsection{Simetri}
+		\subsection{Tamlık Bölegeleri ve Cisimler}
 		
-        \subsection{Halkalar}
-		
-        \subsection{Tamlık Bölegeleri ve Cisimler}
-		
+    		\begin{defn}
+    		    Bir tamlık bölgesi sıfırdan farklı iki elemanının çarpımının sıfırdan farklı olduğu bir $R$ halkasıdır.
+    		\end{defn}
+    		
+    		\begin{defn}
+    		    Eğer bir $r \in R$ elemanı için $rs = 1$ olacak şekilde bir $s \in R$ elemanı varsa, o zaman $r \in R$ elemanı tersinirdir.
+    		\end{defn}
+        	    
+            \begin{defn}
+                Sıfırdan farklı her elemanının tersinir olduğu bir halkaya cisim denir.
+        	\end{defn}
+        		
+        	\begin{defn}
+        	    Diyelim ki $R$ bir tamlık bölgesi olsun. O zaman $a, b \in R$ ve $b \neq 0$ olmak üzere her elemanı $q = ab^{-1}$ olarak yazılabilen ve $R$ tamlık bölgesininin bir alt halkası olduğu cisme $R$ tamlık bölgesinin kesirler cismi denir.
+        	\end{defn}
+        	
+        	\begin{defn}
+        	    subfield
+        	\end{defn}
+        	
         \subsection{Homomorfizmalar ve İdealler}
-		
-        \subsection{Bölüm Halkaları}
-		
-        \subsection{Cisimler Üzerinde Polinom Halkaları}
-		
-        \subsection{Asal İdealler ve Maksimal İdealler}
+        	
+        	\begin{defn}
+    			If $R$ and $S$ are rings, then a function $\varphi : R \to S$ is a ring homomorphism (or ring map) if, for all $r, r' \in R$:
+    			\begin{equation*}
+    				\varphi(r + r') = \varphi(r) + \varphi(r');
+    			\end{equation*}
+    			\begin{equation*}
+    				\varphi(rr') = \varphi(r)\varphi(r');
+    			\end{equation*}
+    			\begin{equation*}
+    				\varphi(1) = 1.
+    			\end{equation*}
+    			A ring homomorphism $\varphi : R \to S$ is an isomorphism if $\varphi$ is a bijection; in this case, one says that $R$ and $S$ are isomorphic and one writes $R \cong S$.
+    		\end{defn}
+    		
+    		\begin{defn}
+    			If $\varphi : R \to S$ is a ring map, then its kernel is
+    			\begin{equation*}
+    				\textup{ker}\varphi = \{r \in R : \varphi(r) = 0\},
+    			\end{equation*}
+    			and its image is
+    			\begin{equation*}
+    				\textup{im}\varphi = \{s \in S : s = \varphi(r) \text{ for some } r \in R\}.
+    			\end{equation*}
+    		\end{defn}
+    		
+    		\begin{defn}
+    			An ideal in a ring R is a subset $I$ containing $0$ such that:
+    			\begin{enumerate}
+    				\renewcommand{\labelenumi}{(\roman{enumi})}
+    				\item $a, b \in I$ imply $a - b \in I$;
+    				\item $a \in I$ and $r \in R$ imply $ra \in I$.
+    			\end{enumerate}
+    			An ideal $I$ in a ring $R$ is a proper ideal if $I \neq R$.
+    		\end{defn}
+    		
+    		ideal generated by
+    		
+    		principal ideal
+    		
+    		natural map
+    		
+    		\begin{defn}
+    			If $I$ is an ideal in a ring $R$, then $R/I$ is called the quotient ring of $R$ modulo $I$.
+    		\end{defn}
+    		
+    		xxx
+    		
+    		\begin{defn}
+    			A ring $R$ is called a principal ideal domain (PID) if it is a domain in which every ideal is a principal ideal.
+    		\end{defn}
+    		
+    		\begin{defn}
+    			Let $R$ be a domain, and let $f(x), g(x) \in R[x]$. The greatest common divisor (gcd) of $f(x)$ and $g(x)$ is a polynomial $d(x) \in R[x]$ such that:
+    			\begin{enumerate}
+    				\renewcommand{\labelenumi}{(\roman{enumi})}
+    				\item $d(x)$ is a common divisor of $f(x)$ and $g(x)$; that is $d | f$ and $d | g$;
+    				\item if $c(x)$ is any common divisor of $f(x)$ and $g(x)$, then $c(x) | d(x)$;
+    				\item $d(x)$ is monic.
+    			\end{enumerate}
+    		\end{defn}
+    		One often denotes $d(x)$ by $(f, g)$. If $(f, g) = 1$, then $f(x)$ and $g(x)$ are called relatively prime.
+    		
+    		\begin{defn}
+    			Let $F$ be a field. A nonzero polynomial $p(x) \in F[x]$ is irreducible over $F$ if $\partial(p) \geq 1$ and there is no factorization $p(x) = f(x)g(x)$ in $F[x]$ with $\partial(f) < \partial(p)$ and $\partial(g) < \partial(p)$.
+    		\end{defn}
+    		
+    		\begin{defn}
+    			An ideal $I$ in a ring $R$ is called a prime ideal if it is a proper ideal and $ab \in I$ implies $a \in I$ or $b \in I$.
+    		\end{defn}
+    		
+    		\begin{defn}
+    			And ideal $I$ in a ring $R$ is a maximal ideal if it is a proper ideal and there is no ideal $J$ with $I \subsetneqq J \subsetneqq R$.
+    		\end{defn}
+    		
+    		\begin{defn}
+    			The prime field of a field $F$ is the intersection of all the subfields of $F$.
+    		\end{defn}
+    		
+    		\begin{defn}
+    			A field has characteristic $0$ if its prime field is isomorphic to $\mathbf{Q}$; it has characteristic $p$ if its prime field is isomorphic to $\mathbf{Z}_p$.
+    		\end{defn}
+    		
+    		\begin{defn}
+    		    UFD
+    		\end{defn}
+    		
+    		\begin{defn}
+    			A polynomial $f(x) = a_0 + a_1x + \dots + a_nx^n \in \mathbf{Z}[x]$ is called primitive if the $\textup{gcd}$ of its coefficients is $1$.
+    		\end{defn}
+    		
 		    
 	\section{Cisimlerin Cebirsel Genişlemeleri}
 	
@@ -898,7 +1077,7 @@
     	        \end{equation*}
     	        ile tanımlayalım. Her $\varphi \in G$ elemanı $\alpha_i$ elemanlarını permüte ettiğinden $f(x)$ polinomunun katsayılarını sabitler. O halde $f(x)$ polinomunun katsayıları $E^G = F$ cismindedir. Öyleyse $f(x) \in F[x]$ olur. Ayrıca $p(x)$ ve $f(x)$ polinomlarının $E$ üzerinde bir ortak kökü olduğundan bu iki polinomun $E[x]$ polinomlar halkasında en büyük ortak böleni 1 değildir. O zaman Önerme xxx ile bu iki polinomun $F[x]$ polinomlar halkasında da en büyük ortak böleni 1 değildir. Ayrıca $p(x)$ indirgenemez olduğundan $f(x)$ polinomunu böler. Öyleyse $f(x)$ polinomunun katlı kökleri olmadığından $p(x)$ polinomunun da katlı kökleri yoktur. Böylece $p(x)$ ayrılabilirdir ve $p(x)$ polinomunun tüm kökleri $E$ cismindedir.\par
     	        Şimdi $(ii) \implies (iii)$ olduğunu görelim. Diyelim ki $\alpha_1 \notin F$ olmak üzere $\alpha_1 \in E$ olsun. Burada $E/F$ bir sonlu genişleme olduğundan $\alpha_1$ $F$ üzerinde cebirseldir. Diyelim ki $p_1(x) \in F[x]$ $\alpha_1$ elemanının minimal polinomu olsun. Hipotezden $p_1(x)$ ayrılabilirdir ve $p_1(x)$ polinomunun tüm kökleri $E$ cismindedir. Diyelim ki $K_1 \subset E$ $p_1(x)$ polinomunun parçalanış cismi olsun. Eğer $K_1 = E$ ise, o zaman ispat tamamlanır. Aksi halde $\alpha_2 \notin K_1$ olmak üzere $\alpha_2 \in E$ olsun. Hipotezden $\alpha_2$ elemanını kök kabul eden bir ayrılabilir indirgenemez $p_2(x) \in F[x]$ polinomu vardır. Diyelim ki $K_2 \subset E$ $p_1(x)p_2(x)$ ayrılabilir polinomunun parçalanış cismi olsun. Eğer $K_2 = E$ ise ispat tamamlanır. Aksi halde bu yapı yinelenir. Böylece $E/F$ bir sonlu genişleme olduğundan bir $n$ için $K_n = E$ elde edilir.\par
-    	        Son olarak $(iii) \implies (i)$ olduğunu görelim. xxx
+    	        Son olarak $(iii) \implies (i)$ olduğunu görelim. Son olarak $(iii) \implies (i)$ olduğunu görelim. Eğer $E$ bir $f(x) \in F[x]$ ayrılabilir polinomunun parçalanış cismiyse, o zaman $E/F$ bir sonlu genişleme olduğundan Önerme 3.14 ile bir $\alpha \in E$ için $E = F(\alpha)$ olur. Diyelim ki $p(x)$ $\alpha$ elemanının $F$ üzerindeki minimal polinomu ve $p(x)$ polinomunun derecesi $n$ olsun. O zaman $[E : F] = n$ ve $E_0$ $G(E/F)$ grubunun sabit cismi olmak üzere $[E : E_0] = \abs{G(E/F)}$ olur. Lemma 2.16 ile $F$ cisminin cebirsel kapanışı $K$ olmak üzere $\varphi: F \to K$ birebir homomorfizmalarının $\phi: F(\alpha) \to K$ genişlemelerinin sayısı $\alpha$ elemanının minimal polinomunun farklı köklerinin sayısına eşittir.
     	    \end{proof}
     	    
     	\subsection{Galois Teorisinin Temel Teoremi}
@@ -911,10 +1090,6 @@
     	        Diyelim ki $F$ bir cisim olmak üzere $E$ $F$ cisminin sonlu, normal ve ayrılabilir genişlemesi olsun. O zaman $E$ $F$ cisminin bir Galois genişlemesidir.
     	    \end{defn}
     	    
-    	    \begin{defn}
-    	        
-    	    \end{defn}
-    	
     	    \begin{thm}[Galois Teorisinin Temel Teoremi]
     	        Diyelim ki $F$ bir cisim olmak üzere $E$ $F$ cisminin bir Galois genişlemesi ve $G = G(E/F)$ olsun. O zaman $G$ grubunun $H$ alt gruplarının kümesiyle $E/F$ cisim genişlemesinin $K/F$ alt genişlemeleri arasında $H \mapsto E^H$ ile tanımlı dönüşüm birebir ve örtendir ve tersi $K \mapsto G(E/K)$ ile tanımlıdır. Ayrıca $H_1$ ile $H_2$ $G$ grubunun alt grupları ve $\varphi \in G$ olmak üzere
     	        \begin{enumerate}
@@ -969,11 +1144,25 @@
     	\subsection{Cebirin Temel Teoremi}
     	
     	    \begin{thm}[Cebirin Temel Teoremi]
-    	        
+    	        Kompleks sayılar cismi $\mathbb{C}$ cebirsel kapalıdır.
     	    \end{thm}
     	    
     	    \begin{proof}[İspat]
-    	        
+    	        Kompleks sayılar cismi $\mathbb{C}$ $x^2 + 1 \in \mathbb{R}[x]$ polinomunun parçalanış cismi olarak tanımlansın ve bu polinomun bir kökü $i \in \mathbb{C}$ ile gösterilsin. O zaman $\mathbb{C} = \mathbb{R}(i)$ olur. Her $f(x) \in \mathbb{R}[x]$ polinomunun $\mathbb{C}$ cisminde bir kökünün olduğunu görelim. Diyelim ki $f(x) \in \mathbb{R}[x]$ $x^2 + 1 \in \mathbb{R}[x]$ polinomundan farklı bir monik indirgenemez polinom olsun. Burada Ara Değer Teoreminin doğrudan sonucu olan $\mathbb{R}$ ile ilgili aşağıdaki iki önerme alınsın:
+    	        \begin{enumerate}
+    				\renewcommand{\labelenumi}{(\roman{enumi})}
+    				\item Pozitif reel sayıların karekökleri vardır.
+    				\item Derecesi tek doğal sayı olan reel katsayılı her polinomun bir reel kökü vardır.
+    			\end{enumerate} \par
+    			İlk olarak $\mathbb{C}$ cisminin her elemanının bir karekökü olduğunu görelim. Diyelim ki $a, b \in \mathbb{R}$ olmak üzere $\alpha = a + bi \in \mathbb{C}$ olsun ve
+    			\begin{align*}
+    			    c^2 &= \frac{a + \sqrt{a^2 + b^2}}{2}\\
+    			    d^2 &= \frac{-a + \sqrt{a^2 + b^2}}{2}
+    			\end{align*}
+    			olacak şekilde $c, d \in \mathbb{R}$ alalım. O zaman $c^2 - d^2 = a$ ve $(2cd)^2 = b^2$ olur. Eğer $c$ ile $d$ elemanlarının işaretleri $cd$ ile $b$ elemanlarının işaretleri aynı olacak şekilde seçilirse, o zaman $(c + di)^2 = \alpha$ ve böylece $\alpha$ $c + di \in \mathbb{C}$ elemanının karekökü olur.\par
+    			Diyelim ki $f(x) \in \mathbb{R}[x]$ ve $E$ $f(x)(x^2 + 1)$ polinomunun bir parçalanış cismi olsun. O zaman $E$ $\mathbb{C}$ cismini içerir. Burada $E = \mathbb{C}$ olduğunu görelim. İlk olarak $\mathbb{R}$ cisminin karakteristiği sıfır olduğundan $f(x) \in \mathbb{R}[x]$ polinomu ayrılabilirdir. Teorem 4.6 ile $E$ $\mathbb{R}$ cisminin bir Galois genişlemesidir. Diyelim ki $G = G(E/\mathbb{R})$ ve $H$ $G$ grubunun bir Sylow 2-alt grubu olsun.\par
+    			Diyelim ki $K = E^H$ ve $\alpha \in K$ olsun. O zaman $K$ cisminin $\mathbb{R}$ üzerindeki derecesi $(G : H)$ tek doğal sayısına eşit olur ve Önerme 2.5 ile $\alpha \in K$ elemanının $\mathbb{R}$ üzerindeki mininmal polinomunun derecesi tektir. O halde $\alpha \in K$ elemanının $\mathbb{R}$ üzerindeki mininmal polinomunun bir reel kökü vardır ve derecesi 1 olur. Böylece $\alpha \in \mathbb{R}$ olmak üzere $K = \mathbb{R}$ ve $G = H$ elde edilir.\par
+    			Buradan $G(E/\mathbb{C})$ bir Sylow 2-grup olur. Böylece $G(E/\mathbb{C})$ grubunun indeksi 2 olan bir $N$ alt grubu vardır ve $[E^N : \mathbb{C}] = 2$ olur. O halde $E^N$ $\mathbb{C}$ cisminin bir elemanının kareköküyle üretilir. Fakat $\mathbb{C}$ cisminin bir elemanının karekökü $\mathbb{C}$ cisminde olduğundan $E^N = \mathbb{C}$ çelişkisine varılır. Öyleyse $G(E/\mathbb{C}) = 1$ ve $E = \mathbb{C}$ olur.
     	    \end{proof}
 	        
 \newpage
