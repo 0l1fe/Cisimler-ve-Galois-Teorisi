@@ -148,6 +148,16 @@
     urlcolor=cyan,
 }
 
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[turkish]{babel}
+
+\addto\extrasturkish{%
+  \uccode`i=\string"9D \uccode\string"19 = `I
+  \lccode\string"9D=`i \lccode`I=\string"19 }
+\addto\noextrasturkish{%
+  \uccode`i=`I \lccode`I=`i }
+
 \begin{document}
 
     \maketitle
@@ -165,7 +175,7 @@
 	
 	\section{Giriş}
 	
-	    Évariste Galois (25 Ekim 1811 - 31 Mayıs 1832) bir Fransız matematikçi ve siyasi aktivisttir. Henüz gençlik yıllarındayken, bir polinomun radikaller tarafından çözülebilmesi için gerekli ve yeterli bir durumu belirleyebildi ve böylece 350 yıldır ayakta olan bir problemi çözdü. Çalışmaları soyut cebirin iki ana dalı olan Galois teorisi ve grup teorisi ile Galois bağlantıları alanının temellerini attı. Bir düelloda aldığı yaralardan 20 yaşında öldü. Burada onun fikirlerini inceleyeceğiz.
+	    Évariste Galois (25 Ekim 1811 - 31 Mayıs 1832) bir Fransız matematikçi ve siyasi aktivisttir. Henüz gençlik yıllarındayken bir polinomun radikaller tarafından çözülebilmesi için gerekli ve yeterli bir durumu belirleyebildi ve böylece 350 yıldır ayakta olan bir problemi çözdü. Çalışmaları soyut cebirin iki ana dalı olan Galois teorisi ve grup teorisi ile Galois bağlantıları alanının temellerini attı. Bir düelloda aldığı yaralardan 20 yaşında öldü. Burada onun fikirlerini inceleyeceğiz.
 	    
 	\section{Temel Tanımlar ve Sonuçlar}
 	
